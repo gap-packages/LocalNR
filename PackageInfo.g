@@ -12,6 +12,20 @@ PackageName := "LocalNR",
 Subtitle := "Package of local nearrings",
 Version := "1.0",
 Date := "18/07/2017",
+
+SourceRepository := rec(
+    Type := "git",
+    URL := Concatenation( "https://github.com/gap-packages/", ~.PackageName ),
+),
+IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
+PackageWWWHome  := Concatenation( "https://gap-packages.github.io/", ~.PackageName ),
+README_URL      := Concatenation( ~.PackageWWWHome, "/README.txt" ),
+PackageInfoURL  := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
+ArchiveURL      := Concatenation( ~.SourceRepository.URL,
+                                 "/releases/download/v", ~.Version,
+                                 "/", ~.PackageName, "-", ~.Version ),
+ArchiveFormats := ".tar.gz",
+License := "GPL-3.0-or-later",
 Persons := [
   rec( 
     LastName      := "Raievska",
@@ -58,7 +72,6 @@ Persons := [
      )
 ],  
 Status := "dev",
-AcceptDate := "07/2017",
 PackageDoc := 
   rec(
   # use same as in GAP            
@@ -72,6 +85,11 @@ ArchiveURLSubset := ["doc"],
   Autoload  := true
 ),
 
+AbstractHTML := 
+"The <span class=\"pkgname\">LocalNR</span> package \
+contains the library of local nearrings up to order 361 \
+and some functions to analyze finite nearrings.",
+   
 Dependencies := rec(
   # GAP version, use version strings for specifying exact versions,
   # prepend a '>=' for specifying a least version.
@@ -111,7 +129,6 @@ BannerString := Concatenation(
 
 
 AvailabilityTest := ReturnTrue,
-Autoload := false,
 Keywords := ["local nearring", "endomorphism", "automorphisms group"]
 
 
