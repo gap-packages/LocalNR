@@ -127,7 +127,7 @@ BannerString := Concatenation(
 "\n http://www.imath.kiev.ua/~algebra/LocalNR/",
 "\n ----------------------------------------------------------------------------- \n"),
 
-
+TestFile := "tst/testall.g",
 AvailabilityTest := ReturnTrue,
 Keywords := ["local nearring", "endomorphism", "automorphisms group"]
 
