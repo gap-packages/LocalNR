@@ -57,7 +57,7 @@ Persons := [
 
      )
 ],  
-Status := "accepted",
+Status := "dev",
 AcceptDate := "07/2017",
 PackageDoc := 
   rec(
