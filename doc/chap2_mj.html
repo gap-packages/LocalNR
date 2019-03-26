@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (LocalNR) - Chapter 2: Functions</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap2"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapInd_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap2.html">[MathJax off]</a></p>
+<p><a id="X86FA580F8055B274" name="X86FA580F8055B274"></a></p>
+<div class="ChapSects"><a href="chap2_mj.html#X86FA580F8055B274">2 <span class="Heading">Functions</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X86271CEC83E77A58">2.1 <span class="Heading">Group functions</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7EDBADD77E2638BD">2.1-1 IsMinimalNonAbelianGroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X83C3B54B789609D4">2.1-2 IsMetacyclicPGroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X81771B097A79D6BF">2.1-3 EndoOrbitsOfGroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X784893BB7947F14D">2.1-4 IsEndoCyclicGroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X86A9AE187AF165C9">2.2 <span class="Heading">Nearring functions</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X877D0B1B8729395F">2.2-1 UnitsOfNearRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X870157C878E9606B">2.2-2 IsDistributiveElementOfNearRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7E2BB4F27E6B71E6">2.2-3 IsLocalNearRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7B37F8E185604257">2.2-4 IsLocalRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X87400EFF857CCFD8">2.2-5 NearRingNonUnits</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8093B25285C92420">2.2-6 InverseUnitOfNearRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7CE616A982D407C0">2.2-7 SubNearRingByGenerators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8321BFC6856907B6">2.2-8 NonUnitsAsAdditiveSubgroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8113B5737BC3D587">2.2-9 NonUnitsAsNearRingIdeal</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X80619E5279778AE6">2.2-10 MultiplicativeSemigroupOfNearRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X83280C7283BA2D92">2.2-11 NonUnitsAsMultiplicativeSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X78C3A806874CB77D">2.2-12 IsOneGeneratedNearRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X836935BD79EE8810">2.2-13 AutomorphismsAssociatedWithNearRingUnits</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X847294DD81E00F8C">2.2-14 EndomorphismsAssociatedWithNearRingElements</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7F82AB357B378109">2.2-15 SemidirectProductAssociatedWithNearRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X786B756C79BDA836">2.2-16 IsCircleSubgroupOfNearRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X79C31AE57BB7CAF4">2.2-17 FactorizedGroupAssociatedWithCircleSubgroupOfNearRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X790356BF873963F4">2.2-18 ConstantPartOfNearRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7F2C663584E108AD">2.2-19 ZeroSymmetricPartOfNearRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8000A8D98567B2F8">2.2-20 GroupOfUnitsAsGroupOfAutomorphisms</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X870157C878E9606B">2.2-21 IsDistributiveElementOfNearRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7F84066685C00F01">2.2-22 IsSemiDistributiveNearRing</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X798571F68791D67A">2.2-23 IsNearRingWithIdentity</a></span>
+</div></div>
+</div>
+
+<h3>2 <span class="Heading">Functions</span></h3>
+
+<p><a id="X86271CEC83E77A58" name="X86271CEC83E77A58"></a></p>
+
+<h4>2.1 <span class="Heading">Group functions</span></h4>
+
+<p><a id="X7EDBADD77E2638BD" name="X7EDBADD77E2638BD"></a></p>
+
+<h5>2.1-1 IsMinimalNonAbelianGroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMinimalNonAbelianGroup</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is a group <span class="SimpleMath">\(G\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(G\)</span> is a minimal non-abelian group, otherwise the output is <code class="code">false</code>.</p>
+
+<p>Recall that each finite non-abelian group whose proper subgroups are abelian is called a <em>Miller-Moreno group</em> or in other terminology a <em>minimal non-abelian group</em>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H:=SmallGroup(120,4);       </span>
+&lt;pc group of size 120 with 5 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMinimalNonAbelianGroup(H);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">K:=SmallGroup(16,6);</span>
+&lt;pc group of size 16 with 4 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMinimalNonAbelianGroup(K);</span>
+true
+</pre></div>
+
+<p><a id="X83C3B54B789609D4" name="X83C3B54B789609D4"></a></p>
+
+<h5>2.1-2 IsMetacyclicPGroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMetacyclicPGroup</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is a group <span class="SimpleMath">\(G\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(G\)</span> is a metacyclic <span class="SimpleMath">\(p\)</span>-group, otherwise the output is <code class="code">false</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMetacyclicPGroup(K);</span>
+true
+</pre></div>
+
+<p><a id="X81771B097A79D6BF" name="X81771B097A79D6BF"></a></p>
+
+<h5>2.1-3 EndoOrbitsOfGroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EndoOrbitsOfGroup</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: EndoOrbitsOfGroup</p>
+
+<p>The argument is a group <span class="SimpleMath">\(G\)</span>. The output is</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D:=SmallGroup(32,25);   </span>
+&lt;pc group of size 32 with 5 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=EndoOrbitsOfGroup(D);</span>
+[ [ f1, [ &lt;identity&gt; of ..., f1, f1*f5, f2*f3*f5, f2*f3, f2*f3*f4*f5, f2*f3*f4, 
+         f1*f4*f5, f1*f4, f2, f2*f5, f2*f4, f1*f3*f4*f5, f1*f3*f5, f2*f4*f5, 
+         f1*f3*f4, f1*f3, f3, f3*f4, f3*f5, f3*f4*f5, f4, f5, f1*f2, f1*f2*f4, 
+         f1*f2*f5, f1*f2*f4*f5, f4*f5, f1*f2*f3, f1*f2*f3*f4, f1*f2*f3*f5, 
+         f1*f2*f3*f4*f5 ] ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> Size(T[1][2]);</span>
+32
+</pre></div>
+
+<p><a id="X784893BB7947F14D" name="X784893BB7947F14D"></a></p>
+
+<h5>2.1-4 IsEndoCyclicGroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEndoCyclicGroup</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is a group <span class="SimpleMath">\(G\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(G\)</span> is a endocyclic group, otherwise the output is <code class="code">false</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsEndoCyclicGroup(D);</span>
+true
+</pre></div>
+
+<p><a id="X86A9AE187AF165C9" name="X86A9AE187AF165C9"></a></p>
+
+<h4>2.2 <span class="Heading">Nearring functions</span></h4>
+
+<p><a id="X877D0B1B8729395F" name="X877D0B1B8729395F"></a></p>
+
+<h5>2.2-1 UnitsOfNearRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UnitsOfNearRing</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(R\)</span> is a nearring with identity, otherwise the output is <code class="code">false</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N:=LocalNearRing(32,5,16,3,8);</span>
+ExplicitMultiplicationNearRing ( &lt;pc group of size 32 with 
+5 generators&gt; , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">U:=UnitsOfNearRing(N);</span>
+[ (f1), (f1*f5), (f1*f4), (f1*f4*f5), (f1*f3), (f1*f3*f5), (f1*f3*f4),  
+ (f1*f3*f4*f5), (f1*f2), (f1*f2*f5), (f1*f2*f4), (f1*f2*f4*f5), (f1*f2*f3), 
+ (f1*f2*f3*f5), (f1*f2*f3*f4), (f1*f2*f3*f4*f5) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Un:=NearRingUnits(N);;</span>
+U=Un;
+true
+</pre></div>
+
+<p><a id="X870157C878E9606B" name="X870157C878E9606B"></a></p>
+
+<h5>2.2-2 IsDistributiveElementOfNearRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDistributiveElementOfNearRing</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(R\)</span> is a local nearring, otherwise the output is <code class="code">false</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
+
+</pre></div>
+
+<p><a id="X7E2BB4F27E6B71E6" name="X7E2BB4F27E6B71E6"></a></p>
+
+<h5>2.2-3 IsLocalNearRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsLocalNearRing</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(R\)</span> is a local nearring, otherwise the output is <code class="code">false</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H:=SmallGroup(64,3);</span>
+&lt;pc group of size 64 with 6 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A:= AutomorphismNearRing(H);</span>
+AutomorphismNearRing( &lt;pc group of size 64 with 6 generators&gt; )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(A);</span>
+2048
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsLocalNearRing(A);</span>
+true
+</pre></div>
+
+<p><a id="X7B37F8E185604257" name="X7B37F8E185604257"></a></p>
+
+<h5>2.2-4 IsLocalRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsLocalRing</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is a local nearring <span class="SimpleMath">\(R\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(R\)</span> is a local ring, otherwise the output is <code class="code">false</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L:=AllLocalNearRings(32,3,16,14);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(L);                          </span>
+55
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F:=Filtered(L,x-&gt;IsLocalRing(x));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(F);                          </span>
+1
+</pre></div>
+
+<p><a id="X87400EFF857CCFD8" name="X87400EFF857CCFD8"></a></p>
+
+<h5>2.2-5 NearRingNonUnits</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NearRingNonUnits</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a set</p>
+
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span>. The output is the set of non-invertible elements of <span class="SimpleMath">\(R\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=LocalNearRing(49,2,42,1,1); </span>
+ExplicitMultiplicationNearRing ( &lt;pc group of size 49 with 
+2 generators&gt; , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Nu:=NearRingNonUnits(T);</span>
+[ (&lt;identity&gt; of ...), (f2), (f2^2), (f2^3), (f2^4), (f2^5), (f2^6) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(Nu);</span>
+7
+</pre></div>
+
+<p><a id="X8093B25285C92420" name="X8093B25285C92420"></a></p>
+
+<h5>2.2-6 InverseUnitOfNearRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InverseUnitOfNearRing</code>( <var class="Arg">R</var>, <var class="Arg">u</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: an element</p>
+
+<p>The arguments are nearring <span class="SimpleMath">\(R\)</span> with identity and a unit <span class="SimpleMath">\(u\)</span>. The output is the inverse element of the unit <span class="SimpleMath">\(u\)</span> of <span class="SimpleMath">\(R\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=InverseUnitOfNearRing(K,S[4]);</span>
+(f1*f4*f5)
+</pre></div>
+
+<p><a id="X7CE616A982D407C0" name="X7CE616A982D407C0"></a></p>
+
+<h5>2.2-7 SubNearRingByGenerators</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubNearRingByGenerators</code>( <var class="Arg">R</var>, <var class="Arg">gens</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a subnearring</p>
+
+<p>The arguments are a nearring <span class="SimpleMath">\(R\)</span> and generators <span class="SimpleMath">\(gens\)</span> of <span class="SimpleMath">\(R\)</span>. The output is the subnearring generated by <span class="SimpleMath">\(gens\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">B:=LocalNearRing(32,45,16,5,4); </span>
+ExplicitMultiplicationNearRing ( &lt;pc group of size 32 with 
+5 generators&gt; , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D:=DistributiveElements(B);</span>
+[ (&lt;identity&gt; of ...), (f5), (f1*f2*f3*f4), (f1*f2*f3*f4*f5) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Rs:=SubNearRingByGenerators(B,D);</span>
+ExplicitMultiplicationNearRing ( Group([ &lt;identity&gt; of ..., f5, 
+f1*f2*f3*f4,  f1*f2*f3*f4*f5 ]) , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(Rs);</span>
+4
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsDgNearRing(B);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsDgNearRing(Rs);</span>
+true
+</pre></div>
+
+<p><a id="X8321BFC6856907B6" name="X8321BFC6856907B6"></a></p>
+
+<h5>2.2-8 NonUnitsAsAdditiveSubgroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NonUnitsAsAdditiveSubgroup</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a subgroup</p>
+
+<p>The argument is a local nearring <span class="SimpleMath">\(R\)</span>. The output is the additive subgroup of non-units of <span class="SimpleMath">\(R\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=LocalNearRing(32,3,16,14,5);</span>
+ExplicitMultiplicationNearRing ( &lt;pc group of size 32 with 
+5 generators&gt; , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L:=NonUnitsAsAdditiveSubgroup(T);</span>
+Group([ &lt;identity&gt; of ..., f2, f3, f4, f5, f2*f3, f2*f4,  
+f2*f5, f3*f4, f3*f5, f4*f5, f2*f3*f4, f2*f3*f5, f2*f4*f5, 
+f3*f4*f5, f2*f3*f4*f5 ])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IdGroup(L);</span>
+[ 16, 2 ]
+</pre></div>
+
+<p><a id="X8113B5737BC3D587" name="X8113B5737BC3D587"></a></p>
+
+<h5>2.2-9 NonUnitsAsNearRingIdeal</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NonUnitsAsNearRingIdeal</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: an ideal</p>
+
+<p>The argument is a local nearring <span class="SimpleMath">\(R\)</span>. The output is the ideal generated by all non-invertible elements of <span class="SimpleMath">\(R\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=NonUnitsAsNearRingIdeal(T);</span>
+&lt; nearring ideal &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(I);</span>
+16
+</pre></div>
+
+<p><a id="X80619E5279778AE6" name="X80619E5279778AE6"></a></p>
+
+<h5>2.2-10 MultiplicativeSemigroupOfNearRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MultiplicativeSemigroupOfNearRing</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a semigroup</p>
+
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span>. The output is the multiplicative semigroup of <span class="SimpleMath">\(R\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">B:=LocalNearRing(32,21,16,2,14); </span>
+ExplicitMultiplicationNearRing ( &lt;pc group of size 32 with 
+5 generators&gt; , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M:=MultiplicativeSemigroupOfNearRing(B);</span>
+&lt;monoid with 32 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(M);</span>
+32
+</pre></div>
+
+<p><a id="X83280C7283BA2D92" name="X83280C7283BA2D92"></a></p>
+
+<h5>2.2-11 NonUnitsAsMultiplicativeSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NonUnitsAsMultiplicativeSemigroup</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a semigroup</p>
+
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span>. The output is the multiplicative semigroup of non-units of <span class="SimpleMath">\(R\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Nm:=NonUnitsAsMultiplicativeSemigroup(B);</span>
+&lt;semigroup with 16 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(Nm);</span>
+16
+</pre></div>
+
+<p><a id="X78C3A806874CB77D" name="X78C3A806874CB77D"></a></p>
+
+<h5>2.2-12 IsOneGeneratedNearRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsOneGeneratedNearRing</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(R\)</span> is a nearring generated by one element, otherwise the output is <code class="code">false</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D:=LocalNearRing(32,3,16,3,7);           </span>
+ExplicitMultiplicationNearRing ( &lt;pc group of size 32 with 
+5 generators&gt; , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsOneGeneratedNearRing(D);</span>
+true
+</pre></div>
+
+<p><a id="X836935BD79EE8810" name="X836935BD79EE8810"></a></p>
+
+<h5>2.2-13 AutomorphismsAssociatedWithNearRingUnits</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutomorphismsAssociatedWithNearRingUnits</code>( <var class="Arg">R</var>, <var class="Arg">Un</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: automorphisms</p>
+
+<p>The arguments are a nearring <span class="SimpleMath">\(R\)</span> with identity and a set of units <span class="SimpleMath">\(Un\)</span> of <span class="SimpleMath">\(R\)</span>. The output are the automorphisms associated with nearring units.</p>
+
+<p>A subgroup <span class="SimpleMath">\(A\)</span> of the automorphism group <span class="SimpleMath">\(Aut R^+\)</span> of the additive group of the nearring <span class="SimpleMath">\(R\)</span> with identity isomorphic to the multiplicative group <span class="SimpleMath">\(R^*\)</span> and satisfies the condition</p>
+
+<p class="center">\[i^A=\{i^a\mid a\in A\}=R^*\]</p>
+
+<p>is called the subgroup of <span class="SimpleMath">\(Aut R^+\)</span> associated with the group <span class="SimpleMath">\(R^*\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S:=UnitsOfNearRing(D);</span>
+[ (f1), (f1*f5), (f1*f4), (f1*f4*f5), (f1*f3), (f1*f3*f5), (f1*f3*f4),  
+ (f1*f3*f4*f5), (f1*f2), (f1*f2*f5), (f1*f2*f4), (f1*f2*f4*f5), (f1*f2*f3), 
+ (f1*f2*f3*f5), (f1*f2*f3*f4), (f1*f2*f3*f4*f5) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AutomorphismsAssociatedWithNearRingUnits(D,S);</span>
+[ [ f2, f1*f3 ] -&gt; [ f2, f1*f3 ], [ f2, f1*f3 ] -&gt; [ f2, f1*f3*f5 ], 
+  [ f2, f1*f3 ] -&gt; [ f2, f1*f3*f4 ], [ f2, f1*f3 ] -&gt; [ f2, f1*f3*f4*f5 ], 
+  [ f2, f1*f3 ] -&gt; [ f2*f4*f5, f1 ], [ f2, f1*f3 ] -&gt; [ f2*f4*f5, f1*f5 ], 
+  [ f2, f1*f3 ] -&gt; [ f2*f4*f5, f1*f4 ], [ f2, f1*f3 ] -&gt; [ f2*f4*f5, f1*f4*f5 ], 
+  [ f2, f1*f3 ] -&gt; [ f2, f1*f2*f3 ], [ f2, f1*f3 ] -&gt; [ f2, f1*f2*f3*f5 ], 
+  [ f2, f1*f3 ] -&gt; [ f2, f1*f2*f3*f4 ], [ f2, f1*f3 ] -&gt; [ f2, f1*f2*f3*f4*f5 ], 
+  [ f2, f1*f3 ] -&gt; [ f2*f4*f5, f1*f2*f5 ], [ f2, f1*f3 ] -&gt; [ f2*f4*f5, f1*f2 ], 
+  [ f2, f1*f3 ] -&gt; [ f2*f4*f5, f1*f2*f4*f5 ], [ f2, f1*f3 ] -&gt; [ f2*f4*f5, 
+f1*f2*f4 ] ]
+</pre></div>
+
+<p><a id="X847294DD81E00F8C" name="X847294DD81E00F8C"></a></p>
+
+<h5>2.2-14 EndomorphismsAssociatedWithNearRingElements</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EndomorphismsAssociatedWithNearRingElements</code>( <var class="Arg">R</var>, <var class="Arg">Elm</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: endomorphisms</p>
+
+<p>The arguments are a nearring <span class="SimpleMath">\(R\)</span> and a set <span class="SimpleMath">\(Elm\)</span> of nearring elements. The output is the endomorphisms associated with nearring elements.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Nu:=NearRingNonUnits(D);</span>
+[ (&lt;identity&gt; of ...), (f2), (f3), (f4), (f5), (f2*f3), (f2*f4), (f2*f5), 
+ (f3*f4), (f3*f5), (f4*f5), (f2*f3*f4), (f2*f3*f5), (f2*f4*f5), (f3*f4*f5),
+ (f2*f3*f4*f5) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">EndomorphismsAssociatedWithNearRingElements(D,Nu);</span>
+[ [ f2, f1*f3 ] -&gt; [ &lt;identity&gt; of ..., &lt;identity&gt; of ... ], 
+  [ f2, f1*f3 ] -&gt; [ f4, f2*f4 ], [ f2, f1*f3 ] -&gt; [ f4*f5, f3*f5 ], 
+  [ f2, f1*f3 ] -&gt; [ &lt;identity&gt; of ..., f4 ], 
+  [ f2, f1*f3 ] -&gt; [ &lt;identity&gt; of ..., f5 ], 
+  [ f2, f1*f3 ] -&gt; [ f4, f2*f3*f4*f5 ], 
+  [ f2, f1*f3 ] -&gt; [ f4, f2 ], [ f2, f1*f3 ] -&gt; [ f4, f2*f4*f5 ], 
+  [ f2, f1*f3 ] -&gt; [ f4*f5, f3*f4*f5 ], [ f2, f1*f3 ] -&gt; [ f4*f5, f3 ], 
+  [ f2, f1*f3 ] -&gt; [ &lt;identity&gt; of ..., f4*f5 ], 
+  [ f2, f1*f3 ] -&gt; [ f4, f2*f3*f5 ], 
+  [ f2, f1*f3 ] -&gt; [ f4, f2*f3*f4 ], [ f2, f1*f3 ] -&gt; [ f4, f2*f5 ], 
+  [ f2, f1*f3 ] -&gt; [ f4*f5, f3*f4 ], [ f2, f1*f3 ] -&gt; [ f4, f2*f3 ] ]
+</pre></div>
+
+<p><a id="X7F82AB357B378109" name="X7F82AB357B378109"></a></p>
+
+<h5>2.2-15 SemidirectProductAssociatedWithNearRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemidirectProductAssociatedWithNearRing</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a semidirect product</p>
+
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span> with identity. The output is the semidirect product associated with nearring <span class="SimpleMath">\(R\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=LocalNearRing(125,2,100,8,5); </span>
+ExplicitMultiplicationNearRing ( &lt;pc group of size 125 with 
+3 generators&gt; , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemidirectProductAssociatedWithNearRing(T);</span>
+&lt;pc group with 7 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(last);</span>
+12500
+</pre></div>
+
+<p><a id="X786B756C79BDA836" name="X786B756C79BDA836"></a></p>
+
+<h5>2.2-16 IsCircleSubgroupOfNearRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCircleSubgroupOfNearRing</code>( <var class="Arg">R</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The arguments are a nearring <span class="SimpleMath">\(R\)</span> with identity and a subgroup <span class="SimpleMath">\(H\)</span> of additive group of <span class="SimpleMath">\(R\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(H\)</span> is a constructive subgroup of nearring <span class="SimpleMath">\(R\)</span>, otherwise the output is <code class="code">false</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Sg:=Subgroups(GroupReduct(T));;  </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(Sg);</span>
+14
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F:=Filtered(Sg,x-&gt;IsCircleSubgroupOfNearRing(T,x)); </span>
+[ Group([  ]), Group([ f3 ]), Group([ f3, f2 ]) ]
+</pre></div>
+
+<p><a id="X79C31AE57BB7CAF4" name="X79C31AE57BB7CAF4"></a></p>
+
+<h5>2.2-17 FactorizedGroupAssociatedWithCircleSubgroupOfNearRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FactorizedGroupAssociatedWithCircleSubgroupOfNearRing</code>( <var class="Arg">R</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a group</p>
+
+<p>The arguments are a nearring <span class="SimpleMath">\(R\)</span> with identity and a constructive subgroup <span class="SimpleMath">\(H\)</span> of <span class="SimpleMath">\(R\)</span>. The output is the group</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FG:=FactorizedGroupAssociatedWithCircleSubgroupOfNearRing(T,F[2]);</span>
+&lt;pc group with 2 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IdGroup(FG);</span>
+[ 25, 2 ]
+</pre></div>
+
+<p><a id="X790356BF873963F4" name="X790356BF873963F4"></a></p>
+
+<h5>2.2-18 ConstantPartOfNearRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConstantPartOfNearRing</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a constant part</p>
+
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span>. The output is the constant part of nearring <span class="SimpleMath">\(R\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H:=LocalNearRing(64,24,32,22,12481);</span>
+ExplicitMultiplicationNearRing ( &lt;pc group of size 64 with 
+6 generators&gt; , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C:=ConstantPartOfNearRing(H);</span>
+ExplicitMultiplicationNearRing ( Group([ f2*f3*f5, f2*f3 ]) , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(C);</span>
+4
+</pre></div>
+
+<p><a id="X7F2C663584E108AD" name="X7F2C663584E108AD"></a></p>
+
+<h5>2.2-19 ZeroSymmetricPartOfNearRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZeroSymmetricPartOfNearRing</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a zero-symmetric part</p>
+
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span>. The output is the zero-symmetric part of nearring <span class="SimpleMath">\(R\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ZeroSymmetricPartOfNearRing(H);</span>
+ExplicitMultiplicationNearRing ( Group([ f1*f2*f3, f3, f4*f5, f6 ]) , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(last);                    </span>
+16
+</pre></div>
+
+<p><a id="X8000A8D98567B2F8" name="X8000A8D98567B2F8"></a></p>
+
+<h5>2.2-20 GroupOfUnitsAsGroupOfAutomorphisms</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupOfUnitsAsGroupOfAutomorphisms</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a group of units</p>
+
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span>. The output is the group of units as group of automorphisms <span class="SimpleMath">\(R\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M:=LocalNearRing(32,5,16,3,5); </span>
+ExplicitMultiplicationNearRing ( &lt;pc group of size 32 with 
+5 generators&gt; , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GroupOfUnitsAsGroupOfAutomorphisms(M);</span>
+&lt;group of size 16 with 2 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(last);</span>
+16                  
+</pre></div>
+
+<p><a id="X870157C878E9606B" name="X870157C878E9606B"></a></p>
+
+<h5>2.2-21 IsDistributiveElementOfNearRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDistributiveElementOfNearRing</code>( <var class="Arg">R</var>, <var class="Arg">r</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span> and an element <span class="SimpleMath">\(r\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(r\)</span> is a distributive element of nearring <span class="SimpleMath">\(R\)</span>, otherwise the output is <code class="code">false</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D:=LocalNearRing(49,2,42,6,1); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
+ExplicitMultiplicationNearRing ( &lt;pc group of size 49 with 
+2 generators&gt; , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">h:=List(D);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">d:=h[3];</span>
+(f2^2)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsDistributiveElementOfNearRing(D,d);</span>
+true
+</pre></div>
+
+<p><a id="X7F84066685C00F01" name="X7F84066685C00F01"></a></p>
+
+<h5>2.2-22 IsSemiDistributiveNearRing</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSemiDistributiveNearRing</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(R\)</span> is a semidistributive nearring, otherwise the output is <code class="code">false</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N:=LocalNearRing(25,2,20,3,2); </span>
+ExplicitMultiplicationNearRing ( &lt;pc group of size 25 with 
+2 generators&gt; , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSemiDistributiveNearRing(N);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">P:=LocalNearRing(25,1,20,2,1); </span>
+ExplicitMultiplicationNearRing ( &lt;pc group of size 25 with 
+2 generators&gt; , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSemiDistributiveNearRing(P);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsDistributiveNearRing(N);</span>
+true
+</pre></div>
+
+<p><a id="X798571F68791D67A" name="X798571F68791D67A"></a></p>
+
+<h5>2.2-23 IsNearRingWithIdentity</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNearRingWithIdentity</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: a boolean</p>
+
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(R\)</span> is a nearring with identity, otherwise the output is <code class="code">false</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N:=AllLocalNearRings(32,5,16,3)[8];</span>
+ExplicitMultiplicationNearRing ( &lt;pc group of size 32 with 
+5 generators&gt; , multiplication )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsNearRingWithOne(N);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Identity(N);</span>
+(f1)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsNearRingWithIdentity(N);</span>
+true
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapInd_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

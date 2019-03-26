@@ -1,1 +1,93 @@
-Placeholder
+  
+  
+                                   [1X LocalNR [101X
+  
+  
+                          [1X Package of local nearrings [101X
+  
+  
+                                      1.0
+  
+  
+                                  18 July 2017
+  
+  
+                                 Iryna Raievska
+  
+                                Maryna Raievska
+  
+                                 Yaroslav Sysak
+  
+  
+  
+  Iryna Raievska
+      Email:    [7Xmailto:raevskaya.irina@gmail.com[107X
+      Homepage: [7Xhttp://www.imath.kiev.ua/~raeirina/[107X
+      Address:  [33X[0;14YInstitute of Mathematics[133X
+                [33X[0;14YNational Academy of Sciences of Ukraine[133X
+                [33X[0;14Y01601 Ukraine, Kyiv, 3, Tereshchenkivska st.[133X
+  
+  
+  Maryna Raievska
+      Email:    [7Xmailto:raemarina@imath.kiev.ua[107X
+      Homepage: [7Xhttp://www.imath.kiev.ua/~raemarina/[107X
+      Address:  [33X[0;14YInstitute of Mathematics[133X
+                [33X[0;14YNational Academy of Sciences of Ukraine[133X
+                [33X[0;14Y01601 Ukraine, Kyiv, 3, Tereshchenkivska st.[133X
+  
+  
+  Yaroslav Sysak
+      Email:    [7Xmailto:sysak@imath.kiev.ua[107X
+      Homepage: [7Xhttp://www.imath.kiev.ua/~sysak/[107X
+      Address:  [33X[0;14YInstitute of Mathematics[133X
+                [33X[0;14YNational Academy of Sciences of Ukraine[133X
+                [33X[0;14Y01601 Ukraine, Kyiv, 3, Tereshchenkivska st.[133X
+  
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (LocalNR)[101X
+  
+  1 [33X[0;0YLocal nearrings[133X
+    1.1 [33X[0;0YThe local nearrings library[133X
+      1.1-1 TheAdditiveGroupsOfLibraryOfLNRsOfOrder
+      1.1-2 TheLibraryOfLNRsOnGroup
+      1.1-3 LocalNearRing
+      1.1-4 AllLocalNearRings
+      1.1-5 IsAdditiveGroupOfLibraryOfLNRs
+      1.1-6 InfoLocalNearRing
+  2 [33X[0;0YFunctions[133X
+    2.1 [33X[0;0YGroup functions[133X
+      2.1-1 IsMinimalNonAbelianGroup
+      2.1-2 IsMetacyclicPGroup
+      2.1-3 EndoOrbitsOfGroup
+      2.1-4 IsEndoCyclicGroup
+    2.2 [33X[0;0YNearring functions[133X
+      2.2-1 UnitsOfNearRing
+      2.2-2 IsDistributiveElementOfNearRing
+      2.2-3 IsLocalNearRing
+      2.2-4 IsLocalRing
+      2.2-5 NearRingNonUnits
+      2.2-6 InverseUnitOfNearRing
+      2.2-7 SubNearRingByGenerators
+      2.2-8 NonUnitsAsAdditiveSubgroup
+      2.2-9 NonUnitsAsNearRingIdeal
+      2.2-10 MultiplicativeSemigroupOfNearRing
+      2.2-11 NonUnitsAsMultiplicativeSemigroup
+      2.2-12 IsOneGeneratedNearRing
+      2.2-13 AutomorphismsAssociatedWithNearRingUnits
+      2.2-14 EndomorphismsAssociatedWithNearRingElements
+      2.2-15 SemidirectProductAssociatedWithNearRing
+      2.2-16 IsCircleSubgroupOfNearRing
+      2.2-17 FactorizedGroupAssociatedWithCircleSubgroupOfNearRing
+      2.2-18 ConstantPartOfNearRing
+      2.2-19 ZeroSymmetricPartOfNearRing
+      2.2-20 GroupOfUnitsAsGroupOfAutomorphisms
+      2.2-21 IsDistributiveElementOfNearRing
+      2.2-22 IsSemiDistributiveNearRing
+      2.2-23 IsNearRingWithIdentity
+  
+  
+  [32X

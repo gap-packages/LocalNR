@@ -1,0 +1,520 @@
+  
+  [1X2 [33X[0;0YFunctions[133X[101X
+  
+  
+  [1X2.1 [33X[0;0YGroup functions[133X[101X
+  
+  [1X2.1-1 IsMinimalNonAbelianGroup[101X
+  
+  [33X[1;0Y[29X[2XIsMinimalNonAbelianGroup[102X( [3XG[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument is a group [23XG[123X. The output is [10Xtrue[110X if [23XG[123X is a minimal non-abelian
+  group, otherwise the output is [10Xfalse[110X.[133X
+  
+  [33X[0;0YRecall that each finite non-abelian group whose proper subgroups are abelian
+  is   called  a  [13XMiller-Moreno  group[113X  or  in  other  terminology  a  [13Xminimal
+  non-abelian group[113X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XH:=SmallGroup(120,4);       [127X[104X
+    [4X[28X<pc group of size 120 with 5 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsMinimalNonAbelianGroup(H);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XK:=SmallGroup(16,6);[127X[104X
+    [4X[28X<pc group of size 16 with 4 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsMinimalNonAbelianGroup(K);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-2 IsMetacyclicPGroup[101X
+  
+  [33X[1;0Y[29X[2XIsMetacyclicPGroup[102X( [3XG[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument is a group [23XG[123X. The output is [10Xtrue[110X if [23XG[123X is a metacyclic [23Xp[123X-group,
+  otherwise the output is [10Xfalse[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsMetacyclicPGroup(K);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-3 EndoOrbitsOfGroup[101X
+  
+  [33X[1;0Y[29X[2XEndoOrbitsOfGroup[102X( [3XG[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YEndoOrbitsOfGroup[133X
+  
+  [33X[0;0YThe argument is a group [23XG[123X. The output is[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XD:=SmallGroup(32,25);   [127X[104X
+    [4X[28X<pc group of size 32 with 5 generators>[128X[104X
+    [4X[25Xgap>[125X [27XT:=EndoOrbitsOfGroup(D);[127X[104X
+    [4X[28X[ [ f1, [ <identity> of ..., f1, f1*f5, f2*f3*f5, f2*f3, f2*f3*f4*f5, f2*f3*f4, [128X[104X
+    [4X[28X         f1*f4*f5, f1*f4, f2, f2*f5, f2*f4, f1*f3*f4*f5, f1*f3*f5, f2*f4*f5, [128X[104X
+    [4X[28X         f1*f3*f4, f1*f3, f3, f3*f4, f3*f5, f3*f4*f5, f4, f5, f1*f2, f1*f2*f4, [128X[104X
+    [4X[28X         f1*f2*f5, f1*f2*f4*f5, f4*f5, f1*f2*f3, f1*f2*f3*f4, f1*f2*f3*f5, [128X[104X
+    [4X[28X         f1*f2*f3*f4*f5 ] ] ][128X[104X
+    [4X[25Xgap>[125X [27X Size(T[1][2]);[127X[104X
+    [4X[28X32[128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-4 IsEndoCyclicGroup[101X
+  
+  [33X[1;0Y[29X[2XIsEndoCyclicGroup[102X( [3XG[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a group [23XG[123X. The output is [10Xtrue[110X if [23XG[123X is a endocyclic group,
+  otherwise the output is [10Xfalse[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsEndoCyclicGroup(D);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.2 [33X[0;0YNearring functions[133X[101X
+  
+  [1X2.2-1 UnitsOfNearRing[101X
+  
+  [33X[1;0Y[29X[2XUnitsOfNearRing[102X( [3XR[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a  nearring [23XR[123X. The output is [10Xtrue[110X if [23XR[123X is a nearring with
+  identity, otherwise the output is [10Xfalse[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XN:=LocalNearRing(32,5,16,3,8);[127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( <pc group of size 32 with [128X[104X
+    [4X[28X5 generators> , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XU:=UnitsOfNearRing(N);[127X[104X
+    [4X[28X[ (f1), (f1*f5), (f1*f4), (f1*f4*f5), (f1*f3), (f1*f3*f5), (f1*f3*f4),  [128X[104X
+    [4X[28X (f1*f3*f4*f5), (f1*f2), (f1*f2*f5), (f1*f2*f4), (f1*f2*f4*f5), (f1*f2*f3), [128X[104X
+    [4X[28X (f1*f2*f3*f5), (f1*f2*f3*f4), (f1*f2*f3*f4*f5) ][128X[104X
+    [4X[25Xgap>[125X [27XUn:=NearRingUnits(N);;[127X[104X
+    [4X[28XU=Un;[128X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-2 IsDistributiveElementOfNearRing[101X
+  
+  [33X[1;0Y[29X[2XIsDistributiveElementOfNearRing[102X( [3XR[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is a nearring [23XR[123X. The output is [10Xtrue[110X if [23XR[123X is a local nearring,
+  otherwise the output is [10Xfalse[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-3 IsLocalNearRing[101X
+  
+  [33X[1;0Y[29X[2XIsLocalNearRing[102X( [3XR[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is a nearring [23XR[123X. The output is [10Xtrue[110X if [23XR[123X is a local nearring,
+  otherwise the output is [10Xfalse[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XH:=SmallGroup(64,3);[127X[104X
+    [4X[28X<pc group of size 64 with 6 generators>[128X[104X
+    [4X[25Xgap>[125X [27XA:= AutomorphismNearRing(H);[127X[104X
+    [4X[28XAutomorphismNearRing( <pc group of size 64 with 6 generators> )[128X[104X
+    [4X[25Xgap>[125X [27XSize(A);[127X[104X
+    [4X[28X2048[128X[104X
+    [4X[25Xgap>[125X [27XIsLocalNearRing(A);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-4 IsLocalRing[101X
+  
+  [33X[1;0Y[29X[2XIsLocalRing[102X( [3XR[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe argument is a local nearring [23XR[123X. The output is [10Xtrue[110X if [23XR[123X is a local ring,
+  otherwise the output is [10Xfalse[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XL:=AllLocalNearRings(32,3,16,14);;[127X[104X
+    [4X[25Xgap>[125X [27XSize(L);                          [127X[104X
+    [4X[28X55[128X[104X
+    [4X[25Xgap>[125X [27XF:=Filtered(L,x->IsLocalRing(x));;[127X[104X
+    [4X[25Xgap>[125X [27XSize(F);                          [127X[104X
+    [4X[28X1[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-5 NearRingNonUnits[101X
+  
+  [33X[1;0Y[29X[2XNearRingNonUnits[102X( [3XR[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya set[133X
+  
+  [33X[0;0YThe  argument  is  a  nearring  [23XR[123X.  The  output is the set of non-invertible
+  elements of [23XR[123X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XT:=LocalNearRing(49,2,42,1,1); [127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( <pc group of size 49 with [128X[104X
+    [4X[28X2 generators> , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XNu:=NearRingNonUnits(T);[127X[104X
+    [4X[28X[ (<identity> of ...), (f2), (f2^2), (f2^3), (f2^4), (f2^5), (f2^6) ][128X[104X
+    [4X[25Xgap>[125X [27XSize(Nu);[127X[104X
+    [4X[28X7[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-6 InverseUnitOfNearRing[101X
+  
+  [33X[1;0Y[29X[2XInverseUnitOfNearRing[102X( [3XR[103X, [3Xu[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Yan element[133X
+  
+  [33X[0;0YThe  arguments  are nearring [23XR[123X with identity and a unit [23Xu[123X. The output is the
+  inverse element of the unit [23Xu[123X of [23XR[123X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg:=InverseUnitOfNearRing(K,S[4]);[127X[104X
+    [4X[28X(f1*f4*f5)[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-7 SubNearRingByGenerators[101X
+  
+  [33X[1;0Y[29X[2XSubNearRingByGenerators[102X( [3XR[103X, [3Xgens[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya subnearring[133X
+  
+  [33X[0;0YThe  arguments  are a nearring [23XR[123X and generators [23Xgens[123X of [23XR[123X. The output is the
+  subnearring generated by [23Xgens[123X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XB:=LocalNearRing(32,45,16,5,4); [127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( <pc group of size 32 with [128X[104X
+    [4X[28X5 generators> , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XD:=DistributiveElements(B);[127X[104X
+    [4X[28X[ (<identity> of ...), (f5), (f1*f2*f3*f4), (f1*f2*f3*f4*f5) ][128X[104X
+    [4X[25Xgap>[125X [27XRs:=SubNearRingByGenerators(B,D);[127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( Group([ <identity> of ..., f5, [128X[104X
+    [4X[28Xf1*f2*f3*f4,  f1*f2*f3*f4*f5 ]) , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XSize(Rs);[127X[104X
+    [4X[28X4[128X[104X
+    [4X[25Xgap>[125X [27XIsDgNearRing(B);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsDgNearRing(Rs);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-8 NonUnitsAsAdditiveSubgroup[101X
+  
+  [33X[1;0Y[29X[2XNonUnitsAsAdditiveSubgroup[102X( [3XR[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya subgroup[133X
+  
+  [33X[0;0YThe  argument  is a local nearring [23XR[123X. The output is the additive subgroup of
+  non-units of [23XR[123X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XT:=LocalNearRing(32,3,16,14,5);[127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( <pc group of size 32 with [128X[104X
+    [4X[28X5 generators> , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XL:=NonUnitsAsAdditiveSubgroup(T);[127X[104X
+    [4X[28XGroup([ <identity> of ..., f2, f3, f4, f5, f2*f3, f2*f4,  [128X[104X
+    [4X[28Xf2*f5, f3*f4, f3*f5, f4*f5, f2*f3*f4, f2*f3*f5, f2*f4*f5, [128X[104X
+    [4X[28Xf3*f4*f5, f2*f3*f4*f5 ])[128X[104X
+    [4X[25Xgap>[125X [27XIdGroup(L);[127X[104X
+    [4X[28X[ 16, 2 ][128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-9 NonUnitsAsNearRingIdeal[101X
+  
+  [33X[1;0Y[29X[2XNonUnitsAsNearRingIdeal[102X( [3XR[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Yan ideal[133X
+  
+  [33X[0;0YThe argument is a local nearring [23XR[123X. The output is the ideal generated by all
+  non-invertible elements of [23XR[123X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XI:=NonUnitsAsNearRingIdeal(T);[127X[104X
+    [4X[28X< nearring ideal >[128X[104X
+    [4X[25Xgap>[125X [27XSize(I);[127X[104X
+    [4X[28X16[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-10 MultiplicativeSemigroupOfNearRing[101X
+  
+  [33X[1;0Y[29X[2XMultiplicativeSemigroupOfNearRing[102X( [3XR[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya semigroup[133X
+  
+  [33X[0;0YThe  argument is a nearring [23XR[123X. The output is the multiplicative semigroup of
+  [23XR[123X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XB:=LocalNearRing(32,21,16,2,14); [127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( <pc group of size 32 with [128X[104X
+    [4X[28X5 generators> , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XM:=MultiplicativeSemigroupOfNearRing(B);[127X[104X
+    [4X[28X<monoid with 32 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSize(M);[127X[104X
+    [4X[28X32[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-11 NonUnitsAsMultiplicativeSemigroup[101X
+  
+  [33X[1;0Y[29X[2XNonUnitsAsMultiplicativeSemigroup[102X( [3XR[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya semigroup[133X
+  
+  [33X[0;0YThe  argument is a nearring [23XR[123X. The output is the multiplicative semigroup of
+  non-units of [23XR[123X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XNm:=NonUnitsAsMultiplicativeSemigroup(B);[127X[104X
+    [4X[28X<semigroup with 16 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSize(Nm);[127X[104X
+    [4X[28X16[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-12 IsOneGeneratedNearRing[101X
+  
+  [33X[1;0Y[29X[2XIsOneGeneratedNearRing[102X( [3XR[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a  nearring  [23XR[123X.  The  output  is  [10Xtrue[110X if [23XR[123X is a nearring
+  generated by one element, otherwise the output is [10Xfalse[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XD:=LocalNearRing(32,3,16,3,7);           [127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( <pc group of size 32 with [128X[104X
+    [4X[28X5 generators> , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XIsOneGeneratedNearRing(D);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-13 AutomorphismsAssociatedWithNearRingUnits[101X
+  
+  [33X[1;0Y[29X[2XAutomorphismsAssociatedWithNearRingUnits[102X( [3XR[103X, [3XUn[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Yautomorphisms[133X
+  
+  [33X[0;0YThe arguments are a nearring [23XR[123X with identity and a set of units [23XUn[123X of [23XR[123X. The
+  output are the automorphisms associated with nearring units.[133X
+  
+  [33X[0;0YA  subgroup [23XA[123X of the automorphism group [23XAut R^+[123X of the additive group of the
+  nearring  [23XR[123X  with  identity  isomorphic  to the multiplicative group [23XR^*[123X and
+  satisfies the condition[133X
+  
+  
+  [24X[33X[0;6Yi^A=\{i^a\mid a\in A\}=R^*[133X
+  
+  [124X
+  
+  [33X[0;0Yis called the subgroup of [23XAut R^+[123X associated with the group [23XR^*[123X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XS:=UnitsOfNearRing(D);[127X[104X
+    [4X[28X[ (f1), (f1*f5), (f1*f4), (f1*f4*f5), (f1*f3), (f1*f3*f5), (f1*f3*f4),  [128X[104X
+    [4X[28X (f1*f3*f4*f5), (f1*f2), (f1*f2*f5), (f1*f2*f4), (f1*f2*f4*f5), (f1*f2*f3), [128X[104X
+    [4X[28X (f1*f2*f3*f5), (f1*f2*f3*f4), (f1*f2*f3*f4*f5) ][128X[104X
+    [4X[25Xgap>[125X [27XAutomorphismsAssociatedWithNearRingUnits(D,S);[127X[104X
+    [4X[28X[ [ f2, f1*f3 ] -> [ f2, f1*f3 ], [ f2, f1*f3 ] -> [ f2, f1*f3*f5 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ f2, f1*f3*f4 ], [ f2, f1*f3 ] -> [ f2, f1*f3*f4*f5 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ f2*f4*f5, f1 ], [ f2, f1*f3 ] -> [ f2*f4*f5, f1*f5 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ f2*f4*f5, f1*f4 ], [ f2, f1*f3 ] -> [ f2*f4*f5, f1*f4*f5 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ f2, f1*f2*f3 ], [ f2, f1*f3 ] -> [ f2, f1*f2*f3*f5 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ f2, f1*f2*f3*f4 ], [ f2, f1*f3 ] -> [ f2, f1*f2*f3*f4*f5 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ f2*f4*f5, f1*f2*f5 ], [ f2, f1*f3 ] -> [ f2*f4*f5, f1*f2 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ f2*f4*f5, f1*f2*f4*f5 ], [ f2, f1*f3 ] -> [ f2*f4*f5, [128X[104X
+    [4X[28Xf1*f2*f4 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-14 EndomorphismsAssociatedWithNearRingElements[101X
+  
+  [33X[1;0Y[29X[2XEndomorphismsAssociatedWithNearRingElements[102X( [3XR[103X, [3XElm[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Yendomorphisms[133X
+  
+  [33X[0;0YThe  arguments  are  a  nearring  [23XR[123X  and a set [23XElm[123X of nearring elements. The
+  output is the endomorphisms associated with nearring elements.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XNu:=NearRingNonUnits(D);[127X[104X
+    [4X[28X[ (<identity> of ...), (f2), (f3), (f4), (f5), (f2*f3), (f2*f4), (f2*f5), [128X[104X
+    [4X[28X (f3*f4), (f3*f5), (f4*f5), (f2*f3*f4), (f2*f3*f5), (f2*f4*f5), (f3*f4*f5),[128X[104X
+    [4X[28X (f2*f3*f4*f5) ][128X[104X
+    [4X[25Xgap>[125X [27XEndomorphismsAssociatedWithNearRingElements(D,Nu);[127X[104X
+    [4X[28X[ [ f2, f1*f3 ] -> [ <identity> of ..., <identity> of ... ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ f4, f2*f4 ], [ f2, f1*f3 ] -> [ f4*f5, f3*f5 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ <identity> of ..., f4 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ <identity> of ..., f5 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ f4, f2*f3*f4*f5 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ f4, f2 ], [ f2, f1*f3 ] -> [ f4, f2*f4*f5 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ f4*f5, f3*f4*f5 ], [ f2, f1*f3 ] -> [ f4*f5, f3 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ <identity> of ..., f4*f5 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ f4, f2*f3*f5 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ f4, f2*f3*f4 ], [ f2, f1*f3 ] -> [ f4, f2*f5 ], [128X[104X
+    [4X[28X  [ f2, f1*f3 ] -> [ f4*f5, f3*f4 ], [ f2, f1*f3 ] -> [ f4, f2*f3 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-15 SemidirectProductAssociatedWithNearRing[101X
+  
+  [33X[1;0Y[29X[2XSemidirectProductAssociatedWithNearRing[102X( [3XR[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya semidirect product[133X
+  
+  [33X[0;0YThe  argument  is  a  nearring [23XR[123X with identity. The output is the semidirect
+  product associated with nearring [23XR[123X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XT:=LocalNearRing(125,2,100,8,5); [127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( <pc group of size 125 with [128X[104X
+    [4X[28X3 generators> , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XSemidirectProductAssociatedWithNearRing(T);[127X[104X
+    [4X[28X<pc group with 7 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSize(last);[127X[104X
+    [4X[28X12500[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-16 IsCircleSubgroupOfNearRing[101X
+  
+  [33X[1;0Y[29X[2XIsCircleSubgroupOfNearRing[102X( [3XR[103X, [3XH[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  arguments  are  a nearring [23XR[123X with identity and a subgroup [23XH[123X of additive
+  group  of  [23XR[123X. The output is [10Xtrue[110X if [23XH[123X is a constructive subgroup of nearring
+  [23XR[123X, otherwise the output is [10Xfalse[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSg:=Subgroups(GroupReduct(T));;  [127X[104X
+    [4X[25Xgap>[125X [27XSize(Sg);[127X[104X
+    [4X[28X14[128X[104X
+    [4X[25Xgap>[125X [27XF:=Filtered(Sg,x->IsCircleSubgroupOfNearRing(T,x)); [127X[104X
+    [4X[28X[ Group([  ]), Group([ f3 ]), Group([ f3, f2 ]) ][128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-17 FactorizedGroupAssociatedWithCircleSubgroupOfNearRing[101X
+  
+  [33X[1;0Y[29X[2XFactorizedGroupAssociatedWithCircleSubgroupOfNearRing[102X( [3XR[103X, [3XH[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya group[133X
+  
+  [33X[0;0YThe  arguments  are a nearring [23XR[123X with identity and a constructive subgroup [23XH[123X
+  of [23XR[123X. The output is the group[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XFG:=FactorizedGroupAssociatedWithCircleSubgroupOfNearRing(T,F[2]);[127X[104X
+    [4X[28X<pc group with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIdGroup(FG);[127X[104X
+    [4X[28X[ 25, 2 ][128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-18 ConstantPartOfNearRing[101X
+  
+  [33X[1;0Y[29X[2XConstantPartOfNearRing[102X( [3XR[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya constant part[133X
+  
+  [33X[0;0YThe argument is a nearring [23XR[123X. The output is the constant part of nearring [23XR[123X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XH:=LocalNearRing(64,24,32,22,12481);[127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( <pc group of size 64 with [128X[104X
+    [4X[28X6 generators> , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XC:=ConstantPartOfNearRing(H);[127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( Group([ f2*f3*f5, f2*f3 ]) , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XSize(C);[127X[104X
+    [4X[28X4[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-19 ZeroSymmetricPartOfNearRing[101X
+  
+  [33X[1;0Y[29X[2XZeroSymmetricPartOfNearRing[102X( [3XR[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya zero-symmetric part[133X
+  
+  [33X[0;0YThe  argument  is  a  nearring  [23XR[123X.  The output is the zero-symmetric part of
+  nearring [23XR[123X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XZeroSymmetricPartOfNearRing(H);[127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( Group([ f1*f2*f3, f3, f4*f5, f6 ]) , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XSize(last);                    [127X[104X
+    [4X[28X16[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-20 GroupOfUnitsAsGroupOfAutomorphisms[101X
+  
+  [33X[1;0Y[29X[2XGroupOfUnitsAsGroupOfAutomorphisms[102X( [3XR[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Ya group of units[133X
+  
+  [33X[0;0YThe  argument  is a nearring [23XR[123X. The output is the group of units as group of
+  automorphisms [23XR[123X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XM:=LocalNearRing(32,5,16,3,5); [127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( <pc group of size 32 with [128X[104X
+    [4X[28X5 generators> , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XGroupOfUnitsAsGroupOfAutomorphisms(M);[127X[104X
+    [4X[28X<group of size 16 with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSize(last);[127X[104X
+    [4X[28X16                  [128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-21 IsDistributiveElementOfNearRing[101X
+  
+  [33X[1;0Y[29X[2XIsDistributiveElementOfNearRing[102X( [3XR[103X, [3Xr[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument is a nearring [23XR[123X and an element [23Xr[123X. The output is [10Xtrue[110X if [23Xr[123X is a
+  distributive element of nearring [23XR[123X, otherwise the output is [10Xfalse[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XD:=LocalNearRing(49,2,42,6,1); [127X[104X
+    [4X[25Xgap>[125X [27X[127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( <pc group of size 49 with [128X[104X
+    [4X[28X2 generators> , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27Xh:=List(D);;[127X[104X
+    [4X[25Xgap>[125X [27Xd:=h[3];[127X[104X
+    [4X[28X(f2^2)[128X[104X
+    [4X[25Xgap>[125X [27XIsDistributiveElementOfNearRing(D,d);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-22 IsSemiDistributiveNearRing[101X
+  
+  [33X[1;0Y[29X[2XIsSemiDistributiveNearRing[102X( [3XR[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument is a nearring [23XR[123X. The output is [10Xtrue[110X if [23XR[123X is a semidistributive
+  nearring, otherwise the output is [10Xfalse[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XN:=LocalNearRing(25,2,20,3,2); [127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( <pc group of size 25 with [128X[104X
+    [4X[28X2 generators> , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XIsSemiDistributiveNearRing(N);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XP:=LocalNearRing(25,1,20,2,1); [127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( <pc group of size 25 with [128X[104X
+    [4X[28X2 generators> , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XIsSemiDistributiveNearRing(P);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsDistributiveNearRing(N);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-23 IsNearRingWithIdentity[101X
+  
+  [33X[1;0Y[29X[2XIsNearRingWithIdentity[102X( [3XR[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Ya boolean[133X
+  
+  [33X[0;0YThe  argument  is  a  nearring [23XR[123X. The output is [10Xtrue[110X if [23XR[123X is a nearring with
+  identity, otherwise the output is [10Xfalse[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XN:=AllLocalNearRings(32,5,16,3)[8];[127X[104X
+    [4X[28XExplicitMultiplicationNearRing ( <pc group of size 32 with [128X[104X
+    [4X[28X5 generators> , multiplication )[128X[104X
+    [4X[25Xgap>[125X [27XIsNearRingWithOne(N);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIdentity(N);[127X[104X
+    [4X[28X(f1)[128X[104X
+    [4X[25Xgap>[125X [27XIsNearRingWithIdentity(N);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  

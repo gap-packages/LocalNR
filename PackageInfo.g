@@ -1,102 +1,138 @@
 #############################################################################
-##  
-##  Demo PackageInfo.g for the GitHubPagesForGAP
 ##
-
+#W  PackageInfo.g             Iryna Raievska, Maryna Raievska, Yaroslav Sysak 
+#Y  Copyright (C) 2015     
+##
+##  Licensing information can be found in the README file of this package.
+##
+#############################################################################
+##
 SetPackageInfo( rec(
+PackageName := "LocalNR",
+Subtitle := "Package of local nearrings",
+Version := "1.0",
+Date := "18/07/2017",
 
-PackageName := "GitHubPagesForGAP",
-
-Subtitle := "A GitHub Pages generator for GAP packages",
-Version := "0.2",
-Date := "04/02/2017", # dd/mm/yyyy format
-
+SourceRepository := rec(
+    Type := "git",
+    URL := Concatenation( "https://github.com/gap-packages/", ~.PackageName ),
+),
+IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
+PackageWWWHome  := Concatenation( "https://gap-packages.github.io/", ~.PackageName ),
+README_URL      := Concatenation( ~.PackageWWWHome, "/README.txt" ),
+PackageInfoURL  := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
+ArchiveURL      := Concatenation( ~.SourceRepository.URL,
+                                 "/releases/download/v", ~.Version,
+                                 "/", ~.PackageName, "-", ~.Version ),
+ArchiveFormats := ".tar.gz",
+License := "GPL-3.0-or-later",
 Persons := [
-  rec(
-    LastName      := "Horn",
-    FirstNames    := "Max",
+  rec( 
+    LastName      := "Raievska",
+    FirstNames    := "Iryna",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "max.horn@math.uni-giessen.de",
-    WWWHome       := "http://www.quendi.de/math",
-    PostalAddress := Concatenation(
-                       "AG Algebra\n",
-                       "Mathematisches Institut\n",
-                       "Justus-Liebig-Universität Gießen\n",
-                       "Arndtstraße 2\n",
-                       "35392 Gießen\n",
-                       "Germany" ),
-    Place         := "Gießen",
-    Institution   := "Justus-Liebig-Universität Gießen"
-  ),
-
-  rec(
-    LastName      := "Thor",
-    FirstNames    := "A. U.",
+    Email         := "raevskaya.irina@gmail.com",
+    WWWHome       := "http://www.imath.kiev.ua/~raeirina/",
+    PostalAddress := Concatenation( [
+                     "Institute of Mathematics\n",
+                     "National Academy of Sciences of Ukraine\n",
+                     "01601 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
+    Place         := "Kyiv",
+    Institution   := "Institute of Mathematics"
+     ),
+ rec( 
+    LastName      := "Raievska",
+    FirstNames    := "Maryna",
     IsAuthor      := true,
-    IsMaintainer  := false,
-    #Email         := "author@example.com",
-  ),
-
-  rec(
-    LastName      := "Itor",
-    FirstNames    := "Jan",
-    IsAuthor      := false,
     IsMaintainer  := true,
-    #Email         := "janitor@example.com",
-  ),
-],
+    Email         := "raemarina@imath.kiev.ua",
+    WWWHome       := "http://www.imath.kiev.ua/~raemarina/",
+    PostalAddress := Concatenation( [
+                     "Institute of Mathematics\n",
+                     "National Academy of Sciences of Ukraine\n",
+                     "01601 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
+    Place         := "Kyiv",
+    Institution   := "Institute of Mathematics"
+     ),
+ rec( 
+    LastName      := "Sysak",
+    FirstNames    := "Yaroslav",
+    IsAuthor      := true,
+    IsMaintainer  := true,
+    Email         := "sysak@imath.kiev.ua",
+    WWWHome       := "http://www.imath.kiev.ua/~sysak/",
+    PostalAddress := Concatenation( [
+                     "Institute of Mathematics\n",
+                     "National Academy of Sciences of Ukraine\n",
+                     "01601 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
+    Place         := "Kyiv",
+    Institution   := "Institute of Mathematics"
 
-Status := "other",
-
-# The following are not strictly necessary in your own PackageInfo.g
-# (in the sense that update.g only looks at the usual fields
-# like PackageWWWHome, ArchiveURL etc.). But they are convenient
-# if you use exactly the scheme for your package website that we propose.
-GithubUser := "gap-system",
-GithubRepository := ~.PackageName,
-GithubWWW := Concatenation("https://github.com/", ~.GithubUser, "/", ~.GithubRepository),
-
-PackageWWWHome := Concatenation("https://", ~.GithubUser, ".github.io/", ~.GithubRepository, "/"),
-README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
-PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-# The following assumes you are using the Github releases system. If not, adjust
-# it accordingly.
-ArchiveURL     := Concatenation(~.GithubWWW,
-                    "/releases/download/v", ~.Version, "/",
-                    ~.GithubRepository, "-", ~.Version),
-
-ArchiveFormats := ".tar.gz .tar.bz2",
-
-AbstractHTML := 
-  "This is a pseudo package that contains no actual\
-  <span class=\"pkgname\">GAP</span> code. Instead, it is a template for other\
-  GAP packages that allows to quickly setup GitHub Pages.",
-
-PackageDoc := rec(
-  BookName  := "GitHubPagesForGAP",
-  ArchiveURLSubset := ["doc"],
+     )
+],  
+Status := "dev",
+PackageDoc := 
+  rec(
+  # use same as in GAP            
+  BookName  := "LocalNR",
+ArchiveURLSubset := ["doc"],
   HTMLStart := "doc/chap0.html",
-  PDFFile   := "doc/manual.pdf",
-  SixFile   := "doc/manual.six",
-  LongTitle := "A GitHub Pages generator for GAP packages",
+  PDFFile := "doc/manual.pdf",
+  SixFile := "doc/manual.six",
+  LongTitle := "a GAP package of local nearrings",
+
+  Autoload  := true
 ),
 
-# The following dependencies are fake and for testing / demo purposes
+AbstractHTML := 
+"The <span class=\"pkgname\">LocalNR</span> package \
+contains the library of local nearrings up to order 361 \
+and some functions to analyze finite nearrings.",
+   
 Dependencies := rec(
-  GAP := ">=4.8.1",
-  NeededOtherPackages := [
-    ["GAPDoc", ">= 1.2"],
-    ["IO", ">= 4.1"],
-  ],
-  SuggestedOtherPackages := [["orb", ">= 4.2"]],
+  # GAP version, use version strings for specifying exact versions,
+  # prepend a '>=' for specifying a least version.
+  GAP := ">=4.7.8",
+  # list of pairs [package name, (least) version],  package name is case
+  # insensitive, least version denoted with '>=' prepended to version string.
+  # without these, the package will not load
+  # NeededOtherPackages := [["GAPDoc", ">= 0.99"]],
+  NeededOtherPackages := [["SONATA", ">= 2.4"]],
+  # without these the package will issue a warning while loading
+  # SuggestedOtherPackages := [],
+  SuggestedOtherPackages := [],
+  # needed external conditions (programs, operating system, ...)  provide
+  # just strings as text or
+  # pairs [text, URL] where URL  provides further information
+  # about that point.
+  # (no automatic test will be done for this, do this in your
+  # 'AvailabilityTest' function below)
+  # ExternalConditions := []
   ExternalConditions := []
 ),
 
-AvailabilityTest := ReturnTrue,
+BannerString := Concatenation( 
+"------------------------------------------------------------------------------",
+"-------\n",
+  "Loading LocalNR ", ~.Version, "\n",
+  "by ", ~.Persons[3].FirstNames, " ", ~.Persons[3].LastName,
+        " (", ~.Persons[3].WWWHome, ")\n",
+  "with contributions by:\n",
+  ~.Persons[1].FirstNames, " ", ~.Persons[1].LastName,
+        " (", ~.Persons[1].WWWHome, ")\n",
+  " and ",~.Persons[2].FirstNames, " ", ~.Persons[2].LastName,
+        " (", ~.Persons[2].WWWHome, ")\n",
+"\n LocalNR - a package of local nearrings",
+"\n http://www.imath.kiev.ua/~algebra/LocalNR/",
+"\n ----------------------------------------------------------------------------- \n"),
 
-Keywords := ["GitHub Pages", "GAP"]
+
+AvailabilityTest := ReturnTrue,
+Keywords := ["local nearring", "endomorphism", "automorphisms group"]
+
 
 ));
+
 
 
