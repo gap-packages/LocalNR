@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/gap-packages/LocalNR.svg?branch=master)](https://travis-ci.org/gap-packages/LocalNR)
+[![Code Coverage](https://codecov.io/github/gap-packages/LocalNR/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/LocalNR)
+
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 +                                                                           +
 +   Copyright (C) 2017     Iryna Raievska, Maryna Raievska, Yaroslav Sysak  +
