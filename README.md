@@ -3,8 +3,8 @@
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 +                                                                           +
-+   Copyright (C) 2017     Iryna Raievska, Maryna Raievska, Yaroslav Sysak  +
-+                                                                           +
++   Copyright (C) 2019               Yaroslav Sysak with contributions by   +
++                                         Iryna Raievska, Maryna Raievska   +
 +                                                                           +
 +   'LocalNR' is free software: you can redistribute it and/or modify       +
 +   it under the terms of the GNU General Public License as published by    +
@@ -68,7 +68,7 @@ steps; see Section 74.1 in the reference manual of GAP for further details:
 
 1) Download one of the archives 'localnr.tar.gz' or 'localnr.zip' from
 
-       http://
+       https://gap-packages.github.io/LocalNR/
 
 2) Move the archive inside a 'pkg' directory. This can be either the main
    'pkg' directory in your GAP installation or your personal 'pkg' directory.
@@ -86,11 +86,11 @@ steps; see Section 74.1 in the reference manual of GAP for further details:
 
 After installation the folder 'LocalNR' should contain the subdirectories
 
-    Endom, doc, lib
+    Endom, doc, lib, tst
 
 and the files
 
-    init.g, PackageInfo.g, read.g, GPLv3, CHANGELOG and README.txt
+    init.g, PackageInfo.g, read.g, GPLv3, CHANGELOG, README.txt and makedoc.g
 
 ---------
  Loading
@@ -104,29 +104,31 @@ To use the package type 'LoadPackage("LocalNR");' at the GAP prompt.
 ---------
 
 If you use 'LocalNR', please tell us by sending an email to
-<raevskaya.irina@gmail.com>, <raemarina@imath.kiev.ua>, <sysak@imath.kiev.ua>.
+<raeirina@imath.kiev.ua>, <raemarina@imath.kiev.ua>, <sysak@imath.kiev.ua>.
 
 If you find any bugs or have any suggestions or comments, we would
 very much appreciate it if you would let us know. Also, we would like
 to hear about applications of this software.
 
-Iryna Raievska, Maryna Raievska, Yaroslav Sysak  
+Yaroslav Sysak, Iryna Raievska, Maryna Raievska   
 Kyiv, 2th of February 2017.
+
+Yaroslav Sysak 
+  Institute of Mathematics 
+  of National Academy of Sciences of Ukraine
+  01024, Ukraine, Kyiv, 
+  3, Tereshchenkivska st.
 
 Iryna Raievska 
   Institute of Mathematics 
   of National Academy of Sciences of Ukraine
-  01004, Ukraine, Kyiv, 
+  01024, Ukraine, Kyiv, 
   3, Tereshchenkivska st.
 
 Maryna Raievska  
   Institute of Mathematics 
   of National Academy of Sciences of Ukraine
-  01004, Ukraine, Kyiv, 
+  01024, Ukraine, Kyiv, 
   3, Tereshchenkivska st.
 
-Yaroslav Sysak 
-  Institute of Mathematics 
-  of National Academy of Sciences of Ukraine
-  01004, Ukraine, Kyiv, 
-  3, Tereshchenkivska st.
+

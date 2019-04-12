@@ -65,16 +65,13 @@ gap> Nu:=NearRingNonUnits(T);
 [ (<identity> of ...), (f2), (f2^2), (f2^3), (f2^4), (f2^5), (f2^6) ]
 gap> Size(Nu);
 7
-gap> g:=InverseUnitOfNearRing(K,S[4]);
-(f1*f4*f5)
 gap> B:=LocalNearRing(32,45,16,5,4); 
 ExplicitMultiplicationNearRing ( <pc group of size 32 with 
 5 generators> , multiplication )
-gap> D:=DistributiveElements(B);
-[ (<identity> of ...), (f5), (f1*f2*f3*f4), (f1*f2*f3*f4*f5) ]
-gap> Rs:=SubNearRingByGenerators(B,D);
-ExplicitMultiplicationNearRing ( Group([ <identity> of ..., f5, 
-f1*f2*f3*f4,  f1*f2*f3*f4*f5 ]) , multiplication )
+gap> D:=DistributiveElements(B);;
+gap> Size(D);
+4
+gap> Rs:=SubNearRingByGenerators(B,D);;
 gap> Size(Rs);
 4
 gap> IsDgNearRing(B);
@@ -98,7 +95,8 @@ gap> B:=LocalNearRing(32,21,16,2,14);
 ExplicitMultiplicationNearRing ( <pc group of size 32 with 
 5 generators> , multiplication )
 gap> M:=MultiplicativeSemigroupOfNearRing(B);
-<monoid with 32 generators>
+Semigroup with Identity (f2)
+<semigroup of size 32, with 8 generators>
 gap> Size(M);
 32
 gap> Nm:=NonUnitsAsMultiplicativeSemigroup(B);
@@ -114,32 +112,16 @@ gap> S:=UnitsOfNearRing(D);
 [ (f1), (f1*f5), (f1*f4), (f1*f4*f5), (f1*f3), (f1*f3*f5), (f1*f3*f4),  
  (f1*f3*f4*f5), (f1*f2), (f1*f2*f5), (f1*f2*f4), (f1*f2*f4*f5), (f1*f2*f3), 
  (f1*f2*f3*f5), (f1*f2*f3*f4), (f1*f2*f3*f4*f5) ]
-gap> AutomorphismsAssociatedWithNearRingUnits(D,S);
-[ [ f2, f1*f3 ] -> [ f2, f1*f3 ], [ f2, f1*f3 ] -> [ f2, f1*f3*f5 ], 
-  [ f2, f1*f3 ] -> [ f2, f1*f3*f4 ], [ f2, f1*f3 ] -> [ f2, f1*f3*f4*f5 ], 
-  [ f2, f1*f3 ] -> [ f2*f4*f5, f1 ], [ f2, f1*f3 ] -> [ f2*f4*f5, f1*f5 ], 
-  [ f2, f1*f3 ] -> [ f2*f4*f5, f1*f4 ], [ f2, f1*f3 ] -> [ f2*f4*f5, f1*f4*f5 ], 
-  [ f2, f1*f3 ] -> [ f2, f1*f2*f3 ], [ f2, f1*f3 ] -> [ f2, f1*f2*f3*f5 ], 
-  [ f2, f1*f3 ] -> [ f2, f1*f2*f3*f4 ], [ f2, f1*f3 ] -> [ f2, f1*f2*f3*f4*f5 ], 
-  [ f2, f1*f3 ] -> [ f2*f4*f5, f1*f2*f5 ], [ f2, f1*f3 ] -> [ f2*f4*f5, f1*f2 ], 
-  [ f2, f1*f3 ] -> [ f2*f4*f5, f1*f2*f4*f5 ], [ f2, f1*f3 ] -> [ f2*f4*f5, 
-f1*f2*f4 ] ]
+gap> A:=AutomorphismsAssociatedWithNearRingUnits(D,S);;
+gap> Size(A);
+16
 gap> Nu:=NearRingNonUnits(D);
 [ (<identity> of ...), (f2), (f3), (f4), (f5), (f2*f3), (f2*f4), (f2*f5), 
  (f3*f4), (f3*f5), (f4*f5), (f2*f3*f4), (f2*f3*f5), (f2*f4*f5), (f3*f4*f5),
  (f2*f3*f4*f5) ]
-gap> EndomorphismsAssociatedWithNearRingElements(D,Nu);
-[ [ f2, f1*f3 ] -> [ <identity> of ..., <identity> of ... ], 
-  [ f2, f1*f3 ] -> [ f4, f2*f4 ], [ f2, f1*f3 ] -> [ f4*f5, f3*f5 ], 
-  [ f2, f1*f3 ] -> [ <identity> of ..., f4 ], 
-  [ f2, f1*f3 ] -> [ <identity> of ..., f5 ], 
-  [ f2, f1*f3 ] -> [ f4, f2*f3*f4*f5 ], 
-  [ f2, f1*f3 ] -> [ f4, f2 ], [ f2, f1*f3 ] -> [ f4, f2*f4*f5 ], 
-  [ f2, f1*f3 ] -> [ f4*f5, f3*f4*f5 ], [ f2, f1*f3 ] -> [ f4*f5, f3 ], 
-  [ f2, f1*f3 ] -> [ <identity> of ..., f4*f5 ], 
-  [ f2, f1*f3 ] -> [ f4, f2*f3*f5 ], 
-  [ f2, f1*f3 ] -> [ f4, f2*f3*f4 ], [ f2, f1*f3 ] -> [ f4, f2*f5 ], 
-  [ f2, f1*f3 ] -> [ f4*f5, f3*f4 ], [ f2, f1*f3 ] -> [ f4, f2*f3 ] ]
+gap> En:=EndomorphismsAssociatedWithNearRingElements(D,Nu);;
+gap> Size(En);
+16
 gap> T:=LocalNearRing(125,2,100,8,5); 
 ExplicitMultiplicationNearRing ( <pc group of size 125 with 
 3 generators> , multiplication )
@@ -159,12 +141,10 @@ gap> IdGroup(FG);
 gap> H:=LocalNearRing(64,24,32,22,12481);
 ExplicitMultiplicationNearRing ( <pc group of size 64 with 
 6 generators> , multiplication )
-gap> C:=ConstantPartOfNearRing(H);
-ExplicitMultiplicationNearRing ( Group([ f2*f3*f5, f2*f3 ]) , multiplication )
+gap> C:=ConstantPartOfNearRing(H);;
 gap> Size(C);
 4
-gap> ZeroSymmetricPartOfNearRing(H);
-ExplicitMultiplicationNearRing ( Group([ f1*f2*f3, f3, f4*f5, f6 ]) , multiplication )
+gap> ZeroSymmetricPartOfNearRing(H);;
 gap> Size(last);                    
 16
 gap> M:=LocalNearRing(32,5,16,3,5); 
@@ -191,8 +171,6 @@ gap> P:=LocalNearRing(25,1,20,2,1);
 ExplicitMultiplicationNearRing ( <pc group of size 25 with 
 2 generators> , multiplication )
 gap> IsSemiDistributiveNearRing(P);
-true
-gap> IsDistributiveNearRing(N);
 true
 gap> N:=AllLocalNearRings(32,5,16,3)[8];
 ExplicitMultiplicationNearRing ( <pc group of size 32 with 

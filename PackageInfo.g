@@ -1,7 +1,9 @@
 #############################################################################
 ##
-#W  PackageInfo.g             Iryna Raievska, Maryna Raievska, Yaroslav Sysak 
-#Y  Copyright (C) 2015     
+#W  PackageInfo.g                      Yaroslav Sysak with contributions by 
+#Y  Copyright (C) 2019                      Iryna Raievska, Maryna Raievska 
+##
+##  Institute of Mathematics of National Academy of Sciences of Ukraine
 ##
 ##  Licensing information can be found in the README file of this package.
 ##
@@ -32,12 +34,12 @@ Persons := [
     FirstNames    := "Iryna",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "raevskaya.irina@gmail.com",
-    WWWHome       := "http://www.imath.kiev.ua/~raeirina/",
+    Email         := "raeirina@imath.kiev.ua",
+    WWWHome       := "https://www.imath.kiev.ua/~algebra/Raievska_I/",
     PostalAddress := Concatenation( [
                      "Institute of Mathematics\n",
                      "National Academy of Sciences of Ukraine\n",
-                     "01601 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
+                     "01024 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
     Place         := "Kyiv",
     Institution   := "Institute of Mathematics"
      ),
@@ -47,11 +49,11 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "raemarina@imath.kiev.ua",
-    WWWHome       := "http://www.imath.kiev.ua/~raemarina/",
+    WWWHome       := "https://www.imath.kiev.ua/~algebra/Raievska_M/",
     PostalAddress := Concatenation( [
                      "Institute of Mathematics\n",
                      "National Academy of Sciences of Ukraine\n",
-                     "01601 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
+                     "01024 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
     Place         := "Kyiv",
     Institution   := "Institute of Mathematics"
      ),
@@ -61,11 +63,11 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "sysak@imath.kiev.ua",
-    WWWHome       := "http://www.imath.kiev.ua/~sysak/",
+    WWWHome       := "https://www.imath.kiev.ua/~algebra/Sysak/",
     PostalAddress := Concatenation( [
                      "Institute of Mathematics\n",
                      "National Academy of Sciences of Ukraine\n",
-                     "01601 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
+                     "01024 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
     Place         := "Kyiv",
     Institution   := "Institute of Mathematics"
 

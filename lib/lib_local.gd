@@ -2,10 +2,10 @@
 ##
 ##                                               LocalNR package
 ##
-##  Copyright 2017, Iryna Raievska, 
-##                  Maryna Raievska,   
-##                  Yaroslav Sysak
-## Institute of Mathematics of National Academy of Sciences of Ukraine
+##  Copyright 2019,                Yaroslav Sysak with contributions by
+##                                      Iryna Raievska, Maryna Raievska
+##                  
+##  Institute of Mathematics of National Academy of Sciences of Ukraine
 ##
 #############################################################################
 
@@ -95,7 +95,7 @@ DeclareGlobalFunction( "TheLibraryOfLNRsOnGroup");
 #! The arguments are $k$, $l$, $m$, $n$, $w$.
 #! The output is local nearring from <C>Library</C> without 
 #! check. The arguments $k$, $l$, $m$, $n$, $w$ are as above.
-#! @Returns a list
+#! @Returns a nearring
 #! @Arguments k,l,m,n,w
 #! @Label
 DeclareOperation( "LocalNearRing", [ IsInt, IsInt, IsInt, IsInt, IsInt ]);
