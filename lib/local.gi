@@ -209,21 +209,6 @@ InstallMethod( GroupOfUnitsAsGroupOfAutomorphisms,
   fi;
   end);
 
-##
-############################################################################
-##
-# InverseUnitOfNearRing(<R,u>)
-InstallMethod( InverseUnitOfNearRing,
-    "Compute inverse unit of nearring",
-     [ IsNearRing, IsNearRingElement ], 
-  function(R, u)
-  local m, U, v;
-  U:=UnitsOfNearRing(R);
-  m:=Size(U);
-  if u in U then return u^(m-1);
-  else Error("the element is non-invertible"); 
-  fi;
-  end);
 
 ##
 ############################################################################
@@ -527,7 +512,7 @@ InstallMethod(IsNearRingWithIdentity,
 ##
 # IsSubNearRing(<R,H>)
 InstallMethod( IsSubNearRing,
-    "Is subgroup the additive group of subnearring",
+    "Is the subgroup of the additive group a subnearring",
     [ IsNearRing, IsGroup], 
   function(R,H)
   local a, G, M, S;      
