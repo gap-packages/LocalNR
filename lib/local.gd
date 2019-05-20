@@ -100,8 +100,6 @@ DeclareProperty( "IsEndoCyclicGroup", IsGroup );
 #! true
 #! @EndExample
 
-#! @EndSection
-
 
 ###################################
 ##
@@ -591,8 +589,3 @@ DeclareOperation( "IsSubNearRing",[ IsNearRing, IsGroup ] );
 #! gap> IsSubNearRing(R,S[3]);           
 #! true
 #! @EndExample
-
-
-##
-#! @EndSection
-##

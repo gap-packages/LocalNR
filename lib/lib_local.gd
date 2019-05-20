@@ -167,5 +167,3 @@ DeclareGlobalFunction( "InfoLocalNearRing");
 #! AllLocalNearRings(361,2,360,15)                          (1) 
 #! @EndExample
 ##
-#! @EndSection
-##
