@@ -18,6 +18,8 @@ gap> START_TEST("LocalNR package: man-examples.tst");
 gap> List(TheAdditiveGroupsOfLibraryOfLNRsOfOrder(81),IdGroup);
 [ [ 81, 1 ], [ 81, 2 ], [ 81, 3 ], [ 81, 5 ], [ 81, 6 ], [ 81, 11 ], 
   [ 81, 12 ], [ 81, 13 ], [ 81, 15 ] ]
+gap> G:=SmallGroup(81,2);
+<pc group of size 81 with 4 generators>
 gap> TheLibraryOfLNRsOnGroup(G);
 [ "AllLocalNearRings(81,2,54,3)", "AllLocalNearRings(81,2,54,6)", 
   "AllLocalNearRings(81,2,54,9)", "AllLocalNearRings(81,2,54,10)", 
