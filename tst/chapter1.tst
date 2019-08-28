@@ -297,6 +297,82 @@ AllLocalNearRings(64,34,32,43)                           (2688)
 AllLocalNearRings(64,34,32,44)                           (2048) 
 AllLocalNearRings(64,34,32,46)                           (120)  
 AllLocalNearRings(64,34,32,48)                           (64)   
+gap> Size(AllLocalNearRings(64,35,32,22));
+64
+gap> Size(AllLocalNearRings(64,35,32,24));
+80
+gap> Size(AllLocalNearRings(64,35,32,46));
+96
+gap> Size(AllLocalNearRings(64,35,32,48));
+80
+gap> Size(AllLocalNearRings(121,2,110,1));
+5
+gap> Size(AllLocalNearRings(121,2,110,2));
+4
+gap> Size(AllLocalNearRings(121,2,110,4));
+1
+gap> Size(AllLocalNearRings(121,2,110,6));
+1
+gap> Size(AllLocalNearRings(121,2,120,4));
+1
+gap> Size(AllLocalNearRings(121,2,120,5));
+1
+gap> Size(AllLocalNearRings(121,2,120,15));
+1
+gap> Size(AllLocalNearRings(121,2,120,21));
+1
+gap> Size(AllLocalNearRings(64,26,32,5));
+16
+gap> Size(AllLocalNearRings(64,26,32,11));
+36
+gap> Size(AllLocalNearRings(64,26,32,36));
+84
+gap> Size(AllLocalNearRings(64,26,32,40));
+32
+gap> Size(AllLocalNearRings(64,26,32,41));
+32
+gap> Size(AllLocalNearRings(64,27,32,5));
+16
+gap> Size(AllLocalNearRings(64,27,32,11));
+36
+gap> Size(AllLocalNearRings(64,27,32,36));
+84
+gap> Size(AllLocalNearRings(64,27,32,40));
+32
+gap> Size(AllLocalNearRings(64,27,32,41)); 
+32
+gap> Size(AllLocalNearRings(64,34,32,22));
+64
+gap> Size(AllLocalNearRings(64,34,32,24));
+64
+gap> Size(AllLocalNearRings(64,34,32,48));
+64
+gap> Size(AllLocalNearRings(343,5,294,8));
+3
+gap> Size(AllLocalNearRings(343,5,294,9));
+2
+gap> Size(AllLocalNearRings(343,5,294,10));
+4
+gap> Size(AllLocalNearRings(343,5,294,11)); 
+5
+gap> Size(AllLocalNearRings(343,5,294,12));
+3
+gap> Size(AllLocalNearRings(343,5,294,13));
+5
+gap> Size(AllLocalNearRings(343,5,294,14));
+2
+gap> Size(AllLocalNearRings(343,5,294,15));
+3
+gap> Size(AllLocalNearRings(343,5,294,16));
+3
+gap> Size(AllLocalNearRings(343,5,294,17));
+3
+gap> Size(AllLocalNearRings(343,5,294,18));
+2
+gap> Size(AllLocalNearRings(343,5,294,19));
+2
+gap> Size(AllLocalNearRings(343,5,294,23));
+9
 
 ## Each test file should finish with the call of STOP_TEST.
 ## The argument of STOP_TEST should be the name of the test file.
