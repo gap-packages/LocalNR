@@ -297,82 +297,145 @@ AllLocalNearRings(64,34,32,43)                           (2688)
 AllLocalNearRings(64,34,32,44)                           (2048) 
 AllLocalNearRings(64,34,32,46)                           (120)  
 AllLocalNearRings(64,34,32,48)                           (64)   
-gap> Size(AllLocalNearRings(64,35,32,22));
-64
-gap> Size(AllLocalNearRings(64,35,32,24));
-80
-gap> Size(AllLocalNearRings(64,35,32,46));
-96
-gap> Size(AllLocalNearRings(64,35,32,48));
-80
-gap> Size(AllLocalNearRings(121,2,110,1));
-5
-gap> Size(AllLocalNearRings(121,2,110,2));
-4
-gap> Size(AllLocalNearRings(121,2,110,4));
-1
-gap> Size(AllLocalNearRings(121,2,110,6));
-1
-gap> Size(AllLocalNearRings(121,2,120,4));
-1
-gap> Size(AllLocalNearRings(121,2,120,5));
-1
-gap> Size(AllLocalNearRings(121,2,120,15));
-1
-gap> Size(AllLocalNearRings(121,2,120,21));
-1
-gap> Size(AllLocalNearRings(64,26,32,5));
-16
-gap> Size(AllLocalNearRings(64,26,32,11));
-36
-gap> Size(AllLocalNearRings(64,26,32,36));
-84
-gap> Size(AllLocalNearRings(64,26,32,40));
-32
-gap> Size(AllLocalNearRings(64,26,32,41));
-32
-gap> Size(AllLocalNearRings(64,27,32,5));
-16
-gap> Size(AllLocalNearRings(64,27,32,11));
-36
-gap> Size(AllLocalNearRings(64,27,32,36));
-84
-gap> Size(AllLocalNearRings(64,27,32,40));
-32
-gap> Size(AllLocalNearRings(64,27,32,41)); 
-32
-gap> Size(AllLocalNearRings(64,34,32,22));
-64
-gap> Size(AllLocalNearRings(64,34,32,24));
-64
-gap> Size(AllLocalNearRings(64,34,32,48));
-64
-gap> Size(AllLocalNearRings(343,5,294,8));
-3
-gap> Size(AllLocalNearRings(343,5,294,9));
-2
-gap> Size(AllLocalNearRings(343,5,294,10));
-4
-gap> Size(AllLocalNearRings(343,5,294,11)); 
-5
-gap> Size(AllLocalNearRings(343,5,294,12));
-3
-gap> Size(AllLocalNearRings(343,5,294,13));
-5
-gap> Size(AllLocalNearRings(343,5,294,14));
-2
-gap> Size(AllLocalNearRings(343,5,294,15));
-3
-gap> Size(AllLocalNearRings(343,5,294,16));
-3
-gap> Size(AllLocalNearRings(343,5,294,17));
-3
-gap> Size(AllLocalNearRings(343,5,294,18));
-2
-gap> Size(AllLocalNearRings(343,5,294,19));
-2
-gap> Size(AllLocalNearRings(343,5,294,23));
-9
+gap> T:=SmallGroup(64,14);
+<pc group of size 64 with 6 generators>
+gap> TheLibraryOfLNRsOnGroup(T);
+[ "AllLocalNearRings(64,14,32,6)", "AllLocalNearRings(64,14,32,22)", 
+  "AllLocalNearRings(64,14,32,25)", "AllLocalNearRings(64,14,32,27)", 
+  "AllLocalNearRings(64,14,32,28)", "AllLocalNearRings(64,14,32,30)", 
+  "AllLocalNearRings(64,14,32,31)", "AllLocalNearRings(64,14,32,34)", 
+  "AllLocalNearRings(64,14,32,46)", "AllLocalNearRings(64,14,32,48)", 
+  "AllLocalNearRings(64,14,32,49)" ]
+gap> InfoLocalNearRing(T);
+There are 5520 local nearrings on this group.   
+They are sorted by their multiplicative groups. 
+AllLocalNearRings(64,14,32,6)                            (48)   
+AllLocalNearRings(64,14,32,22)                           (1344) 
+AllLocalNearRings(64,14,32,25)                           (240)  
+AllLocalNearRings(64,14,32,27)                           (1824) 
+AllLocalNearRings(64,14,32,28)                           (720)  
+AllLocalNearRings(64,14,32,30)                           (192)  
+AllLocalNearRings(64,14,32,31)                           (96)   
+AllLocalNearRings(64,14,32,34)                           (144)  
+AllLocalNearRings(64,14,32,46)                           (720)  
+AllLocalNearRings(64,14,32,48)                           (96)   
+AllLocalNearRings(64,14,32,49)                           (96)   
+gap> V:=SmallGroup(64,15);
+<pc group of size 64 with 6 generators>
+gap> TheLibraryOfLNRsOnGroup(V);
+[ "AllLocalNearRings(64,15,32,5)", "AllLocalNearRings(64,15,32,9)", 
+  "AllLocalNearRings(64,15,32,36)", "AllLocalNearRings(64,15,32,37)", 
+  "AllLocalNearRings(64,15,32,39)", "AllLocalNearRings(64,15,32,40)", 
+  "AllLocalNearRings(64,15,32,43)", "AllLocalNearRings(64,15,32,45)", 
+  "AllLocalNearRings(64,15,32,46)", "AllLocalNearRings(64,15,32,47)", 
+  "AllLocalNearRings(64,15,32,48)" ]
+gap> InfoLocalNearRing(V);
+There are 2384 local nearrings on this group.   
+They are sorted by their multiplicative groups. 
+AllLocalNearRings(64,15,32,5)                           (96)  
+AllLocalNearRings(64,15,32,9)                           (32)  
+AllLocalNearRings(64,15,32,36)                          (64)  
+AllLocalNearRings(64,15,32,37)                          (192) 
+AllLocalNearRings(64,15,32,39)                          (408) 
+AllLocalNearRings(64,15,32,40)                          (408) 
+AllLocalNearRings(64,15,32,43)                          (800) 
+AllLocalNearRings(64,15,32,45)                          (32)  
+AllLocalNearRings(64,15,32,46)                          (32)  
+AllLocalNearRings(64,15,32,47)                          (32)  
+AllLocalNearRings(64,15,32,48)                          (288) 
+gap> B:=SmallGroup(64,16);
+<pc group of size 64 with 6 generators>
+gap> TheLibraryOfLNRsOnGroup(B);
+[ "AllLocalNearRings(64,16,32,5)", "AllLocalNearRings(64,16,32,9)", 
+  "AllLocalNearRings(64,16,32,36)", "AllLocalNearRings(64,16,32,37)", 
+  "AllLocalNearRings(64,16,32,39)", "AllLocalNearRings(64,16,32,40)", 
+  "AllLocalNearRings(64,16,32,43)", "AllLocalNearRings(64,16,32,45)", 
+  "AllLocalNearRings(64,16,32,46)", "AllLocalNearRings(64,16,32,47)", 
+  "AllLocalNearRings(64,16,32,48)" ]
+gap> InfoLocalNearRing(B);
+There are 2384 local nearrings on this group.   
+They are sorted by their multiplicative groups. 
+AllLocalNearRings(64,16,32,5)                           (96)  
+AllLocalNearRings(64,16,32,9)                           (32)  
+AllLocalNearRings(64,16,32,36)                          (64)  
+AllLocalNearRings(64,16,32,37)                          (192) 
+AllLocalNearRings(64,16,32,39)                          (408) 
+AllLocalNearRings(64,16,32,40)                          (408) 
+AllLocalNearRings(64,16,32,43)                          (800) 
+AllLocalNearRings(64,16,32,45)                          (32)  
+AllLocalNearRings(64,16,32,46)                          (32)  
+AllLocalNearRings(64,16,32,47)                          (32)  
+AllLocalNearRings(64,16,32,48)                          (288) 
+gap> C:=SmallGroup(64,23);
+<pc group of size 64 with 6 generators>
+gap> TheLibraryOfLNRsOnGroup(C);
+[ "AllLocalNearRings(64,23,32,6)", "AllLocalNearRings(64,23,32,7)", 
+  "AllLocalNearRings(64,23,32,22)", "AllLocalNearRings(64,23,32,27)", 
+  "AllLocalNearRings(64,23,32,28)", "AllLocalNearRings(64,23,32,30)", 
+  "AllLocalNearRings(64,23,32,31)", "AllLocalNearRings(64,23,32,34)", 
+  "AllLocalNearRings(64,23,32,46)", "AllLocalNearRings(64,23,32,48)", 
+  "AllLocalNearRings(64,23,32,49)" ]
+gap> InfoLocalNearRing(C);
+There are 111758 local nearrings on this group.  
+They are sorted by their multiplicative groups. 
+AllLocalNearRings(64,23,32,6)                          (710)   
+AllLocalNearRings(64,23,32,7)                          (34)    
+AllLocalNearRings(64,23,32,22)                         (14977) 
+AllLocalNearRings(64,23,32,27)                         (29048) 
+AllLocalNearRings(64,23,32,28)                         (29184) 
+AllLocalNearRings(64,23,32,30)                         (7808) 
+AllLocalNearRings(64,23,32,31)                         (3896) 
+AllLocalNearRings(64,23,32,34)                         (6840) 
+AllLocalNearRings(64,23,32,46)                         (11709) 
+AllLocalNearRings(64,23,32,48)                         (3776) 
+AllLocalNearRings(64,23,32,49)                         (3776) 
+gap> D:=SmallGroup(64,24);
+<pc group of size 64 with 6 generators>
+gap> TheLibraryOfLNRsOnGroup(D);
+[ "AllLocalNearRings(64,24,32,6)", "AllLocalNearRings(64,24,32,22)", 
+  "AllLocalNearRings(64,24,32,25)", "AllLocalNearRings(64,24,32,27)", 
+  "AllLocalNearRings(64,24,32,28)", "AllLocalNearRings(64,24,32,30)", 
+  "AllLocalNearRings(64,24,32,31)", "AllLocalNearRings(64,24,32,34)", 
+  "AllLocalNearRings(64,24,32,46)", "AllLocalNearRings(64,24,32,48)", 
+  "AllLocalNearRings(64,24,32,49)" ]
+gap> InfoLocalNearRing(D);
+There are 109189 local nearrings on this group. 
+They are sorted by their multiplicative groups. 
+AllLocalNearRings(64,24,32,6)                           (640)   
+AllLocalNearRings(64,24,32,22)                          (12481) 
+AllLocalNearRings(64,24,32,25)                          (8676)  
+AllLocalNearRings(64,24,32,27)                          (26856) 
+AllLocalNearRings(64,24,32,28)                          (27488) 
+AllLocalNearRings(64,24,32,30)                          (6624)  
+AllLocalNearRings(64,24,32,31)                          (3312)  
+AllLocalNearRings(64,24,32,34)                          (5364)  
+AllLocalNearRings(64,24,32,46)                          (11124) 
+AllLocalNearRings(64,24,32,48)                          (3312)  
+AllLocalNearRings(64,24,32,49)                          (3312)  
+gap> H:=SmallGroup(64,29);
+<pc group of size 64 with 6 generators>
+gap> TheLibraryOfLNRsOnGroup(H);
+[ "AllLocalNearRings(64,29,32,21)", "AllLocalNearRings(64,29,32,22)", 
+  "AllLocalNearRings(64,29,32,23)", "AllLocalNearRings(64,29,32,24)", 
+  "AllLocalNearRings(64,29,32,25)", "AllLocalNearRings(64,29,32,28)", 
+  "AllLocalNearRings(64,29,32,29)", "AllLocalNearRings(64,29,32,30)", 
+  "AllLocalNearRings(64,29,32,45)", "AllLocalNearRings(64,29,32,46)", 
+  "AllLocalNearRings(64,29,32,47)", "AllLocalNearRings(64,29,32,48)" ]
+gap> InfoLocalNearRing(H);
+There are 28185 local nearrings on this group.  
+They are sorted by their multiplicative groups. 
+AllLocalNearRings(64,29,32,21)                           (784)  
+AllLocalNearRings(64,29,32,22)                           (1488) 
+AllLocalNearRings(64,29,32,23)                           (2192) 
+AllLocalNearRings(64,29,32,24)                           (1488) 
+AllLocalNearRings(64,29,32,25)                           (7641) 
+AllLocalNearRings(64,29,32,28)                           (3616) 
+AllLocalNearRings(64,29,32,29)                           (3616) 
+AllLocalNearRings(64,29,32,30)                           (2976) 
+AllLocalNearRings(64,29,32,45)                           (784)  
+AllLocalNearRings(64,29,32,46)                           (352)  
+AllLocalNearRings(64,29,32,47)                           (352)  
+AllLocalNearRings(64,29,32,48)                           (2896) 
 
 ## Each test file should finish with the call of STOP_TEST.
 ## The argument of STOP_TEST should be the name of the test file.
