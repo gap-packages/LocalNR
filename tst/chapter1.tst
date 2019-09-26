@@ -28,9 +28,12 @@ gap> TheLibraryOfLNRsOnGroup(G);
   "AllLocalNearRings(81,2,72,24)", "AllLocalNearRings(81,2,72,26)" ]
 gap> InfoLocalNearRing(SmallGroup(361,2));
 The local nearrings are sorted by their multiplicative groups.
-[ "AllLocalNearRings(361,2,342,1) (2)", "AllLocalNearRings(361,2,342,2) (2)", "AllLocalNearRings(361,2,342,4) (1)",
-  "AllLocalNearRings(361,2,342,6) (1)", "AllLocalNearRings(361,2,342,7) (7)", "AllLocalNearRings(361,2,342,8) (6)",
-  "AllLocalNearRings(361,2,360,4) (1)", "AllLocalNearRings(361,2,360,15) (1)" ]
+[ "AllLocalNearRings(361,2,342,1) (2)", "AllLocalNearRings(361,2,342,2) (2)", \
+"AllLocalNearRings(361,2,342,4) (1)",
+  "AllLocalNearRings(361,2,342,6) (1)", "AllLocalNearRings(361,2,342,7) (7)",\
+ "AllLocalNearRings(361,2,342,8) (6)",
+  "AllLocalNearRings(361,2,360,4) (1)", "AllLocalNearRings(361,2,360,15) (1)"\
+ ]
 gap> InfoLocalNearRing(SmallGroup(81,5));
 The local nearrings are sorted by their multiplicative groups.
 [ "AllLocalNearRings(81,5,54,4) (10)", "AllLocalNearRings(81,5,54,9) (135)", "AllLocalNearRings(81,5,54,11) (243)" ]
