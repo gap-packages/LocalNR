@@ -34,9 +34,16 @@ The local nearrings are sorted by their multiplicative groups.
  "AllLocalNearRings(361,2,342,8) (6)",
   "AllLocalNearRings(361,2,360,4) (1)", "AllLocalNearRings(361,2,360,15) (1)"\
  ]
-gap> InfoLocalNearRing(SmallGroup(81,5));
-The local nearrings are sorted by their multiplicative groups.
-[ "AllLocalNearRings(81,5,54,4) (10)", "AllLocalNearRings(81,5,54,9) (135)", "AllLocalNearRings(81,5,54,11) (243)" ]
+gap> TheLibraryOfLNRsOnGroup(SmallGroup(125,5));
+[ "AllLocalNearRings(125,5,100,6)", "AllLocalNearRings(125,5,100,7)", 
+  "AllLocalNearRings(125,5,100,8)", "AllLocalNearRings(125,5,100,9)", 
+  "AllLocalNearRings(125,5,100,10)", "AllLocalNearRings(125,5,100,11)", 
+  "AllLocalNearRings(125,5,100,12)", "AllLocalNearRings(125,5,124,2)" ]
+gap> TheLibraryOfLNRsOnGroup(SmallGroup(361,2));
+[ "AllLocalNearRings(361,2,342,1)", "AllLocalNearRings(361,2,342,2)", 
+  "AllLocalNearRings(361,2,342,4)", "AllLocalNearRings(361,2,342,6)", 
+  "AllLocalNearRings(361,2,342,7)", "AllLocalNearRings(361,2,342,8)", 
+  "AllLocalNearRings(361,2,360,4)", "AllLocalNearRings(361,2,360,15)" ]
 
 ## Each test file should finish with the call of STOP_TEST.
 ## The argument of STOP_TEST should be the name of the test file.
