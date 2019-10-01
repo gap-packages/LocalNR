@@ -25,38 +25,40 @@ gap> IsMinimalNonAbelianGroup(K);
 true
 gap> IsMetacyclicPGroup(K);
 true
-gap> D:=SmallGroup(32,25);   
-<pc group of size 32 with 5 generators>
+gap> D:=SmallGroup(81,2); 
+<pc group of size 81 with 4 generators>
 gap> T:=EndoOrbitsOfGroup(D);;
 gap> Length(T);
 1
-gap>  Size(T[1][2]);
-32
+gap> Size(T[1][2]);
+81
 gap> IsEndoCyclicGroup(D);
 true
-gap> N:=LocalNearRing(32,5,16,3,8);
-ExplicitMultiplicationNearRing ( <pc group of size 32 with 
-5 generators> , multiplication )
+gap> N:=LocalNearRing(49,2,42,2,2);
+ExplicitMultiplicationNearRing ( <pc group of size 49 with 2 generators> , multiplication )
 gap> U:=UnitsOfNearRing(N);
-[ (f1), (f1*f5), (f1*f4), (f1*f4*f5), (f1*f3), (f1*f3*f5), (f1*f3*f4),  
- (f1*f3*f4*f5), (f1*f2), (f1*f2*f5), (f1*f2*f4), (f1*f2*f4*f5), (f1*f2*f3), 
- (f1*f2*f3*f5), (f1*f2*f3*f4), (f1*f2*f3*f4*f5) ]
+[ (f1), (f1*f2), (f1*f2^2), (f1*f2^3), (f1*f2^4), (f1*f2^5), (f1*f2^6), (f1^2), (f1^2*f2), 
+  (f1^2*f2^2), (f1^2*f2^3), (f1^2*f2^4), (f1^2*f2^5), (f1^2*f2^6), (f1^3), (f1^3*f2), 
+  (f1^3*f2^2), (f1^3*f2^3), (f1^3*f2^4), (f1^3*f2^5), (f1^3*f2^6), (f1^4), (f1^4*f2), 
+  (f1^4*f2^2), (f1^4*f2^3), (f1^4*f2^4), (f1^4*f2^5), (f1^4*f2^6), (f1^5), (f1^5*f2), 
+  (f1^5*f2^2), (f1^5*f2^3), (f1^5*f2^4), (f1^5*f2^5), (f1^5*f2^6), (f1^6), (f1^6*f2), 
+  (f1^6*f2^2), (f1^6*f2^3), (f1^6*f2^4), (f1^6*f2^5), (f1^6*f2^6) ]
 gap> Un:=NearRingUnits(N);;
 gap> U=Un;
 true
-gap> H:=SmallGroup(64,3);
-<pc group of size 64 with 6 generators>
+gap> H:=SmallGroup(16,6);
+<pc group of size 16 with 4 generators>
 gap> A:= AutomorphismNearRing(H);
-AutomorphismNearRing( <pc group of size 64 with 6 generators> )
-gap> Size(A);
-2048
+AutomorphismNearRing( <pc group of size 16 with 4 generators> )
+gap>  Size(A);
+64
 gap> IsLocalNearRing(A);
 true
-gap> L:=AllLocalNearRings(32,3,16,14);;
-gap> Size(L);                          
-55
+gap> L:=AllLocalNearRings(16,14,8,4);;
+gap> Size(L);
+24
 gap> F:=Filtered(L,x->IsLocalRing(x));;
-gap> Size(F);                          
+gap> Size(F);
 1
 gap> T:=LocalNearRing(49,2,42,1,1); 
 ExplicitMultiplicationNearRing ( <pc group of size 49 with 
@@ -65,95 +67,91 @@ gap> Nu:=NearRingNonUnits(T);
 [ (<identity> of ...), (f2), (f2^2), (f2^3), (f2^4), (f2^5), (f2^6) ]
 gap> Size(Nu);
 7
-gap> B:=LocalNearRing(32,45,16,5,4); 
-ExplicitMultiplicationNearRing ( <pc group of size 32 with 
-5 generators> , multiplication )
+gap> B:=LocalNearRing(25,2,20,3,1); 
+ExplicitMultiplicationNearRing ( <pc group of size 25 with 2 generators> , multiplication )
 gap> D:=DistributiveElements(B);;
 gap> Size(D);
-4
+5
 gap> Rs:=SubNearRingByGenerators(B,D);;
 gap> Size(Rs);
-4
+5
 gap> IsDgNearRing(B);
 false
 gap> IsDgNearRing(Rs);
 true
-gap> T:=LocalNearRing(32,3,16,14,5);
-ExplicitMultiplicationNearRing ( <pc group of size 32 with 
-5 generators> , multiplication )
+gap> T:=LocalNearRing(125,4,100,9,1); 
+ExplicitMultiplicationNearRing ( <pc group of size 125 with 
+3 generators> , multiplication )
 gap> L:=NonUnitsAsAdditiveSubgroup(T);
-Group([ <identity> of ..., f2, f3, f4, f5, f2*f3, f2*f4,  
-f2*f5, f3*f4, f3*f5, f4*f5, f2*f3*f4, f2*f3*f5, f2*f4*f5, 
-f3*f4*f5, f2*f3*f4*f5 ])
+Group([ <identity> of ..., f2, f3, f2^2, f2*f3, f3^2, f2^3, f2^2*f3, f2*f3^2, f3^3, f2^4, 
+  f2^3*f3, f2^2*f3^2, f2*f3^3, f3^4, f2^4*f3, f2^3*f3^2, f2^2*f3^3, f2*f3^4, f2^4*f3^2, 
+  f2^3*f3^3, f2^2*f3^4, f2^4*f3^3, f2^3*f3^4, f2^4*f3^4 ])
 gap> IdGroup(L);
-[ 16, 2 ]
+[ 25, 2 ]
 gap> I:=NonUnitsAsNearRingIdeal(T);
 < nearring ideal >
 gap> Size(I);
-16
-gap> B:=LocalNearRing(32,21,16,2,14); 
-ExplicitMultiplicationNearRing ( <pc group of size 32 with 
-5 generators> , multiplication )
+25
+gap> B:=LocalNearRing(49,2,42,6,1);          
+ExplicitMultiplicationNearRing ( <pc group of size 49 with 2 generators> , multiplication )
 gap> M:=MultiplicativeSemigroupOfNearRing(B);
-Semigroup with Identity (f2)
-<semigroup of size 32, with 8 generators>
+Semigroup with Identity (f1)
+<semigroup with 6 generators>
 gap> Size(M);
-32
+49
 gap> Nm:=NonUnitsAsMultiplicativeSemigroup(B);
-<semigroup with 16 generators>
+<semigroup with 7 generators>
 gap> Size(Nm);
-16
-gap> D:=LocalNearRing(32,3,16,3,7);           
-ExplicitMultiplicationNearRing ( <pc group of size 32 with 
-5 generators> , multiplication )
+7
+gap> D:=LocalNearRing(49,2,42,4,1);
+ExplicitMultiplicationNearRing ( <pc group of size 49 with 2 generators> , multiplication )
 gap> IsOneGeneratedNearRing(D);
 true
 gap> S:=UnitsOfNearRing(D);
-[ (f1), (f1*f5), (f1*f4), (f1*f4*f5), (f1*f3), (f1*f3*f5), (f1*f3*f4),  
- (f1*f3*f4*f5), (f1*f2), (f1*f2*f5), (f1*f2*f4), (f1*f2*f4*f5), (f1*f2*f3), 
- (f1*f2*f3*f5), (f1*f2*f3*f4), (f1*f2*f3*f4*f5) ]
+[ (f1), (f1*f2), (f1*f2^2), (f1*f2^3), (f1*f2^4), (f1*f2^5), (f1*f2^6), (f1^2), (f1^2*f2), 
+  (f1^2*f2^2), (f1^2*f2^3), (f1^2*f2^4), (f1^2*f2^5), (f1^2*f2^6), (f1^3), (f1^3*f2), 
+  (f1^3*f2^2), (f1^3*f2^3), (f1^3*f2^4), (f1^3*f2^5), (f1^3*f2^6), (f1^4), (f1^4*f2), 
+  (f1^4*f2^2), (f1^4*f2^3), (f1^4*f2^4), (f1^4*f2^5), (f1^4*f2^6), (f1^5), (f1^5*f2), 
+  (f1^5*f2^2), (f1^5*f2^3), (f1^5*f2^4), (f1^5*f2^5), (f1^5*f2^6), (f1^6), (f1^6*f2), 
+  (f1^6*f2^2), (f1^6*f2^3), (f1^6*f2^4), (f1^6*f2^5), (f1^6*f2^6) ]
 gap> A:=AutomorphismsAssociatedWithNearRingUnits(D,S);;
 gap> Size(A);
-16
+42
 gap> Nu:=NearRingNonUnits(D);
-[ (<identity> of ...), (f2), (f3), (f4), (f5), (f2*f3), (f2*f4), (f2*f5), 
- (f3*f4), (f3*f5), (f4*f5), (f2*f3*f4), (f2*f3*f5), (f2*f4*f5), (f3*f4*f5),
- (f2*f3*f4*f5) ]
+[ (<identity> of ...), (f2), (f2^2), (f2^3), (f2^4), (f2^5), (f2^6) ]
 gap> En:=EndomorphismsAssociatedWithNearRingElements(D,Nu);;
 gap> Size(En);
-16
-gap> T:=LocalNearRing(125,2,100,8,5); 
-ExplicitMultiplicationNearRing ( <pc group of size 125 with 
-3 generators> , multiplication )
+7
+gap> T:=LocalNearRing(25,2,20,2,1);             
+ExplicitMultiplicationNearRing ( <pc group of size 25 with 2 generators> , multiplication )
 gap> SemidirectProductAssociatedWithNearRing(T);
-<pc group with 7 generators>
+<pc group with 5 generators>
 gap> Size(last);
-12500
-gap> Sg:=Subgroups(GroupReduct(T));;  
+500
+gap> Sg:=Subgroups(GroupReduct(T));;
 gap> Size(Sg);
-14
-gap> F:=Filtered(Sg,x->IsCircleSubgroupOfNearRing(T,x)); 
-[ Group([  ]), Group([ f3 ]), Group([ f3, f2 ]) ]
+8
+gap> F:=Filtered(Sg,x->IsCircleSubgroupOfNearRing(T,x));
+[ Group([  ]), Group([ f2 ]) ]
 gap> FG:=FactorizedGroupAssociatedWithCircleSubgroupOfNearRing(T,F[2]);
 <pc group with 2 generators>
 gap> IdGroup(FG);
 [ 25, 2 ]
-gap> H:=LocalNearRing(64,24,32,22,12481);
-ExplicitMultiplicationNearRing ( <pc group of size 64 with 
-6 generators> , multiplication )
+gap> H:=LocalNearRing(361,2,342,7,7);
+ExplicitMultiplicationNearRing ( <pc group of size 361 with 
+2 generators> , multiplication )
 gap> C:=ConstantPartOfNearRing(H);;
 gap> Size(C);
-4
+19
 gap> ZeroSymmetricPartOfNearRing(H);;
-gap> Size(last);                    
-16
-gap> M:=LocalNearRing(32,5,16,3,5); 
-ExplicitMultiplicationNearRing ( <pc group of size 32 with 
-5 generators> , multiplication )
-gap> GroupOfUnitsAsGroupOfAutomorphisms(M);
-<group of size 16 with 2 generators>
 gap> Size(last);
-16 
+19
+gap> M:=LocalNearRing(27,4,18,3,2);  
+ExplicitMultiplicationNearRing ( <pc group of size 27 with 3 generators> , multiplication )
+gap> GroupOfUnitsAsGroupOfAutomorphisms(M);
+<group of size 18 with 2 generators>
+gap> Size(last);
+18
 gap> D:=LocalNearRing(49,2,42,6,1); 
 ExplicitMultiplicationNearRing ( <pc group of size 49 with 
 2 generators> , multiplication )
@@ -162,19 +160,13 @@ gap> d:=h[3];
 (f2^2)
 gap> IsDistributiveElementOfNearRing(D,d);
 true
-gap> N:=LocalNearRing(25,2,20,3,2); 
-ExplicitMultiplicationNearRing ( <pc group of size 25 with 
-2 generators> , multiplication )
+gap> N:=LocalNearRing(16,10,8,2,7); 
+ExplicitMultiplicationNearRing ( <pc group of size 16 with 4 generators> , multiplication )
 gap> IsSemiDistributiveNearRing(N);
-false
-gap> P:=LocalNearRing(25,1,20,2,1); 
-ExplicitMultiplicationNearRing ( <pc group of size 25 with 
-2 generators> , multiplication )
-gap> IsSemiDistributiveNearRing(P);
 true
-gap> N:=AllLocalNearRings(32,5,16,3)[8];
-ExplicitMultiplicationNearRing ( <pc group of size 32 with 
-5 generators> , multiplication )
+gap> N:=LocalNearRing(343,5,294,8,2);    
+ExplicitMultiplicationNearRing ( <pc group of size 343 with 
+3 generators> , multiplication )
 gap> IsNearRingWithOne(N);
 false
 gap> Identity(N);
