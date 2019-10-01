@@ -96,7 +96,7 @@ gap> B:=LocalNearRing(49,2,42,6,1);
 ExplicitMultiplicationNearRing ( <pc group of size 49 with 2 generators> , multiplication )
 gap> M:=MultiplicativeSemigroupOfNearRing(B);
 Semigroup with Identity (f1)
-<semigroup with 6 generators>
+<semigroup of size 49, with 6 generators>
 gap> Size(M);
 49
 gap> Nm:=NonUnitsAsMultiplicativeSemigroup(B);
