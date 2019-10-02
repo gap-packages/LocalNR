@@ -67,8 +67,8 @@ DeclareGlobalFunction( "TheAdditiveGroupsOfLibraryOfLNRsOfOrder");
 
 #! @BeginExample
 #! gap> List(TheAdditiveGroupsOfLibraryOfLNRsOfOrder(81),IdGroup);
-#! [ [ 81, 1 ], [ 81, 2 ], [ 81, 3 ], [ 81, 5 ], [ 81, 6 ],  
-#!  [ 81, 11 ], [ 81, 12 ], [ 81, 13 ], [ 81, 15 ] ]
+#! [ [ 81, 1 ], [ 81, 2 ], [ 81, 3 ], [ 81, 5 ], [ 81, 6 ], [ 81, 11 ], 
+#!   [ 81, 12 ], [ 81, 13 ], [ 81, 15 ] ]
 #! @EndExample
 
 ###################################
@@ -83,10 +83,14 @@ DeclareGlobalFunction( "TheAdditiveGroupsOfLibraryOfLNRsOfOrder");
 DeclareGlobalFunction( "TheLibraryOfLNRsOnGroup");
 
 #! @BeginExample
-#! gap> TheLibraryOfLNRsOnGroup(SmallGroup([81,12]));   
-#![ "AllLocalNearRings(81,12,54,5)", "AllLocalNearRings(81,12,54,8)", 
-#!  "AllLocalNearRings(81,12,54,12)", "AllLocalNearRings(81,12,54,13)", 
-#!  "AllLocalNearRings(81,12,72,39)" ]
+#! gap> G:=SmallGroup(81,2);
+#! <pc group of size 81 with 4 generators>
+#! gap> TheLibraryOfLNRsOnGroup(G);
+#! [ "AllLocalNearRings(81,2,54,3)", "AllLocalNearRings(81,2,54,6)", 
+#!   "AllLocalNearRings(81,2,54,9)", "AllLocalNearRings(81,2,54,10)", 
+#!   "AllLocalNearRings(81,2,54,11)", "AllLocalNearRings(81,2,54,15)", 
+#!   "AllLocalNearRings(81,2,72,14)", "AllLocalNearRings(81,2,72,19)", 
+#!   "AllLocalNearRings(81,2,72,24)", "AllLocalNearRings(81,2,72,26)" ]
 #! @EndExample
 
 ###################################
@@ -136,10 +140,12 @@ DeclareOperation( "AllLocalNearRings", [ IsInt, IsInt, IsInt, IsInt ]);
 DeclareGlobalFunction( "IsAdditiveGroupOfLibraryOfLNRs");
 
 #! @BeginExample
-#! gap> G:=SmallGroup(361,2);
-#! <pc group of size 361 with 2 generators>
+#! gap> G:=SmallGroup(25,2);
+#! <pc group of size 25 with 2 generators>
 #! gap> IsAdditiveGroupOfLibraryOfLNRs(G);
 #! true
+#! gap> IsAdditiveGroupOfLibraryOfLNRs(SmallGroup(81,14));
+#! false
 #! @EndExample
 
 ###################################
@@ -154,16 +160,13 @@ DeclareGlobalFunction( "IsAdditiveGroupOfLibraryOfLNRs");
 DeclareGlobalFunction( "InfoLocalNearRing");
 
 #! @BeginExample
-#! gap> InfoLocalNearRing(G);
-#! There are 21 local nearrings on this group.     
-#! They are sorted by their multiplicative groups. 
-#! AllLocalNearRings(361,2,342,1)                           (2) 
-#! AllLocalNearRings(361,2,342,2)                           (2) 
-#! AllLocalNearRings(361,2,342,4)                           (1) 
-#! AllLocalNearRings(361,2,342,6)                           (1) 
-#! AllLocalNearRings(361,2,342,7)                           (7) 
-#! AllLocalNearRings(361,2,342,8)                           (6) 
-#! AllLocalNearRings(361,2,360,4)                           (1) 
-#! AllLocalNearRings(361,2,360,15)                          (1) 
+#! gap> InfoLocalNearRing(SmallGroup(361,2));
+#! The local nearrings are sorted by their multiplicative groups.
+#! [ "AllLocalNearRings(361,2,342,1) (2)", "AllLocalNearRings(361,2,342,2) (2)", \
+#! "AllLocalNearRings(361,2,342,4) (1)",
+#!   "AllLocalNearRings(361,2,342,6) (1)", "AllLocalNearRings(361,2,342,7) (7)",\
+#!  "AllLocalNearRings(361,2,342,8) (6)",
+#!   "AllLocalNearRings(361,2,360,4) (1)", "AllLocalNearRings(361,2,360,15) (1)"\
+#!  ]
 #! @EndExample
 ##
