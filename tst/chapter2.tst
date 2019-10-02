@@ -25,6 +25,12 @@ gap> IsMinimalNonAbelianGroup(K);
 true
 gap> IsMetacyclicPGroup(K);
 true
+gap> IsMinimalNonAbelianGroup(SmallGroup(16,8));
+false
+gap> IsMetacyclicPGroup(SmallGroup(81,4));
+true
+gap> IsMetacyclicPGroup(SmallGroup(81,15));
+false
 gap> D:=SmallGroup(81,2); 
 <pc group of size 81 with 4 generators>
 gap> T:=EndoOrbitsOfGroup(D);;
@@ -46,6 +52,15 @@ gap> U:=UnitsOfNearRing(N);
 gap> Un:=NearRingUnits(N);;
 gap> U=Un;
 true
+gap> F:=LibraryNearRing(SmallGroup(8,4),1);
+#I  using isomorphic copy of the group
+LibraryNearRing(8/5, 1)
+gap> U:=UnitsOfNearRing(F);
+Error, no units exist called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 8 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
 gap> H:=SmallGroup(16,6);
 <pc group of size 16 with 4 generators>
 gap> A:= AutomorphismNearRing(H);
@@ -54,6 +69,11 @@ gap>  Size(A);
 64
 gap> IsLocalNearRing(A);
 true
+gap> K:=LibraryNearRingWithOne(SmallGroup(8,2),1);  
+#I  using isomorphic copy of the group
+LibraryNearRing(8/2, 814)
+gap> IsLocalNearRing(K);
+false
 gap> L:=AllLocalNearRings(16,14,8,4);;
 gap> Size(L);
 24
@@ -67,6 +87,13 @@ gap> Nu:=NearRingNonUnits(T);
 [ (<identity> of ...), (f2), (f2^2), (f2^3), (f2^4), (f2^5), (f2^6) ]
 gap> Size(Nu);
 7
+gap> R:=LibraryNearRing(SmallGroup(8,4),3);
+#I  using isomorphic copy of the group
+LibraryNearRing(8/5, 3)
+gap> N:=NearRingNonUnits(R); 
+[ (()), ((1,2,3,4)(5,6,7,8)), ((1,3)(2,4)(5,7)(6,8)), ((1,4,3,2)(5,8,7,6)), 
+  ((1,5,3,7)(2,8,4,6)), ((1,6,3,8)(2,5,4,7)), ((1,7,3,5)(2,6,4,8)), 
+  ((1,8,3,6)(2,7,4,5)) ]
 gap> B:=LocalNearRing(25,2,20,3,1); 
 ExplicitMultiplicationNearRing ( <pc group of size 25 with 2 generators> , multiplication )
 gap> D:=DistributiveElements(B);;
@@ -107,6 +134,11 @@ gap> D:=LocalNearRing(49,2,42,4,1);
 ExplicitMultiplicationNearRing ( <pc group of size 49 with 2 generators> , multiplication )
 gap> IsOneGeneratedNearRing(D);
 true
+gap> H:=LocalNearRing(16,14,8,2,3);   
+ExplicitMultiplicationNearRing ( <pc group of size 16 with 
+4 generators> , multiplication )
+gap> IsOneGeneratedNearRing(H);    
+false
 gap> S:=UnitsOfNearRing(D);
 [ (f1), (f1*f2), (f1*f2^2), (f1*f2^3), (f1*f2^4), (f1*f2^5), (f1*f2^6), (f1^2), (f1^2*f2), 
   (f1^2*f2^2), (f1^2*f2^3), (f1^2*f2^4), (f1^2*f2^5), (f1^2*f2^6), (f1^3), (f1^3*f2), 
@@ -173,6 +205,22 @@ gap> Identity(N);
 (f1)
 gap> IsNearRingWithIdentity(N);
 true
+gap> T:=LocalNearRing(49,2,42,1,2);        
+ExplicitMultiplicationNearRing ( <pc group of size 49 with 
+2 generators> , multiplication )
+gap> G:=GroupReduct(T);                    
+<pc group of size 49 with 2 generators>
+gap> S:=Subgroups(G);;
+gap> Size(S);
+10
+gap> IsSubNearRing(T,S[3]);
+true
+gap> IsSubNearRing(T,S[9]); 
+false
+gap> D:=SmallGroup(7,1);
+<pc group of size 7 with 1 generators>
+gap> IsSubNearRing(T,D);   
+false
 
 ## Each test file should finish with the call of STOP_TEST.
 ## The argument of STOP_TEST should be the name of the test file.
