@@ -185,7 +185,7 @@ InstallMethod( NearRingNonUnits,
     [ IsNearRing ], 
   function(R)
   if Identity(R)=fail then 
-  return R; 
+  return List(R); 
   else return 
     Difference(R,UnitsOfNearRing(R)); 
   fi; 
