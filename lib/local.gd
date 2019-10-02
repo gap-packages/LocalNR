@@ -43,6 +43,8 @@ DeclareProperty( "IsMinimalNonAbelianGroup", IsGroup );
 #! <pc group of size 16 with 4 generators>
 #! gap> IsMinimalNonAbelianGroup(K);
 #! true
+#! gap> IsMinimalNonAbelianGroup(SmallGroup(16,8));
+#! false
 #! @EndExample
 
 ###################################
@@ -59,6 +61,10 @@ DeclareProperty( "IsMetacyclicPGroup", IsPGroup );
 #! @BeginExample
 #! gap> IsMetacyclicPGroup(K);
 #! true
+#! gap> IsMetacyclicPGroup(SmallGroup(81,4));
+#! true
+#! gap> IsMetacyclicPGroup(SmallGroup(81,15));
+#! false
 #! @EndExample
 
 ###################################
@@ -72,16 +78,13 @@ DeclareProperty( "IsMetacyclicPGroup", IsPGroup );
 DeclareOperation( "EndoOrbitsOfGroup", [ IsGroup ] ); 
 
 #! @BeginExample
-#! gap> D:=SmallGroup(32,25);   
-#! <pc group of size 32 with 5 generators>
-#! gap> T:=EndoOrbitsOfGroup(D);
-#! [ [ f1, [ <identity> of ..., f1, f1*f5, f2*f3*f5, f2*f3, f2*f3*f4*f5, f2*f3*f4, 
-#!          f1*f4*f5, f1*f4, f2, f2*f5, f2*f4, f1*f3*f4*f5, f1*f3*f5, f2*f4*f5, 
-#!          f1*f3*f4, f1*f3, f3, f3*f4, f3*f5, f3*f4*f5, f4, f5, f1*f2, f1*f2*f4, 
-#!          f1*f2*f5, f1*f2*f4*f5, f4*f5, f1*f2*f3, f1*f2*f3*f4, f1*f2*f3*f5, 
-#!          f1*f2*f3*f4*f5 ] ] ]
-#! gap>  Size(T[1][2]);
-#! 32
+#! gap> D:=SmallGroup(81,2); 
+#! <pc group of size 81 with 4 generators>
+#! gap> T:=EndoOrbitsOfGroup(D);;
+#! gap> Length(T);
+#! 1
+#! gap> Size(T[1][2]);
+#! 81
 #! @EndExample
 
 ###################################
@@ -127,28 +130,11 @@ DeclareAttribute( "UnitsOfNearRing", IsNearRing  );
 #! gap> Un:=NearRingUnits(N);;
 #! U=Un;
 #! true
-#! @EndExample
-
-###################################
-
-#! @Description
-#! The argument is a nearring $R$.
-#! The output is <C>true</C> if $R$ is a local nearring,
-#! otherwise the output is <C>false</C>.
-#! @Returns a boolean
-#! @Arguments R
-#! @Label 
-DeclareProperty( "IsDistributiveElementOfNearRing",  IsNearRing );
-
-#! @BeginExample
-#! gap> K:=LocalNearRing(49,2,42,1,2);
-#! ExplicitMultiplicationNearRing ( <pc group of size 49 with 
-#! 2 generators> , multiplication )
-#! gap> L:=List(K);;
-#! gap> Size(L);
-#! 49
-#! gap> IsDistributiveElementOfNearRing(K,L[29]);
-#! true
+#! gap> F:=LibraryNearRing(SmallGroup(8,4),1);
+#! #I  using isomorphic copy of the group
+#! LibraryNearRing(8/5, 1)
+#! gap> U:=UnitsOfNearRing(F);
+#! Error, no units exist
 #! @EndExample
 
 ###################################
@@ -164,14 +150,19 @@ DeclareProperty( "IsDistributiveElementOfNearRing",  IsNearRing );
 DeclareProperty( "IsLocalNearRing",  IsNearRing );
 
 #! @BeginExample
-#! gap> H:=SmallGroup(64,3);
-#! <pc group of size 64 with 6 generators>
+#! gap> H:=SmallGroup(16,6);
+#! <pc group of size 16 with 4 generators>
 #! gap> A:= AutomorphismNearRing(H);
-#! AutomorphismNearRing( <pc group of size 64 with 6 generators> )
-#! gap> Size(A);
-#! 2048
+#! AutomorphismNearRing( <pc group of size 16 with 4 generators> )
+#! gap>  Size(A);
+#! 64
 #! gap> IsLocalNearRing(A);
 #! true
+#! gap> K:=LibraryNearRingWithOne(SmallGroup(8,2),1);  
+#! #I  using isomorphic copy of the group
+#! LibraryNearRing(8/2, 814)
+#! gap> IsLocalNearRing(K);
+#! false
 #! @EndExample
 
 ###################################
@@ -186,11 +177,11 @@ DeclareProperty( "IsLocalNearRing",  IsNearRing );
 DeclareProperty( "IsLocalRing", IsNearRing );
 
 #! @BeginExample
-#! gap> L:=AllLocalNearRings(32,3,16,14);;
-#! gap> Size(L);                          
-#! 55
+#! gap> L:=AllLocalNearRings(16,14,8,4);;
+#! gap> Size(L);
+#! 24
 #! gap> F:=Filtered(L,x->IsLocalRing(x));;
-#! gap> Size(F);                          
+#! gap> Size(F);
 #! 1
 #! @EndExample
 
@@ -212,8 +203,14 @@ DeclareAttribute( "NearRingNonUnits", IsNearRing );
 #! [ (<identity> of ...), (f2), (f2^2), (f2^3), (f2^4), (f2^5), (f2^6) ]
 #! gap> Size(Nu);
 #! 7
+#! gap> R:=LibraryNearRing(SmallGroup(8,4),3);
+#! #I  using isomorphic copy of the group
+#! LibraryNearRing(8/5, 3)
+#! gap> N:=NearRingNonUnits(R); 
+#! [ (()), ((1,2,3,4)(5,6,7,8)), ((1,3)(2,4)(5,7)(6,8)), ((1,4,3,2)(5,8,7,6)), 
+#!   ((1,5,3,7)(2,8,4,6)), ((1,6,3,8)(2,5,4,7)), ((1,7,3,5)(2,6,4,8)), 
+#!   ((1,8,3,6)(2,7,4,5)) ]
 #! @EndExample
-
 
 ###################################
 
@@ -226,15 +223,14 @@ DeclareAttribute( "NearRingNonUnits", IsNearRing );
 DeclareOperation( "SubNearRingByGenerators", [ IsNearRing, IsNearRingElementCollection ] );
 
 #! @BeginExample
-#! gap> B:=LocalNearRing(32,45,16,5,4); 
-#! ExplicitMultiplicationNearRing ( <pc group of size 32 with 
-#! 5 generators> , multiplication )
+#! gap> B:=LocalNearRing(25,2,20,3,1); 
+#! ExplicitMultiplicationNearRing ( <pc group of size 25 with 2 generators> , multiplication )
 #! gap> D:=DistributiveElements(B);;
 #! gap> Size(D);
-#! 4
+#! 5
 #! gap> Rs:=SubNearRingByGenerators(B,D);;
 #! gap> Size(Rs);
-#! 4
+#! 5
 #! gap> IsDgNearRing(B);
 #! false
 #! gap> IsDgNearRing(Rs);
@@ -252,15 +248,15 @@ DeclareOperation( "SubNearRingByGenerators", [ IsNearRing, IsNearRingElementColl
 DeclareAttribute( "NonUnitsAsAdditiveSubgroup", IsNearRing );
 
 #! @BeginExample
-#! gap> T:=LocalNearRing(32,3,16,14,5);
-#! ExplicitMultiplicationNearRing ( <pc group of size 32 with 
-#! 5 generators> , multiplication )
+#! gap> T:=LocalNearRing(125,4,100,9,1); 
+#! ExplicitMultiplicationNearRing ( <pc group of size 125 with 
+#! 3 generators> , multiplication )
 #! gap> L:=NonUnitsAsAdditiveSubgroup(T);
-#! Group([ <identity> of ..., f2, f3, f4, f5, f2*f3, f2*f4,  
-#! f2*f5, f3*f4, f3*f5, f4*f5, f2*f3*f4, f2*f3*f5, f2*f4*f5, 
-#! f3*f4*f5, f2*f3*f4*f5 ])
+#! Group([ <identity> of ..., f2, f3, f2^2, f2*f3, f3^2, f2^3, f2^2*f3, f2*f3^2, f3^3, f2^4, 
+#!   f2^3*f3, f2^2*f3^2, f2*f3^3, f3^4, f2^4*f3, f2^3*f3^2, f2^2*f3^3, f2*f3^4, f2^4*f3^2, 
+#!   f2^3*f3^3, f2^2*f3^4, f2^4*f3^3, f2^3*f3^4, f2^4*f3^4 ])
 #! gap> IdGroup(L);
-#! [ 16, 2 ]
+#! [ 25, 2 ]
 #! @EndExample
 
 ###################################
@@ -277,7 +273,7 @@ DeclareAttribute( "NonUnitsAsNearRingIdeal",  IsNearRing  );
 #! gap> I:=NonUnitsAsNearRingIdeal(T);
 #! < nearring ideal >
 #! gap> Size(I);
-#! 16
+#! 25
 #! @EndExample
 
 ###################################
@@ -291,14 +287,13 @@ DeclareAttribute( "NonUnitsAsNearRingIdeal",  IsNearRing  );
 DeclareAttribute( "MultiplicativeSemigroupOfNearRing", IsNearRing );
 
 #! @BeginExample
-#! gap> B:=LocalNearRing(32,21,16,2,14); 
-#! ExplicitMultiplicationNearRing ( <pc group of size 32 with 
-#! 5 generators> , multiplication )
+#! gap> B:=LocalNearRing(49,2,42,6,1);          
+#! ExplicitMultiplicationNearRing ( <pc group of size 49 with 2 generators> , multiplication )
 #! gap> M:=MultiplicativeSemigroupOfNearRing(B);
-#! Semigroup with Identity (f2)
-#! <semigroup of size 32, with 8 generators>
+#! Semigroup with Identity (f1)
+#! <semigroup of size 49, with 6 generators>
 #! gap> Size(M);
-#! 32
+#! 49
 #! @EndExample
 
 ###################################
@@ -313,9 +308,9 @@ DeclareAttribute( "NonUnitsAsMultiplicativeSemigroup", IsNearRing );
 
 #! @BeginExample
 #! gap> Nm:=NonUnitsAsMultiplicativeSemigroup(B);
-#! <semigroup with 16 generators>
+#! <semigroup with 7 generators>
 #! gap> Size(Nm);
-#! 16
+#! 7
 #! @EndExample
 
 ###################################
@@ -330,11 +325,15 @@ DeclareAttribute( "NonUnitsAsMultiplicativeSemigroup", IsNearRing );
 DeclareProperty( "IsOneGeneratedNearRing", IsNearRing );
 
 #! @BeginExample
-#! gap> D:=LocalNearRing(32,3,16,3,7);           
-#! ExplicitMultiplicationNearRing ( <pc group of size 32 with 
-#! 5 generators> , multiplication )
+#! gap> D:=LocalNearRing(49,2,42,4,1);
+#! ExplicitMultiplicationNearRing ( <pc group of size 49 with 2 generators> , multiplication )
 #! gap> IsOneGeneratedNearRing(D);
 #! true
+#! gap> H:=LocalNearRing(16,14,8,2,3);   
+#! ExplicitMultiplicationNearRing ( <pc group of size 16 with 
+#! 4 generators> , multiplication )
+#! gap> IsOneGeneratedNearRing(H);    
+#! false
 #! @EndExample
 
 ###################################
@@ -355,12 +354,15 @@ DeclareOperation( "AutomorphismsAssociatedWithNearRingUnits", [ IsNearRing, IsNe
 
 #! @BeginExample
 #! gap> S:=UnitsOfNearRing(D);
-#! [ (f1), (f1*f5), (f1*f4), (f1*f4*f5), (f1*f3), (f1*f3*f5), (f1*f3*f4),  
-#!  (f1*f3*f4*f5), (f1*f2), (f1*f2*f5), (f1*f2*f4), (f1*f2*f4*f5), (f1*f2*f3), 
-#!  (f1*f2*f3*f5), (f1*f2*f3*f4), (f1*f2*f3*f4*f5) ]
+#! [ (f1), (f1*f2), (f1*f2^2), (f1*f2^3), (f1*f2^4), (f1*f2^5), (f1*f2^6), (f1^2), (f1^2*f2), 
+#!   (f1^2*f2^2), (f1^2*f2^3), (f1^2*f2^4), (f1^2*f2^5), (f1^2*f2^6), (f1^3), (f1^3*f2), 
+#!   (f1^3*f2^2), (f1^3*f2^3), (f1^3*f2^4), (f1^3*f2^5), (f1^3*f2^6), (f1^4), (f1^4*f2), 
+#!   (f1^4*f2^2), (f1^4*f2^3), (f1^4*f2^4), (f1^4*f2^5), (f1^4*f2^6), (f1^5), (f1^5*f2), 
+#!   (f1^5*f2^2), (f1^5*f2^3), (f1^5*f2^4), (f1^5*f2^5), (f1^5*f2^6), (f1^6), (f1^6*f2), 
+#!   (f1^6*f2^2), (f1^6*f2^3), (f1^6*f2^4), (f1^6*f2^5), (f1^6*f2^6) ]
 #! gap> A:=AutomorphismsAssociatedWithNearRingUnits(D,S);;
 #! gap> Size(A);
-#! 16
+#! 42
 #! @EndExample
 
 ###################################
@@ -375,12 +377,10 @@ DeclareOperation( "EndomorphismsAssociatedWithNearRingElements", [ IsNearRing, I
 
 #! @BeginExample
 #! gap> Nu:=NearRingNonUnits(D);
-#! [ (<identity> of ...), (f2), (f3), (f4), (f5), (f2*f3), (f2*f4), (f2*f5), 
-#!  (f3*f4), (f3*f5), (f4*f5), (f2*f3*f4), (f2*f3*f5), (f2*f4*f5), (f3*f4*f5),
-#!  (f2*f3*f4*f5) ]
+#! [ (<identity> of ...), (f2), (f2^2), (f2^3), (f2^4), (f2^5), (f2^6) ]
 #! gap> En:=EndomorphismsAssociatedWithNearRingElements(D,Nu);;
 #! gap> Size(En);
-#! 16
+#! 7
 #! @EndExample
 
 ###################################
@@ -394,13 +394,12 @@ DeclareOperation( "EndomorphismsAssociatedWithNearRingElements", [ IsNearRing, I
 DeclareOperation( "SemidirectProductAssociatedWithNearRing", [ IsNearRing ]); 
 
 #! @BeginExample
-#! gap> T:=LocalNearRing(125,2,100,8,5); 
-#! ExplicitMultiplicationNearRing ( <pc group of size 125 with 
-#! 3 generators> , multiplication )
+#! gap> T:=LocalNearRing(25,2,20,2,1);             
+#! ExplicitMultiplicationNearRing ( <pc group of size 25 with 2 generators> , multiplication )
 #! gap> SemidirectProductAssociatedWithNearRing(T);
-#! <pc group with 7 generators>
+#! <pc group with 5 generators>
 #! gap> Size(last);
-#! 12500
+#! 500
 #! @EndExample
 
 ###################################
@@ -416,11 +415,11 @@ DeclareOperation( "SemidirectProductAssociatedWithNearRing", [ IsNearRing ]);
 DeclareOperation( "IsCircleSubgroupOfNearRing", [IsNearRing, IsGroup ]);
 
 #! @BeginExample
-#! gap> Sg:=Subgroups(GroupReduct(T));;  
+#! gap> Sg:=Subgroups(GroupReduct(T));;
 #! gap> Size(Sg);
-#! 14
-#! gap> F:=Filtered(Sg,x->IsCircleSubgroupOfNearRing(T,x)); 
-#! [ Group([  ]), Group([ f3 ]), Group([ f3, f2 ]) ]
+#! 8
+#! gap> F:=Filtered(Sg,x->IsCircleSubgroupOfNearRing(T,x));
+#! [ Group([  ]), Group([ f2 ]) ]
 #! @EndExample
 
 ###################################
@@ -452,12 +451,12 @@ DeclareOperation( "FactorizedGroupAssociatedWithCircleSubgroupOfNearRing", [ IsN
 DeclareAttribute("ConstantPartOfNearRing", IsNearRing );
 
 #! @BeginExample
-#! gap> H:=LocalNearRing(64,24,32,22,12481);
-#! ExplicitMultiplicationNearRing ( <pc group of size 64 with 
-#! 6 generators> , multiplication )
+#! gap> H:=LocalNearRing(361,2,342,7,7);
+#! ExplicitMultiplicationNearRing ( <pc group of size 361 with 
+#! 2 generators> , multiplication )
 #! gap> C:=ConstantPartOfNearRing(H);;
 #! gap> Size(C);
-#! 4
+#! 19
 #! @EndExample
 
 ###################################
@@ -472,8 +471,8 @@ DeclareAttribute("ZeroSymmetricPartOfNearRing", IsNearRing );
 
 #! @BeginExample
 #! gap> ZeroSymmetricPartOfNearRing(H);;
-#! gap> Size(last);                    
-#! 16
+#! gap> Size(last);
+#! 19
 #! @EndExample
 
 ###################################
@@ -487,13 +486,12 @@ DeclareAttribute("ZeroSymmetricPartOfNearRing", IsNearRing );
 DeclareAttribute("GroupOfUnitsAsGroupOfAutomorphisms", IsNearRing );
 
 #! @BeginExample
-#! gap> M:=LocalNearRing(32,5,16,3,5); 
-#! ExplicitMultiplicationNearRing ( <pc group of size 32 with 
-#! 5 generators> , multiplication )
+#! gap> M:=LocalNearRing(27,4,18,3,2);  
+#! ExplicitMultiplicationNearRing ( <pc group of size 27 with 3 generators> , multiplication )
 #! gap> GroupOfUnitsAsGroupOfAutomorphisms(M);
-#! <group of size 16 with 2 generators>
+#! <group of size 18 with 2 generators>
 #! gap> Size(last);
-#! 16                  
+#! 18                
 #! @EndExample
 
 
@@ -529,15 +527,9 @@ DeclareOperation( "IsDistributiveElementOfNearRing",[ IsNearRing, IsNearRingElem
 DeclareProperty( "IsSemiDistributiveNearRing", IsNearRing );
 
 #! @BeginExample
-#! gap> N:=LocalNearRing(25,2,20,3,2); 
-#! ExplicitMultiplicationNearRing ( <pc group of size 25 with 
-#! 2 generators> , multiplication )
+#! gap> N:=LocalNearRing(16,10,8,2,7); 
+#! ExplicitMultiplicationNearRing ( <pc group of size 16 with 4 generators> , multiplication )
 #! gap> IsSemiDistributiveNearRing(N);
-#! false
-#! gap> P:=LocalNearRing(25,1,20,2,1); 
-#! ExplicitMultiplicationNearRing ( <pc group of size 25 with 
-#! 2 generators> , multiplication )
-#! gap> IsSemiDistributiveNearRing(P);
 #! true
 #! @EndExample
 
@@ -553,9 +545,9 @@ DeclareProperty( "IsSemiDistributiveNearRing", IsNearRing );
 DeclareProperty( "IsNearRingWithIdentity", IsNearRing  );
 
 #! @BeginExample
-#! gap> N:=AllLocalNearRings(32,5,16,3)[8];
-#! ExplicitMultiplicationNearRing ( <pc group of size 32 with 
-#! 5 generators> , multiplication )
+#! gap> N:=LocalNearRing(343,5,294,8,2);    
+#! ExplicitMultiplicationNearRing ( <pc group of size 343 with 
+#! 3 generators> , multiplication )
 #! gap> IsNearRingWithOne(N);
 #! false
 #! gap> Identity(N);
@@ -563,7 +555,6 @@ DeclareProperty( "IsNearRingWithIdentity", IsNearRing  );
 #! gap> IsNearRingWithIdentity(N);
 #! true
 #! @EndExample
-
 
 ###################################
 
@@ -578,14 +569,20 @@ DeclareProperty( "IsNearRingWithIdentity", IsNearRing  );
 DeclareOperation( "IsSubNearRing",[ IsNearRing, IsGroup ] );
 
 #! @BeginExample
-#! gap> R:=LocalNearRing(32,21,16,2,123);
-#! ExplicitMultiplicationNearRing ( <pc group of size 32 with 
-#! 5 generators> , multiplication )
-#! gap> G:=GroupReduct(R);               
-#! <pc group of size 32 with 5 generators>
-#! gap> S:=Subgroups(G);;                
-#! gap> Size(S);                         
-#! 54
-#! gap> IsSubNearRing(R,S[3]);           
+#! gap> T:=LocalNearRing(49,2,42,1,2);        
+#! ExplicitMultiplicationNearRing ( <pc group of size 49 with 
+#! 2 generators> , multiplication )
+#! gap> G:=GroupReduct(T);                    
+#! <pc group of size 49 with 2 generators>
+#! gap> S:=Subgroups(G);;
+#! gap> Size(S);
+#! 10
+#! gap> IsSubNearRing(T,S[3]);
 #! true
+#! gap> IsSubNearRing(T,S[9]); 
+#! false
+#! gap> D:=SmallGroup(7,1);
+#! <pc group of size 7 with 1 generators>
+#! gap> IsSubNearRing(T,D);   
+#! false
 #! @EndExample
