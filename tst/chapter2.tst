@@ -56,11 +56,7 @@ gap> F:=LibraryNearRing(SmallGroup(8,4),1);
 #I  using isomorphic copy of the group
 LibraryNearRing(8/5, 1)
 gap> U:=UnitsOfNearRing(F);
-Error, no units exist called from
-<function "unknown">( <arguments> )
- called from read-eval loop at line 8 of *stdin*
-you can 'quit;' to quit to outer loop, or
-you can 'return;' to continue
+Error, no units exist
 gap> H:=SmallGroup(16,6);
 <pc group of size 16 with 4 generators>
 gap> A:= AutomorphismNearRing(H);
