@@ -1,6 +1,6 @@
 #############################################################################
 ##
-##                                               LocalNR package
+##                            LocalNR - a GAP package of local nearrings
 ##
 ##  Copyright 2019,                Yaroslav Sysak with contributions by
 ##                                      Iryna Raievska, Maryna Raievska

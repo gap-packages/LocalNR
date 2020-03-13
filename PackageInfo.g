@@ -1,7 +1,9 @@
 #############################################################################
 ##
-#W  PackageInfo.g                      Yaroslav Sysak with contributions by 
-#Y  Copyright (C) 2019                      Iryna Raievska, Maryna Raievska 
+#W  PackageInfo.g                 LocalNR - a GAP package of local nearrings
+##
+#Y  Copyright (C) 2019                 Yaroslav Sysak with contributions by 
+#Y                                          Iryna Raievska, Maryna Raievska 
 ##
 ##  Institute of Mathematics of National Academy of Sciences of Ukraine
 ##
@@ -12,8 +14,8 @@
 SetPackageInfo( rec(
 PackageName := "LocalNR",
 Subtitle := "Package of local nearrings",
-Version := "1.0.1",
-Date := "26/03/2019",
+Version := "1.0.2",
+Date := "13/03/2020",
 
 SourceRepository := rec(
     Type := "git",
@@ -21,7 +23,7 @@ SourceRepository := rec(
 ),
 IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
 PackageWWWHome  := Concatenation( "https://gap-packages.github.io/", ~.PackageName ),
-README_URL      := Concatenation( ~.PackageWWWHome, "/README.txt" ),
+README_URL      := Concatenation( ~.PackageWWWHome, "/README.md" ),
 PackageInfoURL  := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
 ArchiveURL      := Concatenation( ~.SourceRepository.URL,
                                  "/releases/download/v", ~.Version,

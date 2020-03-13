@@ -102,7 +102,7 @@ at the GAP prompt.
 ## Contact
 
 If you use `LocalNR`, please tell us by sending an email to
-<raeirina@imath.kiev.ua>, <raemarina@imath.kiev.ua>, <sysak@imath.kiev.ua>.
+<sysak@imath.kiev.ua>, <raeirina@imath.kiev.ua>, <raemarina@imath.kiev.ua>.
 
 If you find any bugs or have any suggestions or comments, we would
 very much appreciate it if you would let us know either by email or

@@ -1,7 +1,9 @@
 #############################################################################
 ##
-#W  init.g                         LocalNR - a GAP package of local nearrings
-#Y  Copyright (C) 2017        Iryna Raievska, Maryna Raievska, Yaroslav Sysak 
+#W  init.g                        LocalNR - a GAP package of local nearrings
+##
+#Y  Copyright (C) 2019                 Yaroslav Sysak with contributions by 
+#Y                                          Iryna Raievska, Maryna Raievska 
 ##
 ##  Licensing information can be found in the README file of this package.
 ##
