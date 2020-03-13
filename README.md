@@ -1,267 +1,134 @@
-# GitHubPagesForGAP
+[![Build Status](https://travis-ci.org/gap-packages/LocalNR.svg?branch=master)](https://travis-ci.org/gap-packages/LocalNR)
+[![Code Coverage](https://codecov.io/github/gap-packages/LocalNR/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/LocalNR)
 
-This repository can be used to quickly set up a website hosted by
-[GitHub](https://github.com/) for GAP packages using a GitHub repository.
-Specifically, this uses [GitHub pages](https://pages.github.com/)
-by adding a `gh-pages` branch to your package repository which
-contains data generated from the `PackageInfo.g` file of your package.
+# GAP package LocalNR
 
-## Initial setup
+----------------------------------------------------------------------
 
-The easiest way to do this is to run the `setup.sh` shell script
-provided in the [GitHubPagesForGAP]() from within a git clone of your
-package's GitHub repository.
+Copyright (C) 2019
+Yaroslav Sysak with contributions by Iryna Raievska, Maryna Raievska
 
-In case this does not work, or if you want to really know what's going
-on, you can also follow the manual instructions described after the fold.
+`LocalNR` is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the license, or
+(at your option) any later version.
 
-------
+`LocalNR` is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-The following instructions assume you do not already have a `gh-pages`
-branch in your repository. If you do have one, you should delete it before
-following these instructions.
+A copy of the GNU General Public License is available in the file
+`GPLv3`; or for later versions see <https://www.gnu.org/licenses/>.
 
-1. Go into your clone of your package repository.
+You can find information on how to contact us at the end of the
+README file and on the front page of the documentation.
 
-2. Setup a `gh-pages` branch in a `gh-pages` subdirectory.
+----------------------------------------------------------------------
 
-   Users with a recent enough git version (recommended is >= 2.7.0)
-   can do this using a "worktree", via the following commands:
+The `LocalNR` package contains the library of local nearrings up to
+order 361 and some functions to analyze finite nearrings.
 
-   ```sh
-   # Add a new remote pointing to the GitHubPagesForGAP repository
-   git remote add -f gh-gap https://github.com/gap-system/GitHubPagesForGAP
+## Requirements
 
-   # Create a fresh gh-pages branch from the new remote
-   git branch gh-pages gh-gap/gh-pages --no-track
+This software is written for GAP 4. It requires an existing installation
+of GAP (see <https://www.gap-system.org>) in version 4.7.8 or higher.
 
-   # Create a new worktree and change into it
-   git worktree add gh-pages gh-pages
-   cd gh-pages
-   ```
+### operating system
 
-   Everybody else should instead do the following, with the URL
-   in the initial clone command suitably adjusted:
+The current version of `LocalNR` was created for use under Unix.
+It will also work under Windows but only if all files in the directory
+`LocalNR/data` and all of its subdirectories are uncompressed.
 
-   ```sh
-   # Create a fresh clone of your repository, and change into it
-   git clone https://github.com/USERNAME/REPOSITORY gh-pages
-   cd gh-pages
+### RAM
 
-   # Add a new remote pointing to the GitHubPagesForGAP repository
-   git remote add gh-gap https://github.com/gap-system/GitHubPagesForGAP
-   git fetch gh-gap
+Working with `LocalNR` can be memory expensive. We recommend to have
+at least 2 GB of RAM available. 
 
-   # Create a fresh gh-pages branch from the new remote
-   git checkout -b gh-pages gh-gap/gh-pages --no-track
-   ```
+### disk space
 
-5. Add in copies of your `PackageInfo.g`, `README` (or `README.md`) and manual:
+As the data in the library is compressed, 1 GB of disk space will be 
+sufficient to install `LocalNR` under Unix. To use the library under
+Windows the data has to be uncompressed and will then occupy
+approximately 7 GB.
 
-   ```
-   cp -f ../PackageInfo.g ../README* .
-   cp -f ../doc/*.{css,html,js,txt} doc/
-   ```
+## Installation
 
-6. Now run the `update.g` GAP script. This extracts data from your
-   `PackageInfo.g` file and puts that data into `_data/package.yml`.
-   From this, the website template can populate the web pages with
-   some sensible default values.
+The installation follows standard GAP rules as outlined in the following
+steps (see `?Installing a GAP Package` in GAP for further details):
 
-   ```
-   gap update.g
-   ```
+1. Download archive `LocalNR-X.Y.Z.tar.gz` of the most recent release
+from <https://gap-packages.github.io/LocalNR/>.
 
-7. Commit and push everything.
+2. Move the archive inside a `pkg` directory. This can be either the main
+`pkg` directory in your GAP installation or your personal `pkg` directory.
 
-   ```
-   git add PackageInfo.g README* doc/ _data/package.yml
-   git commit -m "Setup gh-pages based on GitHubPagesForGAP"
-   git push --set-upstream origin gh-pages
-   ```
+3. Complete the installation by unpacking the archive, e.g. under Linux type 
 
-That's it. You can now see your new package website under
-https://USERNAME.github.io/REPOSITORY/ (of course after
-adjusting USERNAME and REPOSITORY suitably).
+    tar -xzf LocalNR-X.Y.Z.tar.gz
 
+at the terminal prompt. A subdirectory `LocalNR` will be created inside
+the `pkg` directory.
 
-## Using an existing gh-pages branch
+## Contents
 
-If you previously set up [GitHubPagesForGAP]() and thus already have a `gh-pages`
-branch, you may on occasion have need to make a fresh clone of your package
-repository, and then also would like to recreate the `gh-pages` directory.
+After installation the folder `LocalNR` should contain the subdirectories
 
-The easiest way to do this is to run the `setup.sh` shell script
-provided in the [GitHubPagesForGAP]() from within a git clone of your
-package's GitHub repository.
+    Endom
+    doc
+    lib
+    tst
 
-In case this does not work, or if you want to really know what's going
-on, you can also follow the manual instructions described after the fold.
+and the files
 
-------
+    init.g
+    PackageInfo.g
+    read.g
+    GPLv3
+    CHANGELOG
+    README.txt
+    makedoc.g
 
-Users with a recent enough git version (recommended is >= 2.7)
-can do this using a "worktree", via the following commands:
 
-   ```sh
-   git branch gh-pages origin/gh-pages
-   git worktree add gh-pages gh-pages
-   ```
+## Loading
 
-If you are using an older version of git, you can instead use a second clone
-of your repository instead:
+To use the package type
 
-   ```sh
-   git clone -b gh-pages https://github.com/USERNAME/REPOSITORY gh-pages
-   ```
-
-
-## Adjusting the content and layout
-
-[GitHubPagesForGAP]() tries to automatically provide good defaults for
-most packages. However, you can tweak everything about it:
-
-* To adjust the page layout, edit the files `stylesheets/styles.css`
-and `_layouts/default.html`.
-
-* To adjust the content of the front page, edit `index.md` (resp.
-  for the content of the sidebar, edit `_layouts/default.html`
-
-* You can also add additional pages, in various formats (HTML,
-Markdown, Textile, ...).
-
-For details, please consult the [Jekyll](http://jekyllrb.com/)
-manual.
-
-
-## Testing the site locally
-
-If you would like to test your site on your own machine, without
-uploading it to GitHub (where it is visible to the public), you can do
-so by installing [Jekyll](http://jekyllrb.com/), the static web site
-generator used by GitHub to power GitHub Pages.
-
-Once you have installed Jekyll as described on its homepage, you can
-test the website locally as follows:
-
-1. Go to the `gh-pages` directory we created above.
-
-2. Run jekyll (this launches a tiny web server on your machine):
-
-   ```
-   jekyll serve -w
-   ```
-
-3. Visit the URL http://localhost:4000 in a web browser.
-
-
-## Updating after you made a release
-
-Whenever you make a release of your package (and perhaps more often than
-that), you will want to update your website. The easiest way is to use
-the `release` script from the [ReleaseTools][], which performs all
-the necessary steps for you, except for the very last of actually
-publishing the package (and it can do even that for you, if you
-pass the `-p` option to it).
-
-However, you can also do it manually. The steps for doing it are quite
-similar to the above:
-
-1. Go to the `gh-pages` directory we created above.
-
-2. Add in copies of your `PackageInfo.g`, `README` (or `README.md`) and manual:
-
-   ```
-   cp -f ../PackageInfo.g ../README* .
-   cp -f ../doc/*.{css,html,js,txt} doc/
-   ```
-
-3. Now run the `update.g` GAP script.
-
-4. Commit and push the work we have just done.
-
-   ```
-   git add PackageInfo.g README* doc/ _data/package.yml
-   git commit -m "Update web pages"
-   git push
-   ```
-
-A few seconds after you have done this, your changes will be online
-under https://USERNAME.github.io/REPOSITORY/ .
-
-
-## Updating to a newer version of GitHubPagesForGAP
-
-Normally you should not have to ever do this. However, if you really want to,
-you can attempt to update to the most recent version of [GitHubPagesForGAP]() via
-the following instructions. The difficulty of such an update depends on how
-much you tweaked the site after initially cloning [GitHubPagesForGAP]().
-
-1. Go to the `gh-pages` directory we created above.
-   Make sure that there are no uncommitted changes, as they will be lost
-   when following these instructions.
-
-2. Make sure the `gh-gap` remote exists and has the correct URL. If in doubt,
-   just re-add it:
-   ```
-   git remote remove gh-gap
-   git remote add gh-gap https://github.com/gap-system/GitHubPagesForGAP
-   ```
-
-3. Attempt to merge the latest GitHubPagesForGAP.
-   ```
-   git pull gh-gap gh-pages
-   ```
-
-4. If this produced no errors and just worked, skip to the next step.
-   But it is quite likely that you will have conflicts in the file
-   `_data/package.yml`, or in your `README` or `PackageInfo.g` files.
-   These can usually be resolved by entering this:
-   ```
-   cp ../PackageInfo.g ../README* .
-   gap update.g
-   git add PackageInfo.g README* _data/package.yml
-   ```
-   If you are lucky, these were the only conflicts (check with `git status`).
-   If no merge conflicts remain, finish with this command:
-   ```
-   git commit -m "Merge gh-gap/gh-pages"
-   ```
-   If you still have merge conflicts, and don't know how to resolve them, or
-   get stuck some other way, you can abort the merge process and revert to the
-   original state by issuing this command:
-   ```
-   git merge --abort
-   ```
-
-5. You should be done now. Don't forget to push your changes if you want them
-   to become public.
-
-
-## Packages using GitHubPagesForGAP
-
-The majority of packages listed on <https://gap-packages.github.io> use
-[GitHubPagesForGAP](). If you want some specific examples, here are some:
-
-* <https://gap-packages.github.io/anupq>
-* <https://gap-packages.github.io/cvec>
-* <https://gap-packages.github.io/genss>
-* <https://gap-packages.github.io/io>
-* <https://gap-packages.github.io/NormalizInterface>
-* <https://gap-packages.github.io/nq>
-* <https://gap-packages.github.io/orb>
-* <https://gap-packages.github.io/polenta>
-* <https://gap-packages.github.io/recog>
+    LoadPackage("LocalNR");
+    
+at the GAP prompt.
 
 
 ## Contact
 
-Please submit bug reports, suggestions for improvements and patches via
-the [issue tracker](https://github.com/gap-system/GitHubPagesForGAP/issues).
+If you use `LocalNR`, please tell us by sending an email to
+<sysak@imath.kiev.ua>, <raeirina@imath.kiev.ua>, <raemarina@imath.kiev.ua>.
 
-You can also contact me directly via [email](max@quendi.de).
+If you find any bugs or have any suggestions or comments, we would
+very much appreciate it if you would let us know either by email or
+via <https://github.com/gap-packages/LocalNR/issues> on GitHub. Also,
+we would like to hear about applications of this software.
 
-Copyright (c) 2013-2019 Max Horn
+Yaroslav Sysak, Iryna Raievska, Maryna Raievska   
+Kyiv, 2th of February 2017.
 
-[GitHubPagesForGAP]: https://github.com/gap-system/GitHubPagesForGAP
-[ReleaseTools]: https://github.com/gap-system/ReleaseTools
+Yaroslav Sysak
+
+    Institute of Mathematics 
+    of National Academy of Sciences of Ukraine
+    01024, Ukraine, Kyiv, 
+    3, Tereshchenkivska st.
+
+Iryna Raievska
+
+    Institute of Mathematics 
+    of National Academy of Sciences of Ukraine
+    01024, Ukraine, Kyiv, 
+    3, Tereshchenkivska st.
+
+Maryna Raievska
+
+    Institute of Mathematics 
+    of National Academy of Sciences of Ukraine
+    01024, Ukraine, Kyiv, 
+    3, Tereshchenkivska st.

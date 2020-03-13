@@ -1,24 +1,24 @@
 name: LocalNR
-version: 1.0.1
-date: 2019-03-26
+version: 1.0.2
+date: 2020-03-13
 description: |
     Package of local nearrings
 
 authors:
     - name: Iryna Raievska
-      url: http://www.imath.kiev.ua/~raeirina/
+      url: https://www.imath.kiev.ua/~algebra/Raievska_I/
     - name: Maryna Raievska
-      url: http://www.imath.kiev.ua/~raemarina/
+      url: https://www.imath.kiev.ua/~algebra/Raievska_M/
     - name: Yaroslav Sysak
-      url: http://www.imath.kiev.ua/~sysak/
+      url: https://www.imath.kiev.ua/~algebra/Sysak/
 
 maintainers:
     - name: Iryna Raievska
-      url: http://www.imath.kiev.ua/~raeirina/
+      url: https://www.imath.kiev.ua/~algebra/Raievska_I/
     - name: Maryna Raievska
-      url: http://www.imath.kiev.ua/~raemarina/
+      url: https://www.imath.kiev.ua/~algebra/Raievska_M/
     - name: Yaroslav Sysak
-      url: http://www.imath.kiev.ua/~sysak/
+      url: https://www.imath.kiev.ua/~algebra/Sysak/
 
 GAP: ">=4.7.8"
 
@@ -28,12 +28,12 @@ needed-pkgs:
       url: "https://gap-packages.github.io/sonata/"
 
 www: https://gap-packages.github.io/LocalNR
-readme: README.txt
+readme: README.md
 packageinfo: https://gap-packages.github.io/LocalNR/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/LocalNR/releases/download/v1.0.1/LocalNR-1.0.1.tar.gz
+      url: https://github.com/gap-packages/LocalNR/releases/download/v1.0.2/LocalNR-1.0.2.tar.gz
 
 abstract: |
     The <span class="pkgname">LocalNR</span> package contains the library of local nearrings up to order 361 and some functions to analyze finite nearrings.
@@ -45,26 +45,26 @@ keywords: |
     local nearring, endomorphism, automorphisms group.
 citeas: |
     <p class='BibEntry'>
-    [<span class='BibKey'>RRS19</span>]   <b class='BibAuthor'>Raievska, I., Raievska, M. and Sysak, Y.</b>,
+    [<span class='BibKey'>RRS20</span>]   <b class='BibAuthor'>Raievska, I., Raievska, M. and Sysak, Y.</b>,
      <i class='BibTitle'>LocalNR, Package of local nearrings,
-             Version 1.0.1</i>
-     (<span class='BibYear'>2019</span>)<br />
+             Version 1.0.2</i>
+     (<span class='BibYear'>2020</span>)<br />
     (<span class='BibNote'>GAP package</span>),
     <span class='BibHowpublished'><a href="https://gap-packages.github.io/LocalNR">https://gap-packages.github.io/LocalNR</a></span>.
     </p>
     
 
 bibtex: |
-    @misc{ LocalNR1.0.1,
+    @misc{ LocalNR1.0.2,
       author =           {Raievska, I. and Raievska, M. and Sysak, Y.},
-      title =            {{LocalNR}, Package of local nearrings, {V}ersion 1.0.1},
+      title =            {{LocalNR}, Package of local nearrings, {V}ersion 1.0.2},
       month =            {Mar},
-      year =             {2019},
+      year =             {2020},
       note =             {GAP package},
       howpublished =     {\href         {https://gap-packages.github.io/LocalNR}
                           {\texttt{https://gap-packages.github.io/}\discretionary
                           {}{}{}\texttt{LocalNR}}},
       keywords =         {local nearring; endomorphism; automorphisms group},
-      printedkey =       {RRS19}
+      printedkey =       {RRS20}
     }
 

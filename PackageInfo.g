@@ -1,7 +1,11 @@
 #############################################################################
 ##
-#W  PackageInfo.g             Iryna Raievska, Maryna Raievska, Yaroslav Sysak 
-#Y  Copyright (C) 2015     
+#W  PackageInfo.g                 LocalNR - a GAP package of local nearrings
+##
+#Y  Copyright (C) 2019                 Yaroslav Sysak with contributions by 
+#Y                                          Iryna Raievska, Maryna Raievska 
+##
+##  Institute of Mathematics of National Academy of Sciences of Ukraine
 ##
 ##  Licensing information can be found in the README file of this package.
 ##
@@ -10,8 +14,8 @@
 SetPackageInfo( rec(
 PackageName := "LocalNR",
 Subtitle := "Package of local nearrings",
-Version := "1.0.1",
-Date := "26/03/2019",
+Version := "1.0.3",
+Date := "27/02/2021",
 
 SourceRepository := rec(
     Type := "git",
@@ -19,7 +23,7 @@ SourceRepository := rec(
 ),
 IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
 PackageWWWHome  := Concatenation( "https://gap-packages.github.io/", ~.PackageName ),
-README_URL      := Concatenation( ~.PackageWWWHome, "/README.txt" ),
+README_URL      := Concatenation( ~.PackageWWWHome, "/README.md" ),
 PackageInfoURL  := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
 ArchiveURL      := Concatenation( ~.SourceRepository.URL,
                                  "/releases/download/v", ~.Version,
@@ -32,12 +36,12 @@ Persons := [
     FirstNames    := "Iryna",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "raevskaya.irina@gmail.com",
-    WWWHome       := "http://www.imath.kiev.ua/~raeirina/",
+    Email         := "raeirina@imath.kiev.ua",
+    WWWHome       := "https://www.imath.kiev.ua/~algebra/Raievska_I/",
     PostalAddress := Concatenation( [
                      "Institute of Mathematics\n",
                      "National Academy of Sciences of Ukraine\n",
-                     "01601 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
+                     "01024 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
     Place         := "Kyiv",
     Institution   := "Institute of Mathematics"
      ),
@@ -47,11 +51,11 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "raemarina@imath.kiev.ua",
-    WWWHome       := "http://www.imath.kiev.ua/~raemarina/",
+    WWWHome       := "https://www.imath.kiev.ua/~algebra/Raievska_M/",
     PostalAddress := Concatenation( [
                      "Institute of Mathematics\n",
                      "National Academy of Sciences of Ukraine\n",
-                     "01601 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
+                     "01024 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
     Place         := "Kyiv",
     Institution   := "Institute of Mathematics"
      ),
@@ -61,11 +65,11 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "sysak@imath.kiev.ua",
-    WWWHome       := "http://www.imath.kiev.ua/~sysak/",
+    WWWHome       := "https://www.imath.kiev.ua/~algebra/Sysak/",
     PostalAddress := Concatenation( [
                      "Institute of Mathematics\n",
                      "National Academy of Sciences of Ukraine\n",
-                     "01601 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
+                     "01024 Ukraine, Kyiv, 3, Tereshchenkivska st." ] ),
     Place         := "Kyiv",
     Institution   := "Institute of Mathematics"
 
@@ -127,7 +131,7 @@ BannerString := Concatenation(
 "\n http://www.imath.kiev.ua/~algebra/LocalNR/",
 "\n ----------------------------------------------------------------------------- \n"),
 
-
+TestFile := "tst/testall.g",
 AvailabilityTest := ReturnTrue,
 Keywords := ["local nearring", "endomorphism", "automorphisms group"]
 
