@@ -3,37 +3,37 @@
   [1XIndex[101X
   
   [2XAllLocalNearRings[102X 1.1-4 
-  [2XAutomorphismsAssociatedWithNearRingUnits[102X 2.2-13 
-  [2XConstantPartOfNearRing[102X 2.2-18 
-  [2XEndomorphismsAssociatedWithNearRingElements[102X 2.2-14 
+  [2XAutomorphismsAssociatedWithNearRingUnits[102X 2.2-11 
+  [2XConstantPartOfNearRing[102X 2.2-16 
+  [2XEndomorphismsAssociatedWithNearRingElements[102X 2.2-12 
   [2XEndoOrbitsOfGroup[102X 2.1-3 
-  [2XFactorizedGroupAssociatedWithCircleSubgroupOfNearRing[102X 2.2-17 
-  [2XGroupOfUnitsAsGroupOfAutomorphisms[102X 2.2-20 
+  [2XFactorizedGroupAssociatedWithCircleSubgroupOfNearRing[102X 2.2-15 
+  [2XGroupOfUnitsAsGroupOfAutomorphisms[102X 2.2-18 
   [2XInfoLocalNearRing[102X 1.1-6 
-  [2XInverseUnitOfNearRing[102X 2.2-6 
   [2XIsAdditiveGroupOfLibraryOfLNRs[102X 1.1-5 
-  [2XIsCircleSubgroupOfNearRing[102X 2.2-16 
-  [2XIsDistributiveElementOfNearRing[102X 2.2-2  2.2-21 
+  [2XIsCircleSubgroupOfNearRing[102X 2.2-14 
+  [2XIsDistributiveElementOfNearRing[102X 2.2-19 
   [2XIsEndoCyclicGroup[102X 2.1-4 
-  [2XIsLocalNearRing[102X 2.2-3 
-  [2XIsLocalRing[102X 2.2-4 
+  [2XIsLocalNearRing[102X 2.2-2 
+  [2XIsLocalRing[102X 2.2-3 
   [2XIsMetacyclicPGroup[102X 2.1-2 
   [2XIsMinimalNonAbelianGroup[102X 2.1-1 
-  [2XIsNearRingWithIdentity[102X 2.2-23 
-  [2XIsOneGeneratedNearRing[102X 2.2-12 
-  [2XIsSemiDistributiveNearRing[102X 2.2-22 
+  [2XIsNearRingWithIdentity[102X 2.2-21 
+  [2XIsOneGeneratedNearRing[102X 2.2-10 
+  [2XIsSemiDistributiveNearRing[102X 2.2-20 
+  [2XIsSubNearRing[102X 2.2-22 
   [2XLocalNearRing[102X 1.1-3 
-  [2XMultiplicativeSemigroupOfNearRing[102X 2.2-10 
-  [2XNearRingNonUnits[102X 2.2-5 
-  [2XNonUnitsAsAdditiveSubgroup[102X 2.2-8 
-  [2XNonUnitsAsMultiplicativeSemigroup[102X 2.2-11 
-  [2XNonUnitsAsNearRingIdeal[102X 2.2-9 
-  [2XSemidirectProductAssociatedWithNearRing[102X 2.2-15 
-  [2XSubNearRingByGenerators[102X 2.2-7 
+  [2XMultiplicativeSemigroupOfNearRing[102X 2.2-8 
+  [2XNearRingNonUnits[102X 2.2-4 
+  [2XNonUnitsAsAdditiveSubgroup[102X 2.2-6 
+  [2XNonUnitsAsMultiplicativeSemigroup[102X 2.2-9 
+  [2XNonUnitsAsNearRingIdeal[102X 2.2-7 
+  [2XSemidirectProductAssociatedWithNearRing[102X 2.2-13 
+  [2XSubNearRingByGenerators[102X 2.2-5 
   [2XTheAdditiveGroupsOfLibraryOfLNRsOfOrder[102X 1.1-1 
   [2XTheLibraryOfLNRsOnGroup[102X 1.1-2 
   [2XUnitsOfNearRing[102X 2.2-1 
-  [2XZeroSymmetricPartOfNearRing[102X 2.2-19 
+  [2XZeroSymmetricPartOfNearRing[102X 2.2-17 
   
   
   -------------------------------------------------------

@@ -6,10 +6,10 @@
                           [1X Package of local nearrings [101X
   
   
-                                     1.0.1
+                                     1.0.2
   
   
-                                 26 March 2019
+                                 13 March 2020
   
   
                                  Iryna Raievska
@@ -21,27 +21,27 @@
   
   
   Iryna Raievska
-      Email:    [7Xmailto:raevskaya.irina@gmail.com[107X
-      Homepage: [7Xhttp://www.imath.kiev.ua/~raeirina/[107X
+      Email:    [7Xmailto:raeirina@imath.kiev.ua[107X
+      Homepage: [7Xhttps://www.imath.kiev.ua/~algebra/Raievska_I/[107X
       Address:  [33X[0;14YInstitute of Mathematics[133X
                 [33X[0;14YNational Academy of Sciences of Ukraine[133X
-                [33X[0;14Y01601 Ukraine, Kyiv, 3, Tereshchenkivska st.[133X
+                [33X[0;14Y01024 Ukraine, Kyiv, 3, Tereshchenkivska st.[133X
   
   
   Maryna Raievska
       Email:    [7Xmailto:raemarina@imath.kiev.ua[107X
-      Homepage: [7Xhttp://www.imath.kiev.ua/~raemarina/[107X
+      Homepage: [7Xhttps://www.imath.kiev.ua/~algebra/Raievska_M/[107X
       Address:  [33X[0;14YInstitute of Mathematics[133X
                 [33X[0;14YNational Academy of Sciences of Ukraine[133X
-                [33X[0;14Y01601 Ukraine, Kyiv, 3, Tereshchenkivska st.[133X
+                [33X[0;14Y01024 Ukraine, Kyiv, 3, Tereshchenkivska st.[133X
   
   
   Yaroslav Sysak
       Email:    [7Xmailto:sysak@imath.kiev.ua[107X
-      Homepage: [7Xhttp://www.imath.kiev.ua/~sysak/[107X
+      Homepage: [7Xhttps://www.imath.kiev.ua/~algebra/Sysak/[107X
       Address:  [33X[0;14YInstitute of Mathematics[133X
                 [33X[0;14YNational Academy of Sciences of Ukraine[133X
-                [33X[0;14Y01601 Ukraine, Kyiv, 3, Tereshchenkivska st.[133X
+                [33X[0;14Y01024 Ukraine, Kyiv, 3, Tereshchenkivska st.[133X
   
   
   
@@ -66,28 +66,27 @@
       2.1-4 IsEndoCyclicGroup
     2.2 [33X[0;0YNearring functions[133X
       2.2-1 UnitsOfNearRing
-      2.2-2 IsDistributiveElementOfNearRing
-      2.2-3 IsLocalNearRing
-      2.2-4 IsLocalRing
-      2.2-5 NearRingNonUnits
-      2.2-6 InverseUnitOfNearRing
-      2.2-7 SubNearRingByGenerators
-      2.2-8 NonUnitsAsAdditiveSubgroup
-      2.2-9 NonUnitsAsNearRingIdeal
-      2.2-10 MultiplicativeSemigroupOfNearRing
-      2.2-11 NonUnitsAsMultiplicativeSemigroup
-      2.2-12 IsOneGeneratedNearRing
-      2.2-13 AutomorphismsAssociatedWithNearRingUnits
-      2.2-14 EndomorphismsAssociatedWithNearRingElements
-      2.2-15 SemidirectProductAssociatedWithNearRing
-      2.2-16 IsCircleSubgroupOfNearRing
-      2.2-17 FactorizedGroupAssociatedWithCircleSubgroupOfNearRing
-      2.2-18 ConstantPartOfNearRing
-      2.2-19 ZeroSymmetricPartOfNearRing
-      2.2-20 GroupOfUnitsAsGroupOfAutomorphisms
-      2.2-21 IsDistributiveElementOfNearRing
-      2.2-22 IsSemiDistributiveNearRing
-      2.2-23 IsNearRingWithIdentity
+      2.2-2 IsLocalNearRing
+      2.2-3 IsLocalRing
+      2.2-4 NearRingNonUnits
+      2.2-5 SubNearRingByGenerators
+      2.2-6 NonUnitsAsAdditiveSubgroup
+      2.2-7 NonUnitsAsNearRingIdeal
+      2.2-8 MultiplicativeSemigroupOfNearRing
+      2.2-9 NonUnitsAsMultiplicativeSemigroup
+      2.2-10 IsOneGeneratedNearRing
+      2.2-11 AutomorphismsAssociatedWithNearRingUnits
+      2.2-12 EndomorphismsAssociatedWithNearRingElements
+      2.2-13 SemidirectProductAssociatedWithNearRing
+      2.2-14 IsCircleSubgroupOfNearRing
+      2.2-15 FactorizedGroupAssociatedWithCircleSubgroupOfNearRing
+      2.2-16 ConstantPartOfNearRing
+      2.2-17 ZeroSymmetricPartOfNearRing
+      2.2-18 GroupOfUnitsAsGroupOfAutomorphisms
+      2.2-19 IsDistributiveElementOfNearRing
+      2.2-20 IsSemiDistributiveNearRing
+      2.2-21 IsNearRingWithIdentity
+      2.2-22 IsSubNearRing
   
   
   [32X

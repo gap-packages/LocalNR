@@ -29,8 +29,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XList(TheAdditiveGroupsOfLibraryOfLNRsOfOrder(81),IdGroup);[127X[104X
-    [4X[28X[ [ 81, 1 ], [ 81, 2 ], [ 81, 3 ], [ 81, 5 ], [ 81, 6 ],  [128X[104X
-    [4X[28X [ 81, 11 ], [ 81, 12 ], [ 81, 13 ], [ 81, 15 ] ][128X[104X
+    [4X[28X[ [ 81, 1 ], [ 81, 2 ], [ 81, 3 ], [ 81, 5 ], [ 81, 6 ], [ 81, 11 ], [128X[104X
+    [4X[28X  [ 81, 12 ], [ 81, 13 ], [ 81, 15 ] ][128X[104X
   [4X[32X[104X
   
   [1X1.1-2 TheLibraryOfLNRsOnGroup[101X
@@ -42,16 +42,20 @@
   nearrings from [10XLibrary[110X on [23XG[123X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XTheLibraryOfLNRsOnGroup(SmallGroup([81,12]));   [127X[104X
-    [4X[28X "AllLocalNearRings(81,12,54,5)", "AllLocalNearRings(81,12,54,8)", [128X[104X
-    [4X[28X "AllLocalNearRings(81,12,54,12)", "AllLocalNearRings(81,12,54,13)", [128X[104X
-    [4X[28X "AllLocalNearRings(81,12,72,39)" ][128X[104X
+    [4X[25Xgap>[125X [27XG:=SmallGroup(81,2);[127X[104X
+    [4X[28X<pc group of size 81 with 4 generators>[128X[104X
+    [4X[25Xgap>[125X [27XTheLibraryOfLNRsOnGroup(G);[127X[104X
+    [4X[28X[ "AllLocalNearRings(81,2,54,3)", "AllLocalNearRings(81,2,54,6)", [128X[104X
+    [4X[28X  "AllLocalNearRings(81,2,54,9)", "AllLocalNearRings(81,2,54,10)", [128X[104X
+    [4X[28X  "AllLocalNearRings(81,2,54,11)", "AllLocalNearRings(81,2,54,15)", [128X[104X
+    [4X[28X  "AllLocalNearRings(81,2,72,14)", "AllLocalNearRings(81,2,72,19)", [128X[104X
+    [4X[28X  "AllLocalNearRings(81,2,72,24)", "AllLocalNearRings(81,2,72,26)" ][128X[104X
   [4X[32X[104X
   
   [1X1.1-3 LocalNearRing[101X
   
   [33X[1;0Y[29X[2XLocalNearRing[102X( [3Xk[103X, [3Xl[103X, [3Xm[103X, [3Xn[103X, [3Xw[103X ) [32X operation[133X
-  [6XReturns:[106X  [33X[0;10Ya list[133X
+  [6XReturns:[106X  [33X[0;10Ya nearring[133X
   
   [33X[0;0YThe  arguments  are [23Xk[123X, [23Xl[123X, [23Xm[123X, [23Xn[123X, [23Xw[123X. The output is local nearring from [10XLibrary[110X
   without check. The arguments [23Xk[123X, [23Xl[123X, [23Xm[123X, [23Xn[123X, [23Xw[123X are as above.[133X
@@ -86,10 +90,12 @@
   is [10Xfalse[110X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XG:=SmallGroup(361,2);[127X[104X
-    [4X[28X<pc group of size 361 with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XG:=SmallGroup(25,2);[127X[104X
+    [4X[28X<pc group of size 25 with 2 generators>[128X[104X
     [4X[25Xgap>[125X [27XIsAdditiveGroupOfLibraryOfLNRs(G);[127X[104X
     [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsAdditiveGroupOfLibraryOfLNRs(SmallGroup(81,14));[127X[104X
+    [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
   [1X1.1-6 InfoLocalNearRing[101X
@@ -101,16 +107,13 @@
   from [10XLibrary[110X on [23XG[123X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XInfoLocalNearRing(G);[127X[104X
-    [4X[28XThere are 21 local nearrings on this group.     [128X[104X
-    [4X[28XThey are sorted by their multiplicative groups. [128X[104X
-    [4X[28XAllLocalNearRings(361,2,342,1)                           (2) [128X[104X
-    [4X[28XAllLocalNearRings(361,2,342,2)                           (2) [128X[104X
-    [4X[28XAllLocalNearRings(361,2,342,4)                           (1) [128X[104X
-    [4X[28XAllLocalNearRings(361,2,342,6)                           (1) [128X[104X
-    [4X[28XAllLocalNearRings(361,2,342,7)                           (7) [128X[104X
-    [4X[28XAllLocalNearRings(361,2,342,8)                           (6) [128X[104X
-    [4X[28XAllLocalNearRings(361,2,360,4)                           (1) [128X[104X
-    [4X[28XAllLocalNearRings(361,2,360,15)                          (1) [128X[104X
+    [4X[25Xgap>[125X [27XInfoLocalNearRing(SmallGroup(361,2));[127X[104X
+    [4X[28XThe local nearrings are sorted by their multiplicative groups.[128X[104X
+    [4X[28X[ "AllLocalNearRings(361,2,342,1) (2)", "AllLocalNearRings(361,2,342,2) (2)", \[128X[104X
+    [4X[28X"AllLocalNearRings(361,2,342,4) (1)",[128X[104X
+    [4X[28X  "AllLocalNearRings(361,2,342,6) (1)", "AllLocalNearRings(361,2,342,7) (7)",\[128X[104X
+    [4X[28X "AllLocalNearRings(361,2,342,8) (6)",[128X[104X
+    [4X[28X  "AllLocalNearRings(361,2,360,4) (1)", "AllLocalNearRings(361,2,360,15) (1)"\[128X[104X
+    [4X[28X ][128X[104X
   [4X[32X[104X
   
