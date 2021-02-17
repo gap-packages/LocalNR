@@ -1,5 +1,6 @@
-[![Build Status](https://travis-ci.org/gap-packages/LocalNR.svg?branch=master)](https://travis-ci.org/gap-packages/LocalNR)
+[![CI](https://github.com/gap-packages/LocalNR/workflows/CI/badge.svg)](https://github.com/gap-packages/LocalNR/actions?query=workflow%3ACI+branch%3Amaster)
 [![Code Coverage](https://codecov.io/github/gap-packages/LocalNR/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/LocalNR)
+
 
 # GAP package LocalNR
 
