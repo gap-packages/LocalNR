@@ -14,21 +14,8 @@
 SetPackageInfo( rec(
 PackageName := "LocalNR",
 Subtitle := "Package of local nearrings",
-<<<<<<< HEAD
-<<<<<<< HEAD
 Version := "1.0.3",
 Date := "27/02/2021",
-=======
-Version := "1.0.3",
-Date := "27/02/2021",
-=======
-Version := "1.0.3",
-Date := "27/02/2021",
-=======
-Version := "1.0.2",
-Date := "13/03/2020",
->>>>>>> 515834b83f39c5dbbf021e2cc51073b00f72e490
->>>>>>> ed7f7a9be4bd9b2ec2cbc0f9186ca0db8b90ddd7
 
 SourceRepository := rec(
     Type := "git",
