@@ -18,14 +18,19 @@
 
 #! A set $R$ with two binary operations $+$ and $\cdot$ is called 
 #! a <Emph>(left) nearring</Emph> if the following statements hold:
-#! $ \\ $
-#!  1) $(R,+)=R^{+}$ is a (not necessarily abelian) group with neutral element $0$;
-#! $ \\ $
-#!  2) $(R,\cdot)$ is a semigroup;
-#! $ \\ $
-#!  3) $x(y+z)=xy+xz$ for all $x$, $y$, $z\in R$.
-#! $\\ $
-#! $ \\ $
+#! 
+#! <Enum>
+#! <Item>
+#! $(R,+)=R^{+}$ is a (not necessarily abelian) group with neutral element $0$;
+#! </Item>
+#! <Item>
+#! $(R,\cdot)$ is a semigroup;
+#! </Item>
+#! <Item>
+#! $x(y+z)=xy+xz$ for all $x$, $y$, $z\in R$.
+#! </Item>
+#! </Enum>
+#! 
 #! If $R$ is a nearring, then the group $R^+$  is called 
 #! the <Emph>additive group</Emph> of $R$. 
 #! If in addition $0\cdot x=0$, then the nearring $R$ is 
@@ -35,13 +40,11 @@
 #! a <Emph>nearring with identity</Emph> $i$. In the 
 #! latter case the group $R^*$ of all invertible elements of  
 #! the monoid $(R,\cdot)$ is called the <Emph>multiplicative group</Emph> of $R$.   
-#! $ \\ $
-#! $ \\ $
+#! 
 #! A nearring $R$ with identity is said to be 
 #! <Emph>local</Emph> if the set $L=R\setminus R^*$ of all 
 #! non-invertible elements of $R$ is a subgroup of $R^{+}$. 
-#! $ \\ $
-#! $ \\ $
+#! 
 #! It is clear that if $L$ is an 
 #! ideal of $R$, then the factor nearring $R/L$ is a <Emph>nearfield</Emph>. For example, 
 #! every local ring $R$ is a zero-symmetric local nearring whose 
