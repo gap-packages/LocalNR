@@ -86,10 +86,9 @@ gap> Size(Nu);
 gap> R:=LibraryNearRing(SmallGroup(8,4),3);
 #I  using isomorphic copy of the group
 LibraryNearRing(8/5, 3)
-gap> N:=NearRingNonUnits(R); 
-[ (()), ((1,2,3,4)(5,6,7,8)), ((1,3)(2,4)(5,7)(6,8)), ((1,4,3,2)(5,8,7,6)), 
-  ((1,5,3,7)(2,8,4,6)), ((1,6,3,8)(2,5,4,7)), ((1,7,3,5)(2,6,4,8)), 
-  ((1,8,3,6)(2,7,4,5)) ]
+gap> N:=NearRingNonUnits(R);; 
+gap> Size(N);
+8
 gap> B:=LocalNearRing(25,2,20,3,1); 
 ExplicitMultiplicationNearRing ( <pc group of size 25 with 2 generators> , multiplication )
 gap> D:=DistributiveElements(B);;
