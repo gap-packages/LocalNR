@@ -214,7 +214,7 @@ true
 gap> IsSubNearRing(T,S[9]); 
 false
 gap> D:=SmallGroup(7,1);
-<pc group of size 7 with 1 generators>
+<pc group of size 7 with 1 generator>
 gap> IsSubNearRing(T,D);   
 false
 
