@@ -25,9 +25,13 @@ gap> IsMinimalNonAbelianGroup(K);
 true
 gap> IsMetacyclicPGroup(K);
 true
-gap> IsMinimalNonAbelianGroup(SmallGroup(16,8));
+gap> Q:=SmallGroup(16,8);
+<pc group of size 16 with 4 generators>
+gap> IsMinimalNonAbelianGroup(Q);
 false
-gap> IsMetacyclicPGroup(SmallGroup(81,4));
+gap> S:=SmallGroup(81,4);
+<pc group of size 81 with 4 generators>
+gap> IsMetacyclicPGroup(S);
 true
 gap> IsMetacyclicPGroup(SmallGroup(81,15));
 false
