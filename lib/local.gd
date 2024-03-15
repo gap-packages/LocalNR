@@ -137,11 +137,6 @@ DeclareAttribute( "UnitsOfNearRing", IsNearRing  );
 #! gap> Un:=NearRingUnits(N);;
 #! U=Un;
 #! true
-#! gap> F:=LibraryNearRing(SmallGroup(8,4),1);
-#! #I  using isomorphic copy of the group
-#! LibraryNearRing(8/5, 1)
-#! gap> U:=UnitsOfNearRing(F);
-#! [  ]
 #! @EndExample
 
 ###################################
