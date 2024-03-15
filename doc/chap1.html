@@ -36,7 +36,24 @@
 
 <h3>1 <span class="Heading">Local nearrings</span></h3>
 
-<p>A set <span class="Math">R</span> with two binary operations <span class="Math">+</span> and <span class="Math">\cdot</span> is called a <em>(left) nearring</em> if the following statements hold: <span class="Math"> \\ </span> 1) <span class="Math">(R,+)=R^{+}</span> is a (not necessarily abelian) group with neutral element <span class="Math">0</span>; <span class="Math"> \\ </span> 2) <span class="Math">(R,\cdot)</span> is a semigroup; <span class="Math"> \\ </span> 3) <span class="Math">x(y+z)=xy+xz</span> for all <span class="Math">x</span>, <span class="Math">y</span>, <span class="Math">z\in R</span>. <span class="Math">\\ </span> <span class="Math"> \\ </span> If <span class="Math">R</span> is a nearring, then the group <span class="Math">R^+</span> is called the <em>additive group</em> of <span class="Math">R</span>. If in addition <span class="Math">0\cdot x=0</span>, then the nearring <span class="Math">R</span> is called <em>zero-symmetric</em>, and if the semigroup <span class="Math">(R,\cdot)</span> is a monoid, i.e. it has an identity element <span class="Math">i</span>, then <span class="Math">R</span> is a <em>nearring with identity</em> <span class="Math">i</span>. In the latter case the group <span class="Math">R^*</span> of all invertible elements of the monoid <span class="Math">(R,\cdot)</span> is called the <em>multiplicative group</em> of <span class="Math">R</span>. <span class="Math"> \\ </span> <span class="Math"> \\ </span> A nearring <span class="Math">R</span> with identity is said to be <em>local</em> if the set <span class="Math">L=R\setminus R^*</span> of all non-invertible elements of <span class="Math">R</span> is a subgroup of <span class="Math">R^{+}</span>. <span class="Math"> \\ </span> <span class="Math"> \\ </span> It is clear that if <span class="Math">L</span> is an ideal of <span class="Math">R</span>, then the factor nearring <span class="Math">R/L</span> is a <em>nearfield</em>. For example, every local ring <span class="Math">R</span> is a zero-symmetric local nearring whose subgroup <span class="Math">L</span> coincides with the Jacobson radical of <span class="Math">R</span>.</p>
+<p>A set <span class="Math">R</span> with two binary operations <span class="Math">+</span> and <span class="Math">\cdot</span> is called a <em>(left) nearring</em> if the following statements hold:</p>
+
+<ol>
+<li><p><span class="Math">(R,+)=R^+</span> is a (not necessarily abelian) group with neutral element <span class="Math">0</span>;</p>
+
+</li>
+<li><p><span class="Math">(R,\cdot)</span> is a semigroup;</p>
+
+</li>
+<li><p><span class="Math">x(y+z)=xy+xz</span> for all <span class="Math">x</span>, <span class="Math">y</span>, <span class="Math">z\in R</span>.</p>
+
+</li>
+</ol>
+<p>If <span class="Math">R</span> is a nearring, then the group <span class="Math">R^+</span> is called the <em>additive group</em> of <span class="Math">R</span>. If in addition <span class="Math">0\cdot x=0</span>, then the nearring <span class="Math">R</span> is called <em>zero-symmetric</em>, and if the semigroup <span class="Math">(R,\cdot)</span> is a monoid, i.e. it has an identity element <span class="Math">i</span>, then <span class="Math">R</span> is a <em>nearring with identity</em> <span class="Math">i</span>. In the latter case the group <span class="Math">R^*</span> of all invertible elements of the monoid <span class="Math">(R,\cdot)</span> is called the <em>multiplicative group</em> of <span class="Math">R</span>.</p>
+
+<p>A nearring <span class="Math">R</span> with identity is said to be <em>local</em> if the set <span class="Math">L=R\setminus R^*</span> of all non-invertible elements of <span class="Math">R</span> is a subgroup of <span class="Math">R^+</span>.</p>
+
+<p>It is clear that if <span class="Math">L</span> is an ideal of <span class="Math">R</span>, then the factor nearring <span class="Math">R/L</span> is a <em>nearfield</em>. For example, every local ring <span class="Math">R</span> is a zero-symmetric local nearring whose subgroup <span class="Math">L</span> coincides with the Jacobson radical of <span class="Math">R</span>.</p>
 
 <p><a id="X83C317B77CB6A7D2" name="X83C317B77CB6A7D2"></a></p>
 
@@ -47,13 +64,13 @@
 <h5>1.1-1 TheAdditiveGroupsOfLibraryOfLNRsOfOrder</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TheAdditiveGroupsOfLibraryOfLNRsOfOrder</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p>Returns: information</p>
+<p>Returns: a list</p>
 
 <p>The argument is <span class="Math">n</span>. The output a list of <code class="code">IdGroup</code> of the additive groups of local nearrings from <code class="code">Library</code> of order <span class="Math">n</span>.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(TheAdditiveGroupsOfLibraryOfLNRsOfOrder(81),IdGroup);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(TheAdditiveGroupsOfLibraryOfLNRsOfOrder(81),IdGroup);</span>
 [ [ 81, 1 ], [ 81, 2 ], [ 81, 3 ], [ 81, 5 ], [ 81, 6 ], [ 81, 11 ], 
   [ 81, 12 ], [ 81, 13 ], [ 81, 15 ] ]
 </pre></div>
@@ -63,15 +80,17 @@
 <h5>1.1-2 TheLibraryOfLNRsOnGroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TheLibraryOfLNRsOnGroup</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p>Returns: information</p>
+<p>Returns: a list</p>
 
 <p>The argument is a group <span class="Math">G</span>. The output a list of the catalogues of local nearrings from <code class="code">Library</code> on <span class="Math">G</span>.</p>
 
+<p>The local nearrings are sorted by their multiplicative groups.</p>
+
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G:=SmallGroup(81,2);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G:=SmallGroup(81,2);</span>
 &lt;pc group of size 81 with 4 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TheLibraryOfLNRsOnGroup(G);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TheLibraryOfLNRsOnGroup(G);</span>
 [ "AllLocalNearRings(81,2,54,3)", "AllLocalNearRings(81,2,54,6)", 
   "AllLocalNearRings(81,2,54,9)", "AllLocalNearRings(81,2,54,10)", 
   "AllLocalNearRings(81,2,54,11)", "AllLocalNearRings(81,2,54,15)", 
@@ -86,11 +105,11 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LocalNearRing</code>( <var class="Arg">k</var>, <var class="Arg">l</var>, <var class="Arg">m</var>, <var class="Arg">n</var>, <var class="Arg">w</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns: a nearring</p>
 
-<p>The arguments are <span class="Math">k</span>, <span class="Math">l</span>, <span class="Math">m</span>, <span class="Math">n</span>, <span class="Math">w</span>. The output is local nearring from <code class="code">Library</code> without check. The arguments <span class="Math">k</span>, <span class="Math">l</span>, <span class="Math">m</span>, <span class="Math">n</span>, <span class="Math">w</span> are as above.</p>
+<p>The arguments are <span class="Math">k</span>, <span class="Math">l</span>, <span class="Math">m</span>, <span class="Math">n</span>, <span class="Math">w</span>. The output is local nearring from <code class="code">Library</code> without check. The arguments <span class="Math">k</span>, <span class="Math">l</span>, <span class="Math">m</span>, <span class="Math">n</span> are from IdGroup of the additive group and the multiplicative group, respectively, <span class="Math">w</span> is the position in the list.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L:=LocalNearRing(81,12,54,8,3);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L:=LocalNearRing(81,12,54,8,3);</span>
 ExplicitMultiplicationNearRing ( &lt;pc group of size 81 with 
 4 generators&gt; , multiplication )
 </pre></div>
@@ -106,8 +125,8 @@ ExplicitMultiplicationNearRing ( &lt;pc group of size 81 with
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L:=AllLocalNearRings(81,12,54,8);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(L);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L:=AllLocalNearRings(81,12,54,8);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(L);</span>
 30
 </pre></div>
 
@@ -122,11 +141,11 @@ ExplicitMultiplicationNearRing ( &lt;pc group of size 81 with
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G:=SmallGroup(25,2);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G:=SmallGroup(25,2);</span>
 &lt;pc group of size 25 with 2 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAdditiveGroupOfLibraryOfLNRs(G);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAdditiveGroupOfLibraryOfLNRs(G);</span>
 true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAdditiveGroupOfLibraryOfLNRs(SmallGroup(81,14));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAdditiveGroupOfLibraryOfLNRs(SmallGroup(81,14));</span>
 false
 </pre></div>
 
@@ -141,7 +160,7 @@ false
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">InfoLocalNearRing(SmallGroup(361,2));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">InfoLocalNearRing(SmallGroup(361,2));</span>
 The local nearrings are sorted by their multiplicative groups.
 [ "AllLocalNearRings(361,2,342,1) (2)", "AllLocalNearRings(361,2,342,2) (2)", \
 "AllLocalNearRings(361,2,342,4) (1)",

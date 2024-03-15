@@ -80,15 +80,15 @@
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H:=SmallGroup(120,4);       </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H:=SmallGroup(120,4);       </span>
 &lt;pc group of size 120 with 5 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMinimalNonAbelianGroup(H);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMinimalNonAbelianGroup(H);</span>
 false
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">K:=SmallGroup(16,6);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">K:=SmallGroup(16,6);</span>
 &lt;pc group of size 16 with 4 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMinimalNonAbelianGroup(K);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMinimalNonAbelianGroup(K);</span>
 true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMinimalNonAbelianGroup(SmallGroup(16,8));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMinimalNonAbelianGroup(SmallGroup(16,8));</span>
 false
 </pre></div>
 
@@ -103,11 +103,11 @@ false
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMetacyclicPGroup(K);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMetacyclicPGroup(K);</span>
 true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMetacyclicPGroup(SmallGroup(81,4));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMetacyclicPGroup(SmallGroup(81,4));</span>
 true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMetacyclicPGroup(SmallGroup(81,15));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMetacyclicPGroup(SmallGroup(81,15));</span>
 false
 </pre></div>
 
@@ -122,12 +122,12 @@ false
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D:=SmallGroup(81,2); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D:=SmallGroup(81,2); </span>
 &lt;pc group of size 81 with 4 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=EndoOrbitsOfGroup(D);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(T);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=EndoOrbitsOfGroup(D);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(T);</span>
 1
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(T[1][2]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(T[1][2]);</span>
 81
 </pre></div>
 
@@ -140,9 +140,11 @@ false
 
 <p>The argument is a group <span class="SimpleMath">\(G\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(G\)</span> is a endocyclic group, otherwise the output is <code class="code">false</code>.</p>
 
+<p>Let <span class="SimpleMath">\(G\)</span> be a group and <span class="SimpleMath">\(End G\)</span> be the set of all its endomorphisms, which can be considered as a semigroup with respect to the composition operation of endomorphisms. For each <span class="SimpleMath">\(g\in G\)</span> we denote by <span class="SimpleMath">\(g^{End G}\)</span> the set <span class="SimpleMath">\(\{g^\alpha| \alpha\in End G\}\)</span> of all images of the element <span class="SimpleMath">\(g\)</span> with respect to endomorphisms of <span class="SimpleMath">\(End G\)</span>. A group <span class="SimpleMath">\(G\)</span> is called <em>endocyclic</em> if it contains an element <span class="SimpleMath">\(g\)</span> with <span class="SimpleMath">\(G=g^{End G}\)</span>.</p>
+
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsEndoCyclicGroup(D);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsEndoCyclicGroup(D);</span>
 true
 </pre></div>
 
@@ -155,27 +157,22 @@ true
 <h5>2.2-1 UnitsOfNearRing</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UnitsOfNearRing</code>( <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
-<p>Returns: a boolean</p>
+<p>Returns: a set</p>
 
-<p>The argument is a nearring <span class="SimpleMath">\(R\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(R\)</span> is a nearring with identity, otherwise the output is <code class="code">false</code>.</p>
+<p>The argument is a nearring <span class="SimpleMath">\(R\)</span>. The output is <code class="code">true</code> if <span class="SimpleMath">\(R\)</span> is a nearring with identity, otherwise the output is <code class="code">Error, no units exist</code>.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N:=LocalNearRing(32,5,16,3,8);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N:=LocalNearRing(32,5,16,3,8);</span>
 ExplicitMultiplicationNearRing ( &lt;pc group of size 32 with 
 5 generators&gt; , multiplication )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">U:=UnitsOfNearRing(N);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">U:=UnitsOfNearRing(N);</span>
 [ (f1), (f1*f5), (f1*f4), (f1*f4*f5), (f1*f3), (f1*f3*f5), (f1*f3*f4),  
  (f1*f3*f4*f5), (f1*f2), (f1*f2*f5), (f1*f2*f4), (f1*f2*f4*f5), (f1*f2*f3), 
  (f1*f2*f3*f5), (f1*f2*f3*f4), (f1*f2*f3*f4*f5) ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Un:=NearRingUnits(N);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Un:=NearRingUnits(N);;</span>
 U=Un;
 true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F:=LibraryNearRing(SmallGroup(8,4),1);</span>
-#I  using isomorphic copy of the group
-LibraryNearRing(8/5, 1)
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">U:=UnitsOfNearRing(F);</span>
-Error, no units exist
 </pre></div>
 
 <p><a id="X7E2BB4F27E6B71E6" name="X7E2BB4F27E6B71E6"></a></p>
@@ -189,18 +186,18 @@ Error, no units exist
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H:=SmallGroup(16,6);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H:=SmallGroup(16,6);</span>
 &lt;pc group of size 16 with 4 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A:= AutomorphismNearRing(H);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A:= AutomorphismNearRing(H);</span>
 AutomorphismNearRing( &lt;pc group of size 16 with 4 generators&gt; )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> Size(A);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> Size(A);</span>
 64
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsLocalNearRing(A);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsLocalNearRing(A);</span>
 true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">K:=LibraryNearRingWithOne(SmallGroup(8,2),1);  </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">K:=LibraryNearRingWithOne(SmallGroup(8,2),1);  </span>
 #I  using isomorphic copy of the group
 LibraryNearRing(8/2, 814)
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsLocalNearRing(K);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsLocalNearRing(K);</span>
 false
 </pre></div>
 
@@ -215,11 +212,11 @@ false
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L:=AllLocalNearRings(16,14,8,4);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(L);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L:=AllLocalNearRings(16,14,8,4);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(L);</span>
 24
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F:=Filtered(L,x-&gt;IsLocalRing(x));;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(F);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F:=Filtered(L,x-&gt;IsLocalRing(x));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(F);</span>
 1
 </pre></div>
 
@@ -234,17 +231,17 @@ false
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=LocalNearRing(49,2,42,1,1); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=LocalNearRing(49,2,42,1,1); </span>
 ExplicitMultiplicationNearRing ( &lt;pc group of size 49 with 
 2 generators&gt; , multiplication )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Nu:=NearRingNonUnits(T);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Nu:=NearRingNonUnits(T);</span>
 [ (&lt;identity&gt; of ...), (f2), (f2^2), (f2^3), (f2^4), (f2^5), (f2^6) ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(Nu);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(Nu);</span>
 7
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">R:=LibraryNearRing(SmallGroup(8,4),3);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">R:=LibraryNearRing(SmallGroup(8,4),3);</span>
 #I  using isomorphic copy of the group
 LibraryNearRing(8/5, 3)
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N:=NearRingNonUnits(R); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N:=NearRingNonUnits(R); </span>
 [ (()), ((1,2,3,4)(5,6,7,8)), ((1,3)(2,4)(5,7)(6,8)), ((1,4,3,2)(5,8,7,6)), 
   ((1,5,3,7)(2,8,4,6)), ((1,6,3,8)(2,5,4,7)), ((1,7,3,5)(2,6,4,8)), 
   ((1,8,3,6)(2,7,4,5)) ]
@@ -261,17 +258,17 @@ LibraryNearRing(8/5, 3)
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">B:=LocalNearRing(25,2,20,3,1); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">B:=LocalNearRing(25,2,20,3,1); </span>
 ExplicitMultiplicationNearRing ( &lt;pc group of size 25 with 2 generators&gt; , multiplication )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D:=DistributiveElements(B);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(D);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D:=DistributiveElements(B);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(D);</span>
 5
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Rs:=SubNearRingByGenerators(B,D);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(Rs);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Rs:=SubNearRingByGenerators(B,D);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(Rs);</span>
 5
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsDgNearRing(B);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsDgNearRing(B);</span>
 false
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsDgNearRing(Rs);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsDgNearRing(Rs);</span>
 true
 </pre></div>
 
@@ -286,14 +283,14 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=LocalNearRing(125,4,100,9,1); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=LocalNearRing(125,4,100,9,1); </span>
 ExplicitMultiplicationNearRing ( &lt;pc group of size 125 with 
 3 generators&gt; , multiplication )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L:=NonUnitsAsAdditiveSubgroup(T);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L:=NonUnitsAsAdditiveSubgroup(T);</span>
 Group([ &lt;identity&gt; of ..., f2, f3, f2^2, f2*f3, f3^2, f2^3, f2^2*f3, f2*f3^2, f3^3, f2^4, 
   f2^3*f3, f2^2*f3^2, f2*f3^3, f3^4, f2^4*f3, f2^3*f3^2, f2^2*f3^3, f2*f3^4, f2^4*f3^2, 
   f2^3*f3^3, f2^2*f3^4, f2^4*f3^3, f2^3*f3^4, f2^4*f3^4 ])
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IdGroup(L);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IdGroup(L);</span>
 [ 25, 2 ]
 </pre></div>
 
@@ -308,9 +305,9 @@ Group([ &lt;identity&gt; of ..., f2, f3, f2^2, f2*f3, f3^2, f2^3, f2^2*f3, f2*f3
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=NonUnitsAsNearRingIdeal(T);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=NonUnitsAsNearRingIdeal(T);</span>
 &lt; nearring ideal &gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(I);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(I);</span>
 25
 </pre></div>
 
@@ -325,13 +322,12 @@ Group([ &lt;identity&gt; of ..., f2, f3, f2^2, f2*f3, f3^2, f2^3, f2^2*f3, f2*f3
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">B:=LocalNearRing(49,2,42,6,1);          </span>
-ExplicitMultiplicationNearRing ( &lt;pc group of size 49 with 2 generators&gt; , multiplication )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M:=MultiplicativeSemigroupOfNearRing(B);</span>
-Semigroup with Identity (f1)
-&lt;semigroup of size 49, with 6 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(M);</span>
-49
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">B:=LocalNearRing(16,10,8,2,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M:=MultiplicativeSemigroupOfNearRing(B);</span>
+Semigroup with identity (f1)
+&lt;semigroup of size 16, with 7 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(M);</span>
+16
 </pre></div>
 
 <p><a id="X83280C7283BA2D92" name="X83280C7283BA2D92"></a></p>
@@ -345,10 +341,10 @@ Semigroup with Identity (f1)
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Nm:=NonUnitsAsMultiplicativeSemigroup(B);</span>
-&lt;semigroup with 7 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(Nm);</span>
-7
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Nm:=NonUnitsAsMultiplicativeSemigroup(B);</span>
+&lt;semigroup with 8 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(Nm);</span>
+8
 </pre></div>
 
 <p><a id="X78C3A806874CB77D" name="X78C3A806874CB77D"></a></p>
@@ -362,14 +358,14 @@ Semigroup with Identity (f1)
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D:=LocalNearRing(49,2,42,4,1);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D:=LocalNearRing(49,2,42,4,1);</span>
 ExplicitMultiplicationNearRing ( &lt;pc group of size 49 with 2 generators&gt; , multiplication )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsOneGeneratedNearRing(D);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsOneGeneratedNearRing(D);</span>
 true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H:=LocalNearRing(16,14,8,2,3);   </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H:=LocalNearRing(16,14,8,2,3);   </span>
 ExplicitMultiplicationNearRing ( &lt;pc group of size 16 with 
 4 generators&gt; , multiplication )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsOneGeneratedNearRing(H);    </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsOneGeneratedNearRing(H);    </span>
 false
 </pre></div>
 
@@ -390,15 +386,15 @@ false
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S:=UnitsOfNearRing(D);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S:=UnitsOfNearRing(D);</span>
 [ (f1), (f1*f2), (f1*f2^2), (f1*f2^3), (f1*f2^4), (f1*f2^5), (f1*f2^6), (f1^2), (f1^2*f2), 
   (f1^2*f2^2), (f1^2*f2^3), (f1^2*f2^4), (f1^2*f2^5), (f1^2*f2^6), (f1^3), (f1^3*f2), 
   (f1^3*f2^2), (f1^3*f2^3), (f1^3*f2^4), (f1^3*f2^5), (f1^3*f2^6), (f1^4), (f1^4*f2), 
   (f1^4*f2^2), (f1^4*f2^3), (f1^4*f2^4), (f1^4*f2^5), (f1^4*f2^6), (f1^5), (f1^5*f2), 
   (f1^5*f2^2), (f1^5*f2^3), (f1^5*f2^4), (f1^5*f2^5), (f1^5*f2^6), (f1^6), (f1^6*f2), 
   (f1^6*f2^2), (f1^6*f2^3), (f1^6*f2^4), (f1^6*f2^5), (f1^6*f2^6) ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A:=AutomorphismsAssociatedWithNearRingUnits(D,S);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(A);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A:=AutomorphismsAssociatedWithNearRingUnits(D,S);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(A);</span>
 42
 </pre></div>
 
@@ -413,10 +409,10 @@ false
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Nu:=NearRingNonUnits(D);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Nu:=NearRingNonUnits(D);</span>
 [ (&lt;identity&gt; of ...), (f2), (f2^2), (f2^3), (f2^4), (f2^5), (f2^6) ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">En:=EndomorphismsAssociatedWithNearRingElements(D,Nu);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(En);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">En:=EndomorphismsAssociatedWithNearRingElements(D,Nu);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(En);</span>
 7
 </pre></div>
 
@@ -431,11 +427,11 @@ false
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=LocalNearRing(25,2,20,2,1);             </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=LocalNearRing(25,2,20,2,1);             </span>
 ExplicitMultiplicationNearRing ( &lt;pc group of size 25 with 2 generators&gt; , multiplication )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemidirectProductAssociatedWithNearRing(T);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemidirectProductAssociatedWithNearRing(T);</span>
 &lt;pc group with 5 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(last);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(last);</span>
 500
 </pre></div>
 
@@ -450,10 +446,10 @@ ExplicitMultiplicationNearRing ( &lt;pc group of size 25 with 2 generators&gt; ,
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Sg:=Subgroups(GroupReduct(T));;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(Sg);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Sg:=Subgroups(GroupReduct(T));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(Sg);</span>
 8
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F:=Filtered(Sg,x-&gt;IsCircleSubgroupOfNearRing(T,x));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F:=Filtered(Sg,x-&gt;IsCircleSubgroupOfNearRing(T,x));</span>
 [ Group([  ]), Group([ f2 ]) ]
 </pre></div>
 
@@ -468,9 +464,9 @@ ExplicitMultiplicationNearRing ( &lt;pc group of size 25 with 2 generators&gt; ,
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FG:=FactorizedGroupAssociatedWithCircleSubgroupOfNearRing(T,F[2]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FG:=FactorizedGroupAssociatedWithCircleSubgroupOfNearRing(T,F[2]);</span>
 &lt;pc group with 2 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IdGroup(FG);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IdGroup(FG);</span>
 [ 25, 2 ]
 </pre></div>
 
@@ -485,11 +481,11 @@ ExplicitMultiplicationNearRing ( &lt;pc group of size 25 with 2 generators&gt; ,
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H:=LocalNearRing(361,2,342,7,7);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H:=LocalNearRing(361,2,342,7,7);</span>
 ExplicitMultiplicationNearRing ( &lt;pc group of size 361 with 
 2 generators&gt; , multiplication )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C:=ConstantPartOfNearRing(H);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(C);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C:=ConstantPartOfNearRing(H);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(C);</span>
 19
 </pre></div>
 
@@ -504,8 +500,8 @@ ExplicitMultiplicationNearRing ( &lt;pc group of size 361 with
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ZeroSymmetricPartOfNearRing(H);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(last);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ZeroSymmetricPartOfNearRing(H);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(last);</span>
 19
 </pre></div>
 
@@ -520,11 +516,11 @@ ExplicitMultiplicationNearRing ( &lt;pc group of size 361 with
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M:=LocalNearRing(27,4,18,3,2);  </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M:=LocalNearRing(27,4,18,3,2);  </span>
 ExplicitMultiplicationNearRing ( &lt;pc group of size 27 with 3 generators&gt; , multiplication )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GroupOfUnitsAsGroupOfAutomorphisms(M);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GroupOfUnitsAsGroupOfAutomorphisms(M);</span>
 &lt;group of size 18 with 2 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(last);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(last);</span>
 18                
 </pre></div>
 
@@ -539,13 +535,13 @@ ExplicitMultiplicationNearRing ( &lt;pc group of size 27 with 3 generators&gt; ,
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D:=LocalNearRing(49,2,42,6,1); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D:=LocalNearRing(49,2,42,6,1); </span>
 ExplicitMultiplicationNearRing ( &lt;pc group of size 49 with 
 2 generators&gt; , multiplication )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">h:=List(D);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">d:=h[3];</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">h:=List(D);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">d:=h[3];</span>
 (f2^2)
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsDistributiveElementOfNearRing(D,d);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsDistributiveElementOfNearRing(D,d);</span>
 true
 </pre></div>
 
@@ -560,9 +556,9 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N:=LocalNearRing(16,10,8,2,7); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N:=LocalNearRing(16,10,8,2,7); </span>
 ExplicitMultiplicationNearRing ( &lt;pc group of size 16 with 4 generators&gt; , multiplication )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSemiDistributiveNearRing(N);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSemiDistributiveNearRing(N);</span>
 true
 </pre></div>
 
@@ -577,14 +573,14 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N:=LocalNearRing(343,5,294,8,2);    </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N:=LocalNearRing(343,5,294,8,2);    </span>
 ExplicitMultiplicationNearRing ( &lt;pc group of size 343 with 
 3 generators&gt; , multiplication )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsNearRingWithOne(N);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsNearRingWithOne(N);</span>
 false
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Identity(N);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Identity(N);</span>
 (f1)
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsNearRingWithIdentity(N);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsNearRingWithIdentity(N);</span>
 true
 </pre></div>
 
@@ -599,21 +595,21 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=LocalNearRing(49,2,42,1,2);        </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=LocalNearRing(49,2,42,1,2);        </span>
 ExplicitMultiplicationNearRing ( &lt;pc group of size 49 with 
 2 generators&gt; , multiplication )
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G:=GroupReduct(T);                    </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G:=GroupReduct(T);                    </span>
 &lt;pc group of size 49 with 2 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S:=Subgroups(G);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(S);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S:=Subgroups(G);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size(S);</span>
 10
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubNearRing(T,S[3]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubNearRing(T,S[3]);</span>
 true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubNearRing(T,S[9]); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubNearRing(T,S[9]); </span>
 false
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D:=SmallGroup(7,1);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D:=SmallGroup(7,1);</span>
 &lt;pc group of size 7 with 1 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubNearRing(T,D);   </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubNearRing(T,D);   </span>
 false
 </pre></div>
 

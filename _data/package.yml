@@ -1,6 +1,6 @@
 name: LocalNR
-version: 1.0.3
-date: 2021-02-27
+version: 1.0.4
+date: 2024-03-15
 description: |
     Package of local nearrings
 
@@ -33,38 +33,38 @@ packageinfo: https://gap-packages.github.io/LocalNR/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/LocalNR/releases/download/v1.0.3/LocalNR-1.0.3.tar.gz
+      url: https://github.com/gap-packages/LocalNR/releases/download/v1.0.4/LocalNR-1.0.4.tar.gz
 
 abstract: |
     The <span class="pkgname">LocalNR</span> package contains the library of local nearrings up to order 361 and some functions to analyze finite nearrings.
 
 status: dev
-doc-html: doc/chap0.html
+doc-html: doc/chap0_mj.html
 doc-pdf: doc/manual.pdf
 keywords: |
     local nearring, endomorphism, automorphisms group.
 citeas: |
     <p class='BibEntry'>
-    [<span class='BibKey'>RRS21</span>]   <b class='BibAuthor'>Raievska, I., Raievska, M. and Sysak, Y.</b>,
+    [<span class='BibKey'>RRS24</span>]   <b class='BibAuthor'>Raievska, I., Raievska, M. and Sysak, Y.</b>,
      <i class='BibTitle'>LocalNR, Package of local nearrings,
-             Version 1.0.3</i>
-     (<span class='BibYear'>2021</span>)<br />
+             Version 1.0.4</i>
+     (<span class='BibYear'>2024</span>)<br />
     (<span class='BibNote'>GAP package</span>),
     <span class='BibHowpublished'><a href="https://gap-packages.github.io/LocalNR">https://gap-packages.github.io/LocalNR</a></span>.
     </p>
     
 
 bibtex: |
-    @misc{ LocalNR1.0.3,
+    @misc{ LocalNR1.0.4,
       author =           {Raievska, I. and Raievska, M. and Sysak, Y.},
-      title =            {{LocalNR}, Package of local nearrings, {V}ersion 1.0.3},
-      month =            {Feb},
-      year =             {2021},
+      title =            {{LocalNR}, Package of local nearrings, {V}ersion 1.0.4},
+      month =            {Mar},
+      year =             {2024},
       note =             {GAP package},
       howpublished =     {\href         {https://gap-packages.github.io/LocalNR}
                           {\texttt{https://gap-packages.github.io/}\discretionary
                           {}{}{}\texttt{LocalNR}}},
       keywords =         {local nearring; endomorphism; automorphisms group},
-      printedkey =       {RRS21}
+      printedkey =       {RRS24}
     }
 

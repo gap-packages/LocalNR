@@ -14,8 +14,8 @@
 SetPackageInfo( rec(
 PackageName := "LocalNR",
 Subtitle := "Package of local nearrings",
-Version := "1.0.3",
-Date := "27/02/2021",
+Version := "1.0.4",
+Date := "15/03/2024",
 
 SourceRepository := rec(
     Type := "git",
@@ -81,7 +81,7 @@ PackageDoc :=
   # use same as in GAP            
   BookName  := "LocalNR",
 ArchiveURLSubset := ["doc"],
-  HTMLStart := "doc/chap0.html",
+  HTMLStart := "doc/chap0_mj.html",
   PDFFile := "doc/manual.pdf",
   SixFile := "doc/manual.six",
   LongTitle := "a GAP package of local nearrings",
