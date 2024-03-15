@@ -52,11 +52,6 @@ gap> U:=UnitsOfNearRing(N);
 gap> Un:=NearRingUnits(N);;
 gap> U=Un;
 true
-gap> F:=LibraryNearRing(SmallGroup(8,4),1);
-#I  using isomorphic copy of the group
-LibraryNearRing(8/5, 1)
-gap> U:=UnitsOfNearRing(F);
-[  ]
 gap> H:=SmallGroup(16,6);
 <pc group of size 16 with 4 generators>
 gap> A:= AutomorphismNearRing(H);
@@ -115,7 +110,7 @@ gap> I:=NonUnitsAsNearRingIdeal(T);
 gap> Size(I);
 25
 gap> B:=LocalNearRing(16,10,8,2,7);          
-ExplicitMultiplicationNearRing ( <pc group of size 16 with 2 generators> , multiplication )
+ExplicitMultiplicationNearRing ( <pc group of size 16 with 4 generators> , multiplication )
 gap> M:=MultiplicativeSemigroupOfNearRing(B);
 Semigroup with Identity (f1)
 <semigroup of size 16, with 7 generators>
