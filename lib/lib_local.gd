@@ -21,7 +21,7 @@
 #! 
 #! <Enum>
 #! <Item>
-#! $(R,+)=R^{+}$ is a (not necessarily abelian) group with neutral element $0$;
+#! $(R,+)=R^+$ is a (not necessarily abelian) group with neutral element $0$;
 #! </Item>
 #! <Item>
 #! $(R,\cdot)$ is a semigroup;
@@ -43,7 +43,7 @@
 #! 
 #! A nearring $R$ with identity is said to be 
 #! <Emph>local</Emph> if the set $L=R\setminus R^*$ of all 
-#! non-invertible elements of $R$ is a subgroup of $R^{+}$. 
+#! non-invertible elements of $R$ is a subgroup of $R^+$. 
 #! 
 #! It is clear that if $L$ is an 
 #! ideal of $R$, then the factor nearring $R/L$ is a <Emph>nearfield</Emph>. For example, 
@@ -63,7 +63,7 @@
 #! The argument is $n$. 
 #! The output a list of <C>IdGroup</C> of the additive groups 
 #! of local nearrings from <C>Library</C> of order $n$.
-#! @Returns information
+#! @Returns a list
 #! @Arguments n
 #! @Label 
 DeclareGlobalFunction( "TheAdditiveGroupsOfLibraryOfLNRsOfOrder");
@@ -80,10 +80,13 @@ DeclareGlobalFunction( "TheAdditiveGroupsOfLibraryOfLNRsOfOrder");
 #! The argument is a group $G$. 
 #! The output a list of the catalogues of local nearrings 
 #! from <C>Library</C> on $G$.
-#! @Returns information
+#! @Returns a list
 #! @Arguments G
 #! @Label 
 DeclareGlobalFunction( "TheLibraryOfLNRsOnGroup");
+
+#! The local nearrings are sorted by their multiplicative groups.
+
 
 #! @BeginExample
 #! gap> G:=SmallGroup(81,2);
@@ -101,7 +104,8 @@ DeclareGlobalFunction( "TheLibraryOfLNRsOnGroup");
 #! @Description
 #! The arguments are $k$, $l$, $m$, $n$, $w$.
 #! The output is local nearring from <C>Library</C> without 
-#! check. The arguments $k$, $l$, $m$, $n$, $w$ are as above.
+#! check. The arguments $k$, $l$, $m$, $n$ are from IdGroup of the additive group and the multiplicative group,  
+#! respectively, $w$ is the position in the list.
 #! @Returns a nearring
 #! @Arguments k,l,m,n,w
 #! @Label

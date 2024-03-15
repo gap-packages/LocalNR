@@ -99,15 +99,14 @@ InstallMethod( UnitsOfNearRing,
     [ IsNearRing ], 0, 
   function(R)
   local A, G, one, x;
-  
-  one:=Identity(R);
-  if one=fail then 
-  return Error("no units exist");
+  one := Identity(R);
+  if one = fail then 
+  return [];
   else
   G:=GroupReduct(R);
   A:=AutomorphismGroup(G);
   return Filtered(R,x->x^Size(A)=one);
-  fi; 
+  fi;
   end);
 
 ##
@@ -286,7 +285,7 @@ InstallMethod( MultiplicativeSemigroupOfNearRing,
   local a, u;
   if Identity(R)=fail then a:=AsSemigroup(List(R));
 else u:=Identity(R);a:=AsSemigroup(List(R));
-Print("Semigroup with Identity"," ",u,"\n");
+Print("Semigroup with identity"," ",u,"\n");
 fi;
 return a;
   end);

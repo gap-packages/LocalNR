@@ -6,7 +6,7 @@
 
 ----------------------------------------------------------------------
 
-Copyright (C) 2019
+Copyright (C) 2024
 Yaroslav Sysak with contributions by Iryna Raievska, Maryna Raievska
 
 `LocalNR` is free software: you can redistribute it and/or modify
@@ -98,6 +98,23 @@ To use the package type
     LoadPackage("LocalNR");
     
 at the GAP prompt.
+
+
+## Download additional libraries
+
+Some local nearrings of the following orders are stored seperatly.
+
+Local nearrings of order 32 need to be downloaded separately (~291MB) from https://zenodo.org/records/10820301
+
+Local nearrings of order 64 need to be downloaded separately (~49MB) from https://zenodo.org/records/10820320
+
+Local nearrings of order 128 need to be downloaded separately (~235MB) from https://zenodo.org/records/7225377#.Y7blWYfMKM8
+
+Local nearrings of order 243 need to be downloaded separately (~429MB) from https://zenodo.org/records/10820318
+
+Local nearrings of order 625 need to be downloaded separately (~146MB) from https://zenodo.org/records/7613145#.ZChqJXZBy39
+
+Unpack these (zip) archives and move the libraries of local nearrings (txt.gz) from these archives to the respecteve Endom subdirectory of the LocalNR directory.
 
 
 ## Contact
