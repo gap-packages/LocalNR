@@ -72,9 +72,8 @@ false
 gap> L:=AllLocalNearRings(16,14,8,4);;
 gap> Size(L);
 24
-gap> F:=Filtered(L,x->IsLocalRing(x));;
-gap> Size(F);
-1
+gap> F:=Filtered(L,x->IsLocalRing(x));
+[ ExplicitMultiplicationNearRing ( <pc group of size 16 with 4 generators> , multiplication ) ]
 gap> T:=LocalNearRing(49,2,42,1,1); 
 ExplicitMultiplicationNearRing ( <pc group of size 49 with 
 2 generators> , multiplication )
@@ -85,15 +84,18 @@ gap> Size(Nu);
 gap> R:=LibraryNearRing(SmallGroup(8,4),3);
 #I  using isomorphic copy of the group
 LibraryNearRing(8/5, 3)
-gap> N:=NearRingNonUnits(R);; 
+gap> N:=NearRingNonUnits(R);
+[ (()), ((1,2,3,4)(5,6,7,8)), ((1,3)(2,4)(5,7)(6,8)), ((1,4,3,2)(5,8,7,6)), ((1,5,3,7)(2,8,4,6)), ((1,6,3,8) 2,5,4,7)),  ((1,7,3,5)(2,6,4,8)), ((1,8,3,6)(2,7,4,5)) ] 
 gap> Size(N);
 8
 gap> B:=LocalNearRing(25,2,20,3,1); 
 ExplicitMultiplicationNearRing ( <pc group of size 25 with 2 generators> , multiplication )
-gap> D:=DistributiveElements(B);;
+gap> D:=DistributiveElements(B);
+[ (<identity> of ...), (f1), (f1^2), (f1^3), (f1^4) ]
 gap> Size(D);
 5
-gap> Rs:=SubNearRingByGenerators(B,D);;
+gap> Rs:=SubNearRingByGenerators(B,D);
+ExplicitMultiplicationNearRing ( Group([ <identity> of ..., f1, f1^2, f1^3, f1^4 ]) , multiplication )
 gap> Size(Rs);
 5
 gap> IsDgNearRing(B);
