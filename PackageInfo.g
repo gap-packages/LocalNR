@@ -86,7 +86,6 @@ ArchiveURLSubset := ["doc"],
   SixFile := "doc/manual.six",
   LongTitle := "a GAP package of local nearrings",
 
-  Autoload  := true
 ),
 
 AbstractHTML := 
