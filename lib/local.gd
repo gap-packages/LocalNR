@@ -208,10 +208,10 @@ DeclareAttribute( "NearRingNonUnits", IsNearRing );
 #! gap> R:=LibraryNearRing(SmallGroup(8,4),3);
 #! #I  using isomorphic copy of the group
 #! LibraryNearRing(8/5, 3)
-#! gap> N:=NearRingNonUnits(R); 
-#! [ (()), ((1,3)(2,4)(5,7)(6,8)), ((1,4,3,2)(5,8,7,6)), ((1,2,3,4)(5,6,7,8)), 
-#!   ((1,7,3,5)(2,6,4,8)), ((1,5,3,7)(2,8,4,6)), ((1,8,3,6)(2,7,4,5)), 
-#!   ((1,6,3,8)(2,5,4,7)) ]
+#! gap> N:=SortedList(NearRingNonUnits(R)); 
+#! [ (()), ((1,2,3,4)(5,6,7,8)), ((1,3)(2,4)(5,7)(6,8)), ((1,4,3,2)(5,8,7,6)), 
+#!   ((1,5,3,7)(2,8,4,6)), ((1,6,3,8)(2,5,4,7)), ((1,7,3,5)(2,6,4,8)), 
+#!   ((1,8,3,6)(2,7,4,5)) ]
 #! @EndExample
 
 ###################################
@@ -582,8 +582,7 @@ DeclareOperation( "IsSubNearRing",[ IsNearRing, IsGroup ] );
 #! true
 #! gap> IsSubNearRing(T,S[9]); 
 #! false
-#! gap> D:=SmallGroup(7,1);
-#! <pc group of size 7 with 1 generator>
+#! gap> D:=SmallGroup(7,1);;
 #! gap> IsSubNearRing(T,D);   
 #! false
 #! @EndExample

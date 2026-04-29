@@ -89,10 +89,10 @@ gap> Size(Nu);
 gap> R:=LibraryNearRing(SmallGroup(8,4),3);
 #I  using isomorphic copy of the group
 LibraryNearRing(8/5, 3)
-gap> N:=NearRingNonUnits(R); 
-[ (()), ((1,3)(2,4)(5,7)(6,8)), ((1,4,3,2)(5,8,7,6)), ((1,2,3,4)(5,6,7,8)), 
-  ((1,7,3,5)(2,6,4,8)), ((1,5,3,7)(2,8,4,6)), ((1,8,3,6)(2,7,4,5)), 
-  ((1,6,3,8)(2,5,4,7)) ]
+gap> N:=SortedList(NearRingNonUnits(R)); 
+[ (()), ((1,2,3,4)(5,6,7,8)), ((1,3)(2,4)(5,7)(6,8)), ((1,4,3,2)(5,8,7,6)), 
+  ((1,5,3,7)(2,8,4,6)), ((1,6,3,8)(2,5,4,7)), ((1,7,3,5)(2,6,4,8)), 
+  ((1,8,3,6)(2,7,4,5)) ]
 
 # doc/_Chapter_Functions.xml:229-242
 gap> B:=LocalNearRing(25,2,20,3,1); 
@@ -238,7 +238,7 @@ gap> Identity(N);
 gap> IsNearRingWithIdentity(N);
 true
 
-# doc/_Chapter_Functions.xml:607-624
+# doc/_Chapter_Functions.xml:607-623
 gap> T:=LocalNearRing(49,2,42,1,2);        
 ExplicitMultiplicationNearRing ( <pc group of size 49 with 
 2 generators> , multiplication )
@@ -251,8 +251,7 @@ gap> IsSubNearRing(T,S[3]);
 true
 gap> IsSubNearRing(T,S[9]); 
 false
-gap> D:=SmallGroup(7,1);
-<pc group of size 7 with 1 generator>
+gap> D:=SmallGroup(7,1);;
 gap> IsSubNearRing(T,D);   
 false
 
