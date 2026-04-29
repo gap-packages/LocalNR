@@ -9,6 +9,6 @@
 ##
 #############################################################################
 ##
-	
+
 ReadPackage( "LocalNR", "lib/lib_local.gi" );
-ReadPackage( "LocalNR", "lib/local.gi" );	
+ReadPackage( "LocalNR", "lib/local.gi" );
