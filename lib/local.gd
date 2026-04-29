@@ -1,6 +1,6 @@
 #############################################################################
 ##
-##                                               LocalNR package
+##                            LocalNR - a GAP package of local nearrings
 ##
 ##  Copyright 2019,                Yaroslav Sysak with contributions by
 ##                                      Iryna Raievska, Maryna Raievska
@@ -98,6 +98,13 @@ DeclareOperation( "EndoOrbitsOfGroup", [ IsGroup ] );
 #! @Label 
 DeclareProperty( "IsEndoCyclicGroup", IsGroup );
 
+#!Let $G$ be a group and $End G$ be the set of all its endomorphisms, 
+#!which can be considered as a semigroup with respect to the composition operation of endomorphisms. 
+#!For each $g\in G$ we denote by $g^{End G}$ the set $\{g^\alpha| \alpha\in End G\}$ 
+#!of all images of the element $g$ with respect to endomorphisms of $End G$.
+
+#!A group $G$ is called <Emph>endocyclic</Emph> if it contains an element $g$ with $G=g^{End G}$.
+
 #! @BeginExample
 #! gap> IsEndoCyclicGroup(D);
 #! true
@@ -113,8 +120,8 @@ DeclareProperty( "IsEndoCyclicGroup", IsGroup );
 #! @Description
 #! The argument is a nearring $R$.
 #! The output is <C>true</C> if $R$ is a nearring with identity,
-#! otherwise the output is <C>false</C>.
-#! @Returns a boolean
+#! otherwise the output is <C>Error, no units exist</C>.
+#! @Returns a set
 #! @Arguments  R
 #! @Label 
 DeclareAttribute( "UnitsOfNearRing", IsNearRing  );
@@ -130,11 +137,6 @@ DeclareAttribute( "UnitsOfNearRing", IsNearRing  );
 #! gap> Un:=NearRingUnits(N);;
 #! U=Un;
 #! true
-#! gap> F:=LibraryNearRing(SmallGroup(8,4),1);
-#! #I  using isomorphic copy of the group
-#! LibraryNearRing(8/5, 1)
-#! gap> U:=UnitsOfNearRing(F);
-#! Error, no units exist
 #! @EndExample
 
 ###################################
@@ -287,13 +289,12 @@ DeclareAttribute( "NonUnitsAsNearRingIdeal",  IsNearRing  );
 DeclareAttribute( "MultiplicativeSemigroupOfNearRing", IsNearRing );
 
 #! @BeginExample
-#! gap> B:=LocalNearRing(49,2,42,6,1);          
-#! ExplicitMultiplicationNearRing ( <pc group of size 49 with 2 generators> , multiplication )
+#! gap> B:=LocalNearRing(16,10,8,2,7);;
 #! gap> M:=MultiplicativeSemigroupOfNearRing(B);
-#! Semigroup with Identity (f1)
-#! <semigroup of size 49, with 6 generators>
+#! Semigroup with identity (f1)
+#! <semigroup of size 16, with 7 generators>
 #! gap> Size(M);
-#! 49
+#! 16
 #! @EndExample
 
 ###################################
@@ -308,9 +309,9 @@ DeclareAttribute( "NonUnitsAsMultiplicativeSemigroup", IsNearRing );
 
 #! @BeginExample
 #! gap> Nm:=NonUnitsAsMultiplicativeSemigroup(B);
-#! <semigroup with 7 generators>
+#! <semigroup with 8 generators>
 #! gap> Size(Nm);
-#! 7
+#! 8
 #! @EndExample
 
 ###################################
@@ -371,7 +372,7 @@ DeclareOperation( "AutomorphismsAssociatedWithNearRingUnits", [ IsNearRing, IsNe
 #! The arguments are a nearring $R$ and a set $Elm$ of nearring elements.
 #! The output is the endomorphisms associated with nearring elements.
 #! @Returns endomorphisms
-#! @Arguments  R,Elm
+#! @Arguments  R, Elm
 #! @Label 
 DeclareOperation( "EndomorphismsAssociatedWithNearRingElements", [ IsNearRing, IsNearRingElementCollection ] );
 

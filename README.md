@@ -1,11 +1,12 @@
-[![Build Status](https://travis-ci.org/gap-packages/LocalNR.svg?branch=master)](https://travis-ci.org/gap-packages/LocalNR)
+[![CI](https://github.com/gap-packages/LocalNR/workflows/CI/badge.svg)](https://github.com/gap-packages/LocalNR/actions?query=workflow%3ACI+branch%3Amaster)
 [![Code Coverage](https://codecov.io/github/gap-packages/LocalNR/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/LocalNR)
+
 
 # GAP package LocalNR
 
 ----------------------------------------------------------------------
 
-Copyright (C) 2019
+Copyright (C) 2024
 Yaroslav Sysak with contributions by Iryna Raievska, Maryna Raievska
 
 `LocalNR` is free software: you can redistribute it and/or modify
@@ -99,10 +100,27 @@ To use the package type
 at the GAP prompt.
 
 
+## Download additional libraries
+
+Some local nearrings of the following orders are stored separately.
+
+Local nearrings of order 32 need to be downloaded separately (~291MB) from https://zenodo.org/records/10820301
+
+Local nearrings of order 64 need to be downloaded separately (~49MB) from https://zenodo.org/records/10820320
+
+Local nearrings of order 128 need to be downloaded separately (~235MB) from https://zenodo.org/records/7225377
+
+Local nearrings of order 243 need to be downloaded separately (~429MB) from https://zenodo.org/records/10820318
+
+Local nearrings of order 625 need to be downloaded separately (~146MB) from https://zenodo.org/records/7613145
+
+Unpack these (zip) archives and move the libraries of local nearrings (txt.gz) from these archives to the respective `Endom` subdirectory of the `LocalNR` directory.
+
+
 ## Contact
 
 If you use `LocalNR`, please tell us by sending an email to
-<raeirina@imath.kiev.ua>, <raemarina@imath.kiev.ua>, <sysak@imath.kiev.ua>.
+<sysak@imath.kiev.ua>, <raeirina@imath.kiev.ua>, <raemarina@imath.kiev.ua>.
 
 If you find any bugs or have any suggestions or comments, we would
 very much appreciate it if you would let us know either by email or
@@ -110,7 +128,7 @@ via <https://github.com/gap-packages/LocalNR/issues> on GitHub. Also,
 we would like to hear about applications of this software.
 
 Yaroslav Sysak, Iryna Raievska, Maryna Raievska   
-Kyiv, 2th of February 2017.
+Kyiv, 15th of March 2024.
 
 Yaroslav Sysak
 

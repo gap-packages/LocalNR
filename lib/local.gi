@@ -99,15 +99,14 @@ InstallMethod( UnitsOfNearRing,
     [ IsNearRing ], 0, 
   function(R)
   local A, G, one, x;
-  
-  one:=Identity(R);
-  if one=fail then 
-  return Error("no units exist");
+  one := Identity(R);
+  if one = fail then 
+  return [];
   else
   G:=GroupReduct(R);
   A:=AutomorphismGroup(G);
   return Filtered(R,x->x^Size(A)=one);
-  fi; 
+  fi;
   end);
 
 ##
@@ -116,9 +115,9 @@ InstallMethod( UnitsOfNearRing,
 # IsLocalNearRing(<R>)
 InstallMethod( IsLocalNearRing,
     "Is local nearring",
-	true,
+    true,
     [ IsNearRing ],   
-	0,      
+    0,      
   function( R )
   local L,one,U,V,x,y;
   
@@ -286,7 +285,7 @@ InstallMethod( MultiplicativeSemigroupOfNearRing,
   local a, u;
   if Identity(R)=fail then a:=AsSemigroup(List(R));
 else u:=Identity(R);a:=AsSemigroup(List(R));
-Print("Semigroup with Identity"," ",u,"\n");
+Print("Semigroup with identity"," ",u,"\n");
 fi;
 return a;
   end);
@@ -482,11 +481,11 @@ InstallMethod( ZeroSymmetricPartOfNearRing,
 #M  IsSemiDistributiveNearRing 
 
 InstallMethod(
-	IsSemiDistributiveNearRing,
-	"test all elements",
-	true,
-	[IsNearRing],
-	1, # faster in the moment
+    IsSemiDistributiveNearRing,
+    "test all elements",
+    true,
+    [IsNearRing],
+    1, # faster in the moment
   function ( nr )
     return ForAll( nr, d -> ForAll( nr, a -> ForAll( nr, b ->
               (a+b+a)*d = (a*d) + (b*d) + (a*d) ) ) );
@@ -497,10 +496,10 @@ InstallMethod(
 ##
 # IsNearRingWithIdentity(<R>)
 InstallMethod(IsNearRingWithIdentity,
-     "Is nearring with identity",
-	true,
-     [IsNearRing],
-	0,
+    "Is nearring with identity",
+    true,
+    [IsNearRing],
+    0,
   function ( R )
   local id;
     id := Identity( R );

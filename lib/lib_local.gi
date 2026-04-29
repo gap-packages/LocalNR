@@ -153,11 +153,10 @@ if Size(i)>0 then
 Add(g,i[2]);
 fi;
 od;
-us:=Unique(g);
-Sort( us, function(b,w) return Int(b) < Int(w); end );
+us:=Set(g,Int);
 r:=[];
 for i in us do
-Add(r,EvalString(Concatenation("SmallGroup(",String(n),",",i,")")));
+Add(r,SmallGroup(n,i));
 od;
 return r;
 fi; 
@@ -190,11 +189,10 @@ if Size(i)>0 then
 Add(g,i[2]);
 fi;
 od;
-us:=Unique(g);
-Sort( us, function(b,w) return Int(b) < Int(w); end );
+us:=Set(g,Int);
 r:=[];
 for i in us do
-Add(r,EvalString(Concatenation("[",String(s),",",i,"]")));
+Add(r,[s,i]);
 od;
 fi;
 k:=Size(r);
