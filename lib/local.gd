@@ -135,7 +135,7 @@ DeclareAttribute( "UnitsOfNearRing", IsNearRing  );
 #!  (f1*f3*f4*f5), (f1*f2), (f1*f2*f5), (f1*f2*f4), (f1*f2*f4*f5), (f1*f2*f3), 
 #!  (f1*f2*f3*f5), (f1*f2*f3*f4), (f1*f2*f3*f4*f5) ]
 #! gap> Un:=NearRingUnits(N);;
-#! U=Un;
+#! gap> U=Un;
 #! true
 #! @EndExample
 
