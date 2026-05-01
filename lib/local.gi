@@ -64,8 +64,7 @@ InstallMethod( EndoOrbitsOfGroup,
         x := M[1];
         H := [];
         for y in En do
-          Add( H, x^y );
-          H := Unique( H );
+          AddSet( H, x^y );
         od;
         Add( F, [ x, H ] );
         T := Difference( T, H );

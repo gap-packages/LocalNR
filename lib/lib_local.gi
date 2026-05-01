@@ -7,7 +7,7 @@ InstallMethod( LocalNearRing,
     [ IsInt, IsInt, IsInt, IsInt, IsInt ],
     function( k, l, m, n, w )
       local h, dio, G, P, P1, H, R, Li, t, gr, Pos, x, y, d, z, hom,
-            f, const, constructor, u, B, A, k1, Or, a, g, Em, ma, mul,
+            const, constructor, u, B, A, k1, Or, a, g, Em, ma, mul,
             Nr;
 
       h := DirectoriesPackageLibrary( "LocalNR", Concatenation( "Endom/", String( k ) ) );
@@ -39,10 +39,9 @@ InstallMethod( LocalNearRing,
           d := GroupHomomorphismByImagesNC( G, G, gr, x );
           Add( hom, d );
         od;
-        f := function( x, y ) return x * y; end;
-        const := function( y ) return function( x ) return y^x; end; end;
+        const := y -> (x -> y^x);
         constructor := function( z ) return function( u ) return function( x, y ) return u^( PreImage( z, y ) * PreImage( z, x ) ); end; end; end;
-        B := Filtered( hom, x -> IsInjective( x ) );
+        B := Filtered( hom, IsInjective );
         A := GroupByGenerators( B );
         k1 := Position( OrbitLengths( A, G ), Size( A ) );
         Or := OrbitsDomain( A, G )[k1];
@@ -65,7 +64,7 @@ InstallMethod( AllLocalNearRings,
     [ IsInt, IsInt, IsInt, IsInt ],
     function( k, l, m, n )
       local G, P1, w, h, H, s, t, Li, hom, En, R, gr, Pos, x, i, y, z,
-            d, f, const, constructor, u, I, J, T, B, j, A, k1, Or, a,
+            d, const, constructor, u, I, J, T, B, j, A, k1, Or, a,
             g, Em, ma, mul, Nr;
 
       h := DirectoriesPackageLibrary( "LocalNR", Concatenation( "Endom/", String( k ) ) );
@@ -102,7 +101,6 @@ InstallMethod( AllLocalNearRings,
             Add( hom[i], d );
           od;
         od;
-        f := function( x, y ) return x * y; end;
         const := function( y ) return function( x ) return y^x; end; end;
         constructor := function( z ) return function( u ) return function( x, y ) return
             u^( PreImage( z, y ) * PreImage( z, x ) ); end; end; end;
@@ -111,7 +109,7 @@ InstallMethod( AllLocalNearRings,
         repeat
           J := [];
           T := [];
-          B := Filtered( hom[I[1]], x -> IsInjective( x ) );;
+          B := Filtered( hom[I[1]], IsInjective );
           for i in I do
             if IsSubset( hom[i], B ) then
               Add( J, i );
@@ -152,7 +150,7 @@ InstallGlobalFunction(TheAdditiveGroupsOfLibraryOfLNRsOfOrder, function(n)
     cont := DirectoryContents( t[1] );;
     Size( cont );
     for i in cont do
-      RemoveCharacters( i, "Endom\.txt\.gz" );
+      RemoveCharacters( i, "Endom.txt.gz" );
     od;
     h := [];
     for j in cont do
@@ -211,11 +209,7 @@ InstallGlobalFunction(IsAdditiveGroupOfLibraryOfLNRs, function(G)
   fi;
   k := Size( r );
   d := Filtered( [1..k], x -> IdGroup( G ) = r[x] );
-  if Size( d ) > 0 then
-    Print( "true" );
-  else
-    Print( "false" );
-  fi;
+  return Size( d ) > 0;
 end );
 
 
