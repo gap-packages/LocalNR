@@ -23,24 +23,14 @@ InstallMethod( LocalNearRing,
         Li := AsSortedList( G );
         t := Size( P );
         gr := MinimalGeneratingSet( G );
-        Pos := [];
-        for x in gr do
-          Add( Pos, Position( Li, x ) );
-        od;
+        Pos := List( gr, x -> Position( Li, x ) );
         for y in [1..t] do
-          d := [];
-          for z in Pos do
-            Add( d, Li[P[y][z]] );
-          od;
+          d := List( Pos, z -> Li[P[y][z]] );
           Add( H, d );
         od;
-        hom := [];
-        for x in H do
-          d := GroupHomomorphismByImagesNC( G, G, gr, x );
-          Add( hom, d );
-        od;
+        hom := List( H, x -> GroupHomomorphismByImagesNC( G, G, gr, x ) );
         const := y -> (x -> y^x);
-        constructor := function( z ) return function( u ) return function( x, y ) return u^( PreImage( z, y ) * PreImage( z, x ) ); end; end; end;
+        constructor := { z, u } -> { x, y } -> u^( PreImage( z, y ) * PreImage( z, x ) );
         B := Filtered( hom, IsInjective );
         A := GroupByGenerators( B );
         k1 := Position( OrbitLengths( A, G ), Size( A ) );
@@ -49,7 +39,7 @@ InstallMethod( LocalNearRing,
         g := const( a );
         Em := MagmaWithOne( hom );
         ma := MappingByFunction( Em, G, g );
-        mul := constructor( ma )( a );
+        mul := constructor( ma, a );
         Nr := ExplicitMultiplicationNearRingNC( G, mul );
         return Nr;
       fi;
@@ -76,34 +66,23 @@ InstallMethod( AllLocalNearRings,
         P1 := ReadAsFunction( w )();
         H := [];
         s := Size( P1 );
-        t := List( P1, Size );;
-        Li := AsSortedList( G );;
+        t := List( P1, Size );
+        Li := AsSortedList( G );
         hom := [];
         En := [];
         R := [];
         gr := MinimalGeneratingSet( G );
-        Pos := [];
-        for x in gr do
-          Add( Pos, Position( Li, x ) );
-        od;
+        Pos := List( gr, x -> Position( Li, x ) );
         for i in [1..s] do
           H[i] := [];
           for y in [1..t[i]] do
-            d := [];
-            for z in Pos do
-              Add( d, Li[P1[i][y][z]] );
-            od;
+            d := List( Pos, z -> Li[P1[i][y][z]] );
             Add( H[i], d );
           od;
-          hom[i] := [];
-          for x in H[i] do
-            d := GroupHomomorphismByImagesNC( G, G, gr, x );
-            Add( hom[i], d );
-          od;
+          hom[i] := List( H[i], x -> GroupHomomorphismByImagesNC( G, G, gr, x ) );
         od;
-        const := function( y ) return function( x ) return y^x; end; end;
-        constructor := function( z ) return function( u ) return function( x, y ) return
-            u^( PreImage( z, y ) * PreImage( z, x ) ); end; end; end;
+        const := y -> (x -> y^x);
+        constructor := { z, u } -> { x, y } -> u^( PreImage( z, y ) * PreImage( z, x ) );
         s := Size( hom );
         I := [1..s];
         repeat
@@ -124,14 +103,14 @@ InstallMethod( AllLocalNearRings,
           for l in J do
             Em := MagmaWithOne( hom[l] );
             ma := MappingByFunction( Em, G, g );
-            mul := constructor( ma )( a );
+            mul := constructor( ma, a );
             Nr := ExplicitMultiplicationNearRingNC( G, mul );
             Add( T, Nr );
           od;
           Add( R, T );
-          I := Difference( I, J );;
+          I := Difference( I, J );
         until Size( I ) = 0;
-        R := Concatenation( R );;
+        R := Concatenation( R );
         return R;
       fi;
     end );
@@ -147,7 +126,7 @@ InstallGlobalFunction(TheAdditiveGroupsOfLibraryOfLNRsOfOrder, function(n)
   if IsEmpty( t ) then
     Error( "the order must be PrimePowerInt and 3<n and n<1331 (except orders 128, 256, 512, 625, 729, 1024)" );
   else
-    cont := DirectoryContents( t[1] );;
+    cont := DirectoryContents( t[1] );
     Size( cont );
     for i in cont do
       RemoveCharacters( i, "Endom.txt.gz" );
@@ -185,7 +164,7 @@ InstallGlobalFunction(IsAdditiveGroupOfLibraryOfLNRs, function(G)
   if IsEmpty( t ) then
     Error( "false" );
   else
-    cont := DirectoryContents( t[1] );;
+    cont := DirectoryContents( t[1] );
     Size( cont );
     for i in cont do
       RemoveCharacters( i, "Endom\.txt\.gz" );
