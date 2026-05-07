@@ -27,18 +27,12 @@ InstallMethod( IsMetacyclicPGroup,
     function( G )
       local p;
 
-      p := Factors( Size( G ) )[1];
+      p := PrimePGroup( G );
       if p = 2 then
-        if Maximum( List( List( MaximalSubgroups( G ), MinimalGeneratingSet ), Size ) ) <= 2
-        then
-          return true;
-        fi;
+        return ForAll( MaximalSubgroups( G ), M -> RankPGroup( M ) <= 2 );
       else
-        if Size( FactorGroup( G, Agemo( G, p ) ) ) <= p^2 then
-          return true;
-        fi;
+        return Size( FactorGroup( G, Agemo( G, p ) ) ) <= p^2;
       fi;
-      return false;
     end );
 
 ##
