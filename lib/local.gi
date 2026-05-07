@@ -6,15 +6,7 @@ InstallMethod( IsMinimalNonAbelianGroup,
     "Is minimal non-abelian group",
     [ IsGroup ],
     function( G )
-      if IsAbelian( G ) then
-        return false;
-      else
-        if ForAll( MaximalSubgroups( G ), x -> IsAbelian( x ) ) then
-          return true;
-        else
-          return false;
-        fi;
-      fi;
+      return not IsAbelian( G ) and ForAll( MaximalSubgroups( G ), IsAbelian );
     end );
 
 ##
@@ -48,18 +40,12 @@ InstallMethod( EndoOrbitsOfGroup,
       A := AutomorphismGroup( G );
       En := Endomorphisms( G );
       Or := OrbitsDomain( A, G );
-      T := [];
-      for x in Or do
-        Add( T, Representative( x ) );
-      od;
+      T := List( Or, Representative );
       F := [];
       repeat
         M := Filtered( T, x -> Order( x ) = Maximum( List( T, Order ) ) );
         x := M[1];
-        H := [];
-        for y in En do
-          AddSet( H, x^y );
-        od;
+        H := Set( En, y -> x^y );
         Add( F, [ x, H ] );
         T := Difference( T, H );
       until Size( T ) = 0;
@@ -84,11 +70,7 @@ InstallMethod( IsEndoCyclicGroup,
           Add( h, F[i][2] );
         fi;
       od;
-      if Size( h ) > 0 then
-        return true;
-      else
-        return false;
-      fi;
+      return Size( h ) > 0;
     end );
 
 ##
@@ -97,17 +79,16 @@ InstallMethod( IsEndoCyclicGroup,
 # UnitsOfNearRing(<R>)
 InstallMethod( UnitsOfNearRing,
     "Compute all units of nearring",
-    true,
     [ IsNearRing ], 0,
     function( R )
       local A, G, one, x;
 
-      one := Identity( R );
-      if one = fail then
+      if not IsNearRingWithIdentity( R ) then
         return [];
       else
         G := GroupReduct( R );
         A := AutomorphismGroup( G );
+        one := Identity( R );
         return Filtered( R, x -> x^Size( A ) = one );
       fi;
     end );
@@ -118,7 +99,6 @@ InstallMethod( UnitsOfNearRing,
 # IsLocalNearRing(<R>)
 InstallMethod( IsLocalNearRing,
     "Is local nearring",
-    true,
     [ IsNearRing ],
     0,
     function( R )
@@ -127,15 +107,8 @@ InstallMethod( IsLocalNearRing,
       one := Identity( R );
       U := UnitsOfNearRing( R );
       L := Difference( R, U );;
-      V := [];
-      for x in L do
-        Add( V, one + x );
-      od;
-      if IsSubset( U, V ) then
-        return true;
-      else
-        return false;
-      fi;
+      V := List( L, x -> one + x );
+      return IsSubset( U, V );
     end );
 
 ##
@@ -147,14 +120,10 @@ InstallMethod( IsDistributiveElementOfNearRing,
     [ IsNearRing, IsNearRingElement ],
     0,
     function( R, r )
-      local map, x;
+      local map;
 
       map := MappingByFunction( R, R, x -> x * r );
-      if IsAdditiveGroupHomomorphism( map ) then
-        return true;
-      else
-        return false;
-      fi;
+      return IsAdditiveGroupHomomorphism( map );
     end );
 
 ##
@@ -170,17 +139,9 @@ InstallMethod( IsLocalRing,
 
       G := GroupReduct( R );
       mg := MinimalGeneratingSet( G );
-      elm := [];
-      for x in mg do
-        Add( elm, AsNearRingElement( R, x ) );
-      od;
-      if IsAbelian( G ) and IsLocalNearRing( R ) and
-         ForAll( elm, y -> IsDistributiveElementOfNearRing( R, y ) )
-      then
-        return true;
-      else
-        return false;
-      fi;
+      elm := List( mg, x -> AsNearRingElement( R, x ) );
+      return IsAbelian( G ) and IsLocalNearRing( R ) and
+         ForAll( elm, y -> IsDistributiveElementOfNearRing( R, y ) );
     end );
   
 ##
@@ -191,7 +152,7 @@ InstallMethod( NearRingNonUnits,
     "Compute nearring non-units",
     [ IsNearRing ],
     function( R )
-      if Identity( R ) = fail then
+      if not IsNearRingWithIdentity( R ) then
         return List( R );
       else
         return Difference( R, UnitsOfNearRing( R ) );
@@ -208,7 +169,7 @@ InstallMethod( GroupOfUnitsAsGroupOfAutomorphisms,
     function( R )
       local A, U;
 
-      if Identity( R ) = fail then
+      if not IsNearRingWithIdentity( R ) then
         Error( "no units exist" );
       else
         U := UnitsOfNearRing( R );;
@@ -232,15 +193,9 @@ InstallMethod( SubNearRingByGenerators,
       G := GroupReduct( R );
       S := SemigroupByGenerators( elm );
       repeat
-        M := [];
-        N := [];
-        for a in S do
-          Add( M, AsGroupReductElement( a ) );
-        od;
+        M := List( S, AsGroupReductElement );
         M := Subgroup( G, M );
-        for b in M do
-          Add( N, AsNearRingElement( R, b ) );
-        od;
+        N := List( M, b -> AsNearRingElement( R, b ) );
         S := SemigroupByGenerators( N );
       until Size( M ) = Size( S );
       c := SubNearRingBySubgroupNC( R, M );
@@ -259,10 +214,7 @@ InstallMethod( NonUnitsAsAdditiveSubgroup,
 
       if IsLocalNearRing( R ) then
         N := NearRingNonUnits( R );
-        g := [];
-        for a in N do
-          Add( g, AsGroupReductElement( a ) );
-        od;
+        g := List( N, AsGroupReductElement );
         L := Subgroup( GroupReduct( R ), g );
         return L;
       else
@@ -297,16 +249,7 @@ InstallMethod( MultiplicativeSemigroupOfNearRing,
     "Multiplicative semigroup of nearring",
     [ IsNearRing ],
     function( R )
-      local a, u;
-
-      if Identity( R ) = fail then
-        a := AsSemigroup( List( R ) );
-      else
-        u := Identity( R );
-        a := AsSemigroup( List( R ) );
-        Print( "Semigroup with identity", " ", u, "\n" );
-      fi;
-      return a;
+      return AsSemigroup( List( R ) );
     end );
 
 
@@ -337,18 +280,9 @@ InstallMethod( IsOneGeneratedNearRing,
       local S, T, U, x;
 
       S := SubNearRings( R );
-      T := [];
-      for x in S do
-        if Size( x ) < Size( R ) then
-          Add( T, x );
-        fi;
-      od;
+      T := Filtered( S, x -> Size( x ) < Size( R ) );
       U := Union( T );
-      if Size( U ) < Size( R ) then
-        return true;
-      else
-        return false;
-      fi;
+      return Size( U ) < Size( R );
     end );
 
 ############################################################################
@@ -367,11 +301,7 @@ InstallMethod( AutomorphismsAssociatedWithNearRingUnits,
       if ForAll( un, u -> u^m = Identity( R ) ) then
         A := [];
         for r in un do
-          gen := [];
-          for x in mg do
-            d := AsGroupReductElement( r^(m - 1) * AsNearRingElement( R, x ) );
-            Add( gen, d );
-          od;
+          gen := List( mg, x -> AsGroupReductElement( r^(m - 1) * AsNearRingElement( R, x ) ) );
           g := GroupHomomorphismByImages( G, G, mg, gen );
           Add( A, g );
         od;
@@ -395,11 +325,7 @@ InstallMethod( EndomorphismsAssociatedWithNearRingElements,
       mg := MinimalGeneratingSet( G );
       En := [];
       for x in elm do
-        a := [];
-        for y in mg do
-          d := AsGroupReductElement( x * AsNearRingElement( R, y ) );
-          Add( a, d );
-        od;
+        a := List( mg, y -> AsGroupReductElement( x * AsNearRingElement( R, y ) ) );
         g := GroupHomomorphismByImages( G, G, mg, a );
         Add( En, g );
       od;
@@ -416,7 +342,7 @@ InstallMethod( SemidirectProductAssociatedWithNearRing,
     function( R )
       local A, S, G, Un;
 
-      if Identity( R ) = fail then
+      if not IsNearRingWithIdentity( R ) then
         return fail;
       else
         G := GroupReduct( R );
@@ -437,22 +363,14 @@ InstallMethod( IsCircleSubgroupOfNearRing,
     function( R, H )
       local a, d, F, G, Un, x;
 
-      if Identity( R ) = fail then
+      if not IsNearRingWithIdentity( R ) then
         Error( "must be a nearring with one" );
       else
         Un := UnitsOfNearRing( R );
-        F := [];
         a := AsGroupReductElement( One( R ) );
-        for x in H do
-          d := AsNearRingElement( R, a * x );
-          Add( F, d );
-        od;
+        F := List( H, x -> AsNearRingElement( R, a * x ) );
       fi;
-      if IsSubset( Un, F ) and Size( Unique( ListX( F, F, \* ) ) ) = Size( F ) then
-        return true;
-      else
-        return false;
-      fi;
+      return IsSubset( Un, F ) and Size( Unique( ListX( F, F, \* ) ) ) = Size( F );
     end );
 
 ##
@@ -465,13 +383,9 @@ InstallMethod( FactorizedGroupAssociatedWithCircleSubgroupOfNearRing,
     function( R, H )
       local A, a, S, d, F, x;
 
-      if IsCircleSubgroupOfNearRing( R, H ) = true then
+      if IsCircleSubgroupOfNearRing( R, H ) then
         a := AsGroupReductElement( One( R ) );
-        F := [];
-        for x in H do
-          d := AsNearRingElement( R, a * x );
-          Add( F, d );
-        od;
+        F := List( H, x -> AsNearRingElement( R, a * x ) );
         A := AutomorphismsAssociatedWithNearRingUnits( R, F );
         A := AsGroup( A );
         S := SemidirectProduct( A, H );
@@ -518,7 +432,6 @@ InstallMethod( ZeroSymmetricPartOfNearRing,
 InstallMethod(
     IsSemiDistributiveNearRing,
     "test all elements",
-    true,
     [IsNearRing],
     1, # faster in the moment
   function ( nr )
@@ -532,14 +445,10 @@ InstallMethod(
 # IsNearRingWithIdentity(<R>)
 InstallMethod(IsNearRingWithIdentity,
     "Is nearring with identity",
-    true,
     [IsNearRing],
     0,
     function ( R )
-      local id;
-
-      id := Identity( R );
-      return ( id <> fail );
+      return Identity( R ) <> fail;
     end );
 
 ##
@@ -553,18 +462,10 @@ InstallMethod( IsSubNearRing,
       local a, G, M, S;
 
       G := GroupReduct( R );
-      M := [];
       if IsSubgroup( G, H ) = false then
         return false;
       fi;
-      for a in H do
-        Add( M, AsNearRingElement( R, a ) );
-      od;
+      M := List( H, a -> AsNearRingElement( R, a ) );
       S := SemigroupByGenerators( M );
-      if Size( H ) = Size( S ) then
-        return true;
-      fi;
-      return false;
+      return Size( H ) = Size( S );
     end );
-
-## 

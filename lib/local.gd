@@ -291,7 +291,6 @@ DeclareAttribute( "MultiplicativeSemigroupOfNearRing", IsNearRing );
 #! @BeginExample
 #! gap> B:=LocalNearRing(16,10,8,2,7);;
 #! gap> M:=MultiplicativeSemigroupOfNearRing(B);
-#! Semigroup with identity (f1)
 #! <semigroup of size 16, with 7 generators>
 #! gap> Size(M);
 #! 16
