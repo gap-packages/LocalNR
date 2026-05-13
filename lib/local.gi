@@ -67,10 +67,10 @@ InstallMethod( IsEndoCyclicGroup,
       h := [];
       for i in [1..t] do
         if Size( F[i][2] ) = Size( G ) then
-          Add( h, F[i][2] );
+          return true;
         fi;
       od;
-      return Size( h ) > 0;
+      return false;
     end );
 
 ##
@@ -84,7 +84,7 @@ InstallMethod( UnitsOfNearRing,
       local A, G, one, x;
 
       if not IsNearRingWithIdentity( R ) then
-        return [];
+         return [];
       else
         G := GroupReduct( R );
         A := AutomorphismGroup( G );
