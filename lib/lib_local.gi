@@ -12,9 +12,12 @@ InstallMethod( LocalNearRing,
 
       h := DirectoriesPackageLibrary( "LocalNR", Concatenation( "Endom/", String( k ) ) );
       if IsEmpty( h ) then
-        return false;
+        Error("The library of local nearrings of order ", k, " is not available");
       else
         dio := Filename( h, Concatenation( "Endom", String( k ), "_", String( l ), "-", String( m ), "_", String( n ), ".txt" ) );
+        if dio = fail then
+          Error("The library of local nearrings with the additive group [", k, ",", l, "] and multiplicative group [", m, ",", n, "] is not available");
+        fi;
         G := SmallGroup( k, l );
         P1 := ReadAsFunction( dio )();
         P := P1[w];
@@ -59,9 +62,12 @@ InstallMethod( AllLocalNearRings,
 
       h := DirectoriesPackageLibrary( "LocalNR", Concatenation( "Endom/", String( k ) ) );
       if IsEmpty( h ) then
-        return false;
+        Error("The library of local nearrings of order ", k, " is not available");
       else
         w := Filename( h, Concatenation( "Endom", String( k ), "_", String( l ), "-", String( m ), "_", String( n ), ".txt" ) );
+        if w = fail then
+          Error("The library of local nearrings with the additive group [", k, ",", l, "] and multiplicative group [", m, ",", n, "] is not available");
+        fi;
         G := SmallGroup( k, l );
         P1 := ReadAsFunction( w )();
         H := [];
@@ -118,13 +124,36 @@ InstallMethod( AllLocalNearRings,
 ##
 ############################################################################
 ##
-# TheAdditiveGroupsOfLibraryOfLNRsOfOrder
-InstallGlobalFunction(TheAdditiveGroupsOfLibraryOfLNRsOfOrder, function(n)
+# NumberLocalNearRings(<k,l,m,n>)
+InstallMethod( NumberLocalNearRings,
+    "Number of all local nearrings",
+    [ IsInt, IsInt, IsInt, IsInt ],
+    function( k, l, m, n )
+      local w, T, h, s;
+
+      h := DirectoriesPackageLibrary( "LocalNR", Concatenation( "Endom/", String( k ) ) );
+      if IsEmpty( h ) then
+        Error("The library of local nearrings of order ", k, " is not available");
+      else
+        w := Filename( h, Concatenation( "Endom", String( k ), "_", String( l ), "-", String( m ), "_", String( n ), ".txt" ) );
+        if w = fail then
+          Error("The library of local nearrings with the additive group [", k, ",", l, "] and multiplicative group [", m, ",", n, "] is not available");
+        fi;
+        T := ReadAsFunction( w )();
+        s := Size( T );
+        return s;
+       fi;
+     end );
+##
+############################################################################
+##
+# AdditiveGroupsOfLibraryOfLNRsOfOrder
+InstallGlobalFunction(AdditiveGroupsOfLibraryOfLNRsOfOrder, function(n)
   local t, cont, i, h, j, f, g, r, us;
 
   t := DirectoriesPackageLibrary( "LocalNR", Concatenation( "Endom/", String( n ) ) );
   if IsEmpty( t ) then
-    Error( "the order must be PrimePowerInt and 3<n and n<1331 (except orders 128, 256, 512, 625, 729, 1024)" );
+    Error("The library of local nearrings of order ", n, " is not available");
   else
     cont := DirectoryContents( t[1] );
     Size( cont );
@@ -162,12 +191,12 @@ InstallGlobalFunction(IsAdditiveGroupOfLibraryOfLNRs, function(G)
   s := Size( G );
   t := DirectoriesPackageLibrary( "LocalNR", Concatenation( "Endom/", String( s ) ) );
   if IsEmpty( t ) then
-    Error( "false" );
+    Error("The library of local nearrings of order ", s, " is not available");
   else
     cont := DirectoryContents( t[1] );
     Size( cont );
     for i in cont do
-      RemoveCharacters( i, "Endom\.txt\.gz" );
+      RemoveCharacters( i, "Endom.txt.gz" );
     od;
     h := [];
     for j in cont do
@@ -195,20 +224,20 @@ end );
 ##
 ############################################################################
 ##
-# TheLibraryOfLNRsOnGroup
-InstallGlobalFunction(TheLibraryOfLNRsOnGroup, function(G)
+# LibraryOfLNRsOnGroup
+InstallGlobalFunction(LibraryOfLNRsOnGroup, function(G)
 
   local s, t, cont, i, h, j, f, hj, g, r, ee, ww, b, w;
 
   s := Size( G );
   t := DirectoriesPackageLibrary( "LocalNR", Concatenation( "Endom/", String( s ) ) );
   if IsEmpty( t ) then
-    Error( "false" );
+    Error("The library of local nearrings of order ", s, " is not available");
   else
     cont := DirectoryContents( t[1] );
     Size( cont );
     for i in cont do
-      RemoveCharacters( i, "Endom\.txt\.gz" );
+      RemoveCharacters( i, "Endom.txt.gz" );
     od;
     h := [];
     for j in cont do

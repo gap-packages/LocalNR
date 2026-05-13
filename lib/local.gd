@@ -2,11 +2,11 @@
 ##
 ##                            LocalNR - a GAP package of local nearrings
 ##
-##  Copyright 2019,                Yaroslav Sysak with contributions by
+##  Copyright 2026,                Yaroslav Sysak with contributions by
 ##                                      Iryna Raievska, Maryna Raievska
 ##         
-##  Institute of Mathematics of National Academy of Sciences of Ukraine
-##
+##  Institute of Mathematics of National Academy of Sciences of Ukraine,
+##  Kyiv, Ukraine
 #############################################################################
 
 ###################################
@@ -46,6 +46,8 @@ DeclareProperty( "IsMinimalNonAbelianGroup", IsGroup );
 #! gap> IsMinimalNonAbelianGroup(SmallGroup(16,8));
 #! false
 #! @EndExample
+
+DeclareSynonym( "IsMillerMorenoGroup", IsMinimalNonAbelianGroup );
 
 ###################################
 
@@ -119,9 +121,9 @@ DeclareProperty( "IsEndoCyclicGroup", IsGroup );
 
 #! @Description
 #! The argument is a nearring $R$.
-#! The output is <C>true</C> if $R$ is a nearring with identity,
-#! otherwise the output is <C>Error, no units exist</C>.
-#! @Returns a set
+#! The output is a list of units if $R$ is a nearring with identity,
+#! otherwise the output is an empty list.
+#! @Returns a list
 #! @Arguments  R
 #! @Label 
 DeclareAttribute( "UnitsOfNearRing", IsNearRing  );
@@ -137,6 +139,11 @@ DeclareAttribute( "UnitsOfNearRing", IsNearRing  );
 #! gap> Un:=NearRingUnits(N);;
 #! gap> U=Un;
 #! true
+#! gap> L:=LibraryNearRing(SmallGroup(6,1),3);
+#! #I  using isomorphic copy of the group
+#! LibraryNearRing(6/2, 3)
+#! gap> UnitsOfNearRing(L);
+#! [  ]
 #! @EndExample
 
 ###################################
