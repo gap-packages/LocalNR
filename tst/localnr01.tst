@@ -10,12 +10,12 @@
 #
 gap> START_TEST("localnr01.tst");
 
-# doc/_Chapter_Local_nearrings.xml:76-80
+# doc/_Chapter_Local_nearrings.xml:77-81
 gap> List(AdditiveGroupsOfLibraryOfLNRsOfOrder(81),IdGroup);
 [ [ 81, 1 ], [ 81, 2 ], [ 81, 3 ], [ 81, 5 ], [ 81, 6 ], [ 81, 11 ], 
   [ 81, 12 ], [ 81, 13 ], [ 81, 15 ] ]
 
-# doc/_Chapter_Local_nearrings.xml:96-105
+# doc/_Chapter_Local_nearrings.xml:95-104
 gap> G:=SmallGroup(81,2);
 <pc group of size 81 with 4 generators>
 gap> LibraryOfLNRsOnGroup(G);
@@ -25,21 +25,21 @@ gap> LibraryOfLNRsOnGroup(G);
   "AllLocalNearRings(81,2,72,14)", "AllLocalNearRings(81,2,72,19)", 
   "AllLocalNearRings(81,2,72,24)", "AllLocalNearRings(81,2,72,26)" ]
 
-# doc/_Chapter_Local_nearrings.xml:121-125
+# doc/_Chapter_Local_nearrings.xml:119-123
 gap> L:=LocalNearRing(81,12,54,8,3);
 ExplicitMultiplicationNearRing ( <pc group of size 81 with 
 4 generators> , multiplication )
 
-# doc/_Chapter_Local_nearrings.xml:140-144
+# doc/_Chapter_Local_nearrings.xml:138-142
 gap> L:=AllLocalNearRings(81,12,54,8);;
 gap> Size(L);
 30
 
-# doc/_Chapter_Local_nearrings.xml:159-162
+# doc/_Chapter_Local_nearrings.xml:157-160
 gap> NumberLocalNearRings(81,15,54,8);
 10
 
-# doc/_Chapter_Local_nearrings.xml:178-185
+# doc/_Chapter_Local_nearrings.xml:174-181
 gap> G:=SmallGroup(25,2);
 <pc group of size 25 with 2 generators>
 gap> IsAdditiveGroupOfLibraryOfLNRs(G);
@@ -47,7 +47,7 @@ true
 gap> IsAdditiveGroupOfLibraryOfLNRs(SmallGroup(81,14));
 false
 
-# doc/_Chapter_Local_nearrings.xml:200-209
+# doc/_Chapter_Local_nearrings.xml:194-203
 gap> InfoLocalNearRing(SmallGroup(361,2));
 The local nearrings are sorted by their multiplicative groups.
 [ "AllLocalNearRings(361,2,342,1) (2)", "AllLocalNearRings(361,2,342,2) (2)", \

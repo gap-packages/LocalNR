@@ -30,8 +30,8 @@
 #! @Label 
 DeclareProperty( "IsMinimalNonAbelianGroup", IsGroup );
 
-#! Recall that each finite non-abelian group whose proper subgroups are 
-#! abelian is called a <Emph>Miller-Moreno group</Emph> or in other terminology 
+#! Recall that each finite non-abelian group whose proper subgroups are
+#! abelian is called a <Emph>Miller-Moreno group</Emph> or, in other terminology,
 #! a <Emph>minimal non-abelian group</Emph>.
 
 #! @BeginExample
@@ -73,7 +73,9 @@ DeclareProperty( "IsMetacyclicPGroup", IsPGroup );
 
 #! @Description
 #! The argument is a group $G$.
-#! The output is 
+#! The output is a list of pairs <C>[x,H]</C>, where <C>x</C> is a
+#! representative of an endo-orbit of $G$ and <C>H</C> is the set of all
+#! images of <C>x</C> under endomorphisms of $G$.
 #! @Returns EndoOrbitsOfGroup
 #! @Arguments G
 #! @Label 
@@ -93,19 +95,19 @@ DeclareOperation( "EndoOrbitsOfGroup", [ IsGroup ] );
 
 #! @Description
 #! The argument is a group $G$.
-#! The output is <C>true</C> if $G$ is a endocyclic group,
+#! The output is <C>true</C> if $G$ is an endocyclic group,
 #! otherwise the output is <C>false</C>.
 #! @Returns a boolean
 #! @Arguments G
 #! @Label 
 DeclareProperty( "IsEndoCyclicGroup", IsGroup );
 
-#!Let $G$ be a group and $End G$ be the set of all its endomorphisms, 
-#!which can be considered as a semigroup with respect to the composition operation of endomorphisms. 
-#!For each $g\in G$ we denote by $g^{End G}$ the set $\{g^\alpha| \alpha\in End G\}$ 
+#! Let $G$ be a group and $End G$ be the set of all its endomorphisms,
+#! which can be considered as a semigroup with respect to composition.
+#! For each $g\in G$ we denote by $g^{End G}$ the set $\{g^\alpha| \alpha\in End G\}$
 #!of all images of the element $g$ with respect to endomorphisms of $End G$.
 
-#!A group $G$ is called <Emph>endocyclic</Emph> if it contains an element $g$ with $G=g^{End G}$.
+#! A group $G$ is called <Emph>endocyclic</Emph> if it contains an element $g$ with $G=g^{End G}$.
 
 #! @BeginExample
 #! gap> IsEndoCyclicGroup(D);
@@ -347,16 +349,17 @@ DeclareProperty( "IsOneGeneratedNearRing", IsNearRing );
 
 #! @Description
 #! The arguments are a nearring $R$ with identity and a set of units $Un$ of $R$.
-#! The output are the automorphisms associated with nearring units.
-#! @Returns automorphisms
+#! The output is the list of automorphisms of the additive group of $R$
+#! associated with the units in $Un$.
+#! @Returns a list of automorphisms
 #! @Arguments R,Un
 #! @Label 
 DeclareOperation( "AutomorphismsAssociatedWithNearRingUnits", [ IsNearRing, IsNearRingElementCollection ] );
 
 #! A subgroup $A$ of the automorphism group $Aut R^+$ of the additive group of 
-#! the nearring $R$ with identity isomorphic to the multiplicative group $R^*$ 
-#! and satisfies the condition $$i^A=\{i^a\mid a\in A\}=R^*$$ is called 
-#! the subgroup of $Aut R^+$ associated with the group $R^*$.
+#! the nearring $R$ with identity isomorphic to the multiplicative group $R^*$
+#! and satisfying the condition $$i^A=\{i^a\mid a\in A\}=R^*$$ is called
+#! the subgroup of $Aut R^+$ associated with $R^*$.
 
 
 #! @BeginExample
@@ -377,7 +380,7 @@ DeclareOperation( "AutomorphismsAssociatedWithNearRingUnits", [ IsNearRing, IsNe
 #! @Description
 #! The arguments are a nearring $R$ and a set $Elm$ of nearring elements.
 #! The output is the endomorphisms associated with nearring elements.
-#! @Returns endomorphisms
+#! @Returns a list of endomorphisms
 #! @Arguments  R, Elm
 #! @Label 
 DeclareOperation( "EndomorphismsAssociatedWithNearRingElements", [ IsNearRing, IsNearRingElementCollection ] );
@@ -394,7 +397,7 @@ DeclareOperation( "EndomorphismsAssociatedWithNearRingElements", [ IsNearRing, I
 
 #! @Description
 #! The argument is a nearring $R$ with identity.
-#! The output is the semidirect product associated with nearring $R$.
+#! The output is the semidirect product associated with the nearring $R$.
 #! @Returns a semidirect product
 #! @Arguments R
 #! @Label 
@@ -413,8 +416,8 @@ DeclareOperation( "SemidirectProductAssociatedWithNearRing", [ IsNearRing ]);
 
 #! @Description
 #! The arguments are a nearring $R$ with identity and 
-#! a subgroup $H$ of additive group of $R$.
-#! The output is <C>true</C> if $H$ is a constructive subgroup of nearring $R$,
+#! a subgroup $H$ of the additive group of $R$.
+#! The output is <C>true</C> if $H$ is a circle subgroup of the nearring $R$,
 #! otherwise the output is <C>false</C>.
 #! @Returns a boolean
 #! @Arguments R,H
@@ -433,8 +436,9 @@ DeclareOperation( "IsCircleSubgroupOfNearRing", [IsNearRing, IsGroup ]);
 
 #! @Description
 #! The arguments are a nearring $R$ with identity and 
-#! a constructive subgroup $H$ of $R$.
-#! The output is the group
+#! a circle subgroup $H$ of $R$.
+#! The output is the semidirect product associated with $H$ and the
+#! automorphisms determined by the corresponding units.
 #! @Returns a group
 #! @Arguments R,H
 #! @Label 
@@ -451,7 +455,7 @@ DeclareOperation( "FactorizedGroupAssociatedWithCircleSubgroupOfNearRing", [ IsN
 
 #! @Description
 #! The argument is a nearring $R$.
-#! The output is the constant part of nearring $R$.
+#! The output is the constant part of the nearring $R$.
 #! @Returns a constant part 
 #! @Arguments  R
 #! @Label 
@@ -470,7 +474,7 @@ DeclareAttribute("ConstantPartOfNearRing", IsNearRing );
 
 #! @Description
 #! The argument is a nearring $R$.
-#! The output is the zero-symmetric part of nearring $R$.
+#! The output is the zero-symmetric part of the nearring $R$.
 #! @Returns a zero-symmetric part
 #! @Arguments  R
 #! @Label 
@@ -486,8 +490,9 @@ DeclareAttribute("ZeroSymmetricPartOfNearRing", IsNearRing );
 
 #! @Description
 #! The argument is a nearring $R$.
-#! The output is the group of units as group of automorphisms $R$.
-#! @Returns a group of units
+#! The output is a group of automorphisms of the additive group of $R$
+#! that is isomorphic to the group of units of $R$.
+#! @Returns a group
 #! @Arguments  R
 #! @Label 
 DeclareAttribute("GroupOfUnitsAsGroupOfAutomorphisms", IsNearRing );
@@ -505,7 +510,7 @@ DeclareAttribute("GroupOfUnitsAsGroupOfAutomorphisms", IsNearRing );
 ###################################
 #! @Description
 #! The argument is a nearring $R$ and an element $r$.
-#! The output is  <C>true</C> if $r$ is a distributive element of nearring $R$,
+#! The output is <C>true</C> if $r$ is a distributive element of the nearring $R$,
 #! otherwise the output is <C>false</C>.
 #! @Returns a boolean
 #! @Arguments  R, r
