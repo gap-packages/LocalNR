@@ -79,9 +79,9 @@
 ###################################
 
 #! @Description
-#! The argument is $n$. 
-#! The output a list of <C>IdGroup</C> of the additive groups 
-#! of local nearrings from <C>Library</C> of order $n$.
+#! The argument is $n$.
+#! The output is a list of additive groups of local nearrings in the
+#! library of this package of order $n$.
 #! @Returns a list
 #! @Arguments n
 #! @Label 
@@ -96,9 +96,9 @@ DeclareGlobalFunction( "AdditiveGroupsOfLibraryOfLNRsOfOrder");
 ###################################
 
 #! @Description
-#! The argument is a group $G$. 
-#! The output a list of the catalogues of local nearrings 
-#! from <C>Library</C> on $G$.
+#! The argument is a group $G$.
+#! The output is a list of catalogue entries for the local nearrings in
+#! the library of this package whose additive group is isomorphic to $G$.
 #! @Returns a list
 #! @Arguments G
 #! @Label 
@@ -122,9 +122,10 @@ DeclareGlobalFunction( "LibraryOfLNRsOnGroup");
 
 #! @Description
 #! The arguments are $k$, $l$, $m$, $n$, $w$.
-#! The output is local nearring from <C>Library</C> without 
-#! check. The arguments $k$, $l$, $m$, $n$ are from IdGroup of the additive group and the multiplicative group,  
-#! respectively, $w$ is the position in the list.
+#! The output is the $w$-th local nearring from the library of this
+#! package whose additive group has <C>IdGroup</C> value <C>[k,l]</C>
+#! and whose multiplicative group has <C>IdGroup</C> value <C>[m,n]</C>.
+#! No validation of the arguments is performed.
 #! @Returns a nearring
 #! @Arguments k,l,m,n,w
 #! @Label
@@ -140,8 +141,10 @@ DeclareOperation( "LocalNearRing", [ IsInt, IsInt, IsInt, IsInt, IsInt ]);
 
 #! @Description
 #! The arguments are $k$, $l$, $m$, $n$.
-#! The output are all local nearrings from <C>Library</C> without 
-#! check. The arguments $k$, $l$, $m$, $n$ are as above.
+#! The output is the list of all local nearrings from the library of this
+#! package whose additive group has <C>IdGroup</C> value <C>[k,l]</C>
+#! and whose multiplicative group has <C>IdGroup</C> value <C>[m,n]</C>.
+#! No validation of the arguments is performed.
 #! @Returns a list
 #! @Arguments k,l,m,n
 #! @Label
@@ -157,8 +160,10 @@ DeclareOperation( "AllLocalNearRings", [ IsInt, IsInt, IsInt, IsInt ]);
 
 #! @Description
 #! The arguments are $k$, $l$, $m$, $n$.
-#! The output are number of all local nearrings from <C>Library</C> without 
-#! check. The arguments $k$, $l$, $m$, $n$ are as above.
+#! The output is the number of local nearrings in the library of this
+#! package whose additive group has <C>IdGroup</C> value <C>[k,l]</C>
+#! and whose multiplicative group has <C>IdGroup</C> value <C>[m,n]</C>.
+#! No validation of the arguments is performed.
 #! @Returns a number
 #! @Arguments k,l,m,n
 #! @Label
@@ -174,10 +179,10 @@ DeclareSynonym("NrLocalNearRings", NumberLocalNearRings);
 ###################################
 
 #! @Description
-#! The argument is a group $G$. 
-#! The output is <C>true</C> if in <C>Library</C> there exists a local nearring 
-#! whose additive group is isomorphic to $G$  
-#! otherwise the output is <C>false</C>.
+#! The argument is a group $G$.
+#! The output is <C>true</C> if the library of this package contains a
+#! local nearring whose additive group is isomorphic to $G$, and
+#! <C>false</C> otherwise.
 #! @Returns a boolean
 #! @Arguments G
 #! @Label 
@@ -195,9 +200,9 @@ DeclareGlobalFunction( "IsAdditiveGroupOfLibraryOfLNRs");
 ###################################
 
 #! @Description
-#! The argument is a group $G$. 
-#! The output some information about local nearrings 
-#! from <C>Library</C> on $G$.
+#! The argument is a group $G$.
+#! The output is summary information about the local nearrings in the
+#! library of this package whose additive group is isomorphic to $G$.
 #! @Returns information
 #! @Arguments G
 #! @Label 

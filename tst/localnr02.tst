@@ -10,7 +10,7 @@
 #
 gap> START_TEST("localnr02.tst");
 
-# doc/_Chapter_Functions.xml:25-36
+# doc/_Chapter_Functions.xml:24-35
 gap> H:=SmallGroup(120,4);       
 <pc group of size 120 with 5 generators>
 gap> IsMinimalNonAbelianGroup(H);
@@ -22,7 +22,7 @@ true
 gap> IsMinimalNonAbelianGroup(SmallGroup(16,8));
 false
 
-# doc/_Chapter_Functions.xml:51-58
+# doc/_Chapter_Functions.xml:48-55
 gap> IsMetacyclicPGroup(K);
 true
 gap> IsMetacyclicPGroup(SmallGroup(81,4));
@@ -30,7 +30,7 @@ true
 gap> IsMetacyclicPGroup(SmallGroup(81,15));
 false
 
-# doc/_Chapter_Functions.xml:72-80
+# doc/_Chapter_Functions.xml:69-77
 gap> D:=SmallGroup(81,2); 
 <pc group of size 81 with 4 generators>
 gap> T:=EndoOrbitsOfGroup(D);;
@@ -39,11 +39,11 @@ gap> Length(T);
 gap> Size(T[1][2]);
 81
 
-# doc/_Chapter_Functions.xml:100-103
+# doc/_Chapter_Functions.xml:95-98
 gap> IsEndoCyclicGroup(D);
 true
 
-# doc/_Chapter_Functions.xml:124-140
+# doc/_Chapter_Functions.xml:116-132
 gap> N:=LocalNearRing(32,5,16,3,8);
 ExplicitMultiplicationNearRing ( <pc group of size 32 with 
 5 generators> , multiplication )
@@ -60,7 +60,7 @@ LibraryNearRing(6/2, 3)
 gap> UnitsOfNearRing(L);
 [  ]
 
-# doc/_Chapter_Functions.xml:155-169
+# doc/_Chapter_Functions.xml:145-159
 gap> H:=SmallGroup(16,6);
 <pc group of size 16 with 4 generators>
 gap> A:= AutomorphismNearRing(H);
@@ -75,7 +75,7 @@ LibraryNearRing(8/2, 814)
 gap> IsLocalNearRing(K);
 false
 
-# doc/_Chapter_Functions.xml:184-191
+# doc/_Chapter_Functions.xml:172-179
 gap> L:=AllLocalNearRings(16,14,8,4);;
 gap> Size(L);
 24
@@ -83,7 +83,7 @@ gap> F:=Filtered(L,x->IsLocalRing(x));;
 gap> Size(F);
 1
 
-# doc/_Chapter_Functions.xml:205-220
+# doc/_Chapter_Functions.xml:191-206
 gap> T:=LocalNearRing(49,2,42,1,1); 
 ExplicitMultiplicationNearRing ( <pc group of size 49 with 
 2 generators> , multiplication )
@@ -99,7 +99,7 @@ gap> N:=SortedList(NearRingNonUnits(R));
   ((1,5,3,7)(2,8,4,6)), ((1,6,3,8)(2,5,4,7)), ((1,7,3,5)(2,6,4,8)), 
   ((1,8,3,6)(2,7,4,5)) ]
 
-# doc/_Chapter_Functions.xml:234-247
+# doc/_Chapter_Functions.xml:218-231
 gap> B:=LocalNearRing(25,2,20,3,1); 
 ExplicitMultiplicationNearRing ( <pc group of size 25 with 2 generators> , multiplication )
 gap> D:=DistributiveElements(B);;
@@ -113,7 +113,7 @@ false
 gap> IsDgNearRing(Rs);
 true
 
-# doc/_Chapter_Functions.xml:261-271
+# doc/_Chapter_Functions.xml:243-253
 gap> T:=LocalNearRing(125,4,100,9,1); 
 ExplicitMultiplicationNearRing ( <pc group of size 125 with 
 3 generators> , multiplication )
@@ -124,26 +124,26 @@ Group([ <identity> of ..., f2, f3, f2^2, f2*f3, f3^2, f2^3, f2^2*f3, f2*f3^2, f3
 gap> IdGroup(L);
 [ 25, 2 ]
 
-# doc/_Chapter_Functions.xml:285-290
+# doc/_Chapter_Functions.xml:265-270
 gap> I:=NonUnitsAsNearRingIdeal(T);
 < nearring ideal >
 gap> Size(I);
 25
 
-# doc/_Chapter_Functions.xml:304-310
+# doc/_Chapter_Functions.xml:282-288
 gap> B:=LocalNearRing(16,10,8,2,7);;
 gap> M:=MultiplicativeSemigroupOfNearRing(B);
 <semigroup of size 16, with 7 generators>
 gap> Size(M);
 16
 
-# doc/_Chapter_Functions.xml:324-329
+# doc/_Chapter_Functions.xml:300-305
 gap> Nm:=NonUnitsAsMultiplicativeSemigroup(B);
 <semigroup with 8 generators>
 gap> Size(Nm);
 8
 
-# doc/_Chapter_Functions.xml:344-354
+# doc/_Chapter_Functions.xml:318-328
 gap> D:=LocalNearRing(49,2,42,4,1);
 ExplicitMultiplicationNearRing ( <pc group of size 49 with 2 generators> , multiplication )
 gap> IsOneGeneratedNearRing(D);
@@ -154,7 +154,7 @@ ExplicitMultiplicationNearRing ( <pc group of size 16 with
 gap> IsOneGeneratedNearRing(H);    
 false
 
-# doc/_Chapter_Functions.xml:372-383
+# doc/_Chapter_Functions.xml:345-356
 gap> S:=UnitsOfNearRing(D);
 [ (f1), (f1*f2), (f1*f2^2), (f1*f2^3), (f1*f2^4), (f1*f2^5), (f1*f2^6), (f1^2), (f1^2*f2), 
   (f1^2*f2^2), (f1^2*f2^3), (f1^2*f2^4), (f1^2*f2^5), (f1^2*f2^6), (f1^3), (f1^3*f2), 
@@ -166,14 +166,14 @@ gap> A:=AutomorphismsAssociatedWithNearRingUnits(D,S);;
 gap> Size(A);
 42
 
-# doc/_Chapter_Functions.xml:397-403
+# doc/_Chapter_Functions.xml:368-374
 gap> Nu:=NearRingNonUnits(D);
 [ (<identity> of ...), (f2), (f2^2), (f2^3), (f2^4), (f2^5), (f2^6) ]
 gap> En:=EndomorphismsAssociatedWithNearRingElements(D,Nu);;
 gap> Size(En);
 7
 
-# doc/_Chapter_Functions.xml:417-424
+# doc/_Chapter_Functions.xml:386-393
 gap> T:=LocalNearRing(25,2,20,2,1);             
 ExplicitMultiplicationNearRing ( <pc group of size 25 with 2 generators> , multiplication )
 gap> SemidirectProductAssociatedWithNearRing(T);
@@ -181,20 +181,20 @@ gap> SemidirectProductAssociatedWithNearRing(T);
 gap> Size(last);
 500
 
-# doc/_Chapter_Functions.xml:440-446
+# doc/_Chapter_Functions.xml:407-413
 gap> Sg:=Subgroups(GroupReduct(T));;
 gap> Size(Sg);
 8
 gap> F:=Filtered(Sg,x->IsCircleSubgroupOfNearRing(T,x));
 [ Group([  ]), Group([ f2 ]) ]
 
-# doc/_Chapter_Functions.xml:461-466
+# doc/_Chapter_Functions.xml:427-432
 gap> FG:=FactorizedGroupAssociatedWithCircleSubgroupOfNearRing(T,F[2]);
 <pc group with 2 generators>
 gap> IdGroup(FG);
 [ 25, 2 ]
 
-# doc/_Chapter_Functions.xml:480-487
+# doc/_Chapter_Functions.xml:444-451
 gap> H:=LocalNearRing(361,2,342,7,7);
 ExplicitMultiplicationNearRing ( <pc group of size 361 with 
 2 generators> , multiplication )
@@ -202,12 +202,12 @@ gap> C:=ConstantPartOfNearRing(H);;
 gap> Size(C);
 19
 
-# doc/_Chapter_Functions.xml:501-505
+# doc/_Chapter_Functions.xml:463-467
 gap> ZeroSymmetricPartOfNearRing(H);;
 gap> Size(last);
 19
 
-# doc/_Chapter_Functions.xml:519-526
+# doc/_Chapter_Functions.xml:480-487
 gap> M:=LocalNearRing(27,4,18,3,2);  
 ExplicitMultiplicationNearRing ( <pc group of size 27 with 3 generators> , multiplication )
 gap> GroupOfUnitsAsGroupOfAutomorphisms(M);
@@ -215,7 +215,7 @@ gap> GroupOfUnitsAsGroupOfAutomorphisms(M);
 gap> Size(last);
 18                
 
-# doc/_Chapter_Functions.xml:541-550
+# doc/_Chapter_Functions.xml:500-509
 gap> D:=LocalNearRing(49,2,42,6,1); 
 ExplicitMultiplicationNearRing ( <pc group of size 49 with 
 2 generators> , multiplication )
@@ -225,13 +225,13 @@ gap> d:=h[3];
 gap> IsDistributiveElementOfNearRing(D,d);
 true
 
-# doc/_Chapter_Functions.xml:565-570
+# doc/_Chapter_Functions.xml:522-527
 gap> N:=LocalNearRing(16,10,8,2,7); 
 ExplicitMultiplicationNearRing ( <pc group of size 16 with 4 generators> , multiplication )
 gap> IsSemiDistributiveNearRing(N);
 true
 
-# doc/_Chapter_Functions.xml:585-595
+# doc/_Chapter_Functions.xml:540-550
 gap> N:=LocalNearRing(343,5,294,8,2);    
 ExplicitMultiplicationNearRing ( <pc group of size 343 with 
 3 generators> , multiplication )
@@ -242,7 +242,7 @@ gap> Identity(N);
 gap> IsNearRingWithIdentity(N);
 true
 
-# doc/_Chapter_Functions.xml:611-627
+# doc/_Chapter_Functions.xml:564-580
 gap> T:=LocalNearRing(49,2,42,1,2);        
 ExplicitMultiplicationNearRing ( <pc group of size 49 with 
 2 generators> , multiplication )
