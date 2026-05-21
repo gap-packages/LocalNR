@@ -1,11 +1,12 @@
 #############################################################################
 ##
-#W  PackageInfo.g                 LocalNR - a GAP package of local nearrings
+##  PackageInfo.g                 LocalNR - a GAP package of local nearrings
 ##
-#Y  Copyright (C) 2019                 Yaroslav Sysak with contributions by 
-#Y                                          Iryna Raievska, Maryna Raievska 
+##  Copyright (C) 2019-2026            Yaroslav Sysak with contributions by 
+##                                          Iryna Raievska, Maryna Raievska 
 ##
-##  Institute of Mathematics of National Academy of Sciences of Ukraine
+##  Institute of Mathematics of National Academy of Sciences of Ukraine,
+##  Kyiv, Ukraine
 ##
 ##  Licensing information can be found in the README file of this package.
 ##
@@ -14,8 +15,8 @@
 SetPackageInfo( rec(
 PackageName := "LocalNR",
 Subtitle := "Package of local nearrings",
-Version := "1.0.4",
-Date := "15/03/2024",
+Version := "2.0.0",
+Date := "21/05/2026",
 
 SourceRepository := rec(
     Type := "git",
@@ -65,7 +66,7 @@ Persons := [
     LastName      := "Sysak",
     FirstNames    := "Yaroslav",
     IsAuthor      := true,
-    IsMaintainer  := true,
+    IsMaintainer  := false,
     Email         := "sysak@imath.kiev.ua",
     WWWHome       := "https://www.imath.kiev.ua/~algebra/Sysak/",
     PostalAddress := Concatenation( [
@@ -77,7 +78,7 @@ Persons := [
 
      )
 ],  
-Status := "dev",
+Status := "other",
 PackageDoc := 
   rec(
   # use same as in GAP            
@@ -92,13 +93,13 @@ ArchiveURLSubset := ["doc"],
 
 AbstractHTML := 
 "The <span class=\"pkgname\">LocalNR</span> package \
-contains the library of local nearrings up to order 361 \
+contains the library of local nearrings of small orders \
 and some functions to analyze finite nearrings.",
    
 Dependencies := rec(
   # GAP version, use version strings for specifying exact versions,
   # prepend a '>=' for specifying a least version.
-  GAP := ">=4.7.8",
+  GAP := ">=4.10.0",
   # list of pairs [package name, (least) version],  package name is case
   # insensitive, least version denoted with '>=' prepended to version string.
   # without these, the package will not load

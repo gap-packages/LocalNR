@@ -1,12 +1,13 @@
 #############################################################################
 ##
-##                            LocalNR - a GAP package of local nearrings
+##                           LocalNR - a GAP package of local nearrings
 ##
-##  Copyright 2026,                Yaroslav Sysak with contributions by
+##  Copyright (C) 2019-2026        Yaroslav Sysak with contributions by
 ##                                      Iryna Raievska, Maryna Raievska
 ##                  
 ##  Institute of Mathematics of National Academy of Sciences of Ukraine,
 ##  Kyiv, Ukraine
+##
 #############################################################################
 
 

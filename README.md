@@ -6,7 +6,7 @@
 
 ----------------------------------------------------------------------
 
-Copyright (C) 2024
+Copyright (C) 2019-2026
 Yaroslav Sysak with contributions by Iryna Raievska, Maryna Raievska
 
 `LocalNR` is free software: you can redistribute it and/or modify
@@ -27,31 +27,22 @@ README file and on the front page of the documentation.
 
 ----------------------------------------------------------------------
 
-The `LocalNR` package contains the library of local nearrings up to
-order 361 and some functions to analyze finite nearrings.
+The `LocalNR` package contains the library of local nearrings of small
+orders and some functions to analyze finite nearrings.
+
+To check which orders are represented in the library, see the content
+of the Endom directory. The library is complete up to isomorphism
+for local nearrings of orders 4, 8, 9, 16, 25, 27, 49, 81, 121, 125,
+169, 289, 343, 361 and 1331.
+
+For local nearrings of orders 32, 64, 128, 243 and 625 the library
+provides classifications of some classes of nearrings, determined by
+their additive group.
 
 ## Requirements
 
 This software is written for GAP 4. It requires an existing installation
-of GAP (see <https://www.gap-system.org>) in version 4.7.8 or higher.
-
-### operating system
-
-The current version of `LocalNR` was created for use under Unix.
-It will also work under Windows but only if all files in the directory
-`LocalNR/data` and all of its subdirectories are uncompressed.
-
-### RAM
-
-Working with `LocalNR` can be memory expensive. We recommend to have
-at least 2 GB of RAM available. 
-
-### disk space
-
-As the data in the library is compressed, 1 GB of disk space will be 
-sufficient to install `LocalNR` under Unix. To use the library under
-Windows the data has to be uncompressed and will then occupy
-approximately 7 GB.
+of GAP (see <https://www.gap-system.org>) in version 4.10.0 or higher.
 
 ## Installation
 
@@ -71,26 +62,6 @@ from <https://gap-packages.github.io/LocalNR/>.
 at the terminal prompt. A subdirectory `LocalNR` will be created inside
 the `pkg` directory.
 
-## Contents
-
-After installation the folder `LocalNR` should contain the subdirectories
-
-    Endom
-    doc
-    lib
-    tst
-
-and the files
-
-    init.g
-    PackageInfo.g
-    read.g
-    GPLv3
-    CHANGELOG
-    README.txt
-    makedoc.g
-
-
 ## Loading
 
 To use the package type
@@ -99,28 +70,17 @@ To use the package type
     
 at the GAP prompt.
 
+## Acknowledgement
 
-## Download additional libraries
-
-Some local nearrings of the following orders are stored separately.
-
-Local nearrings of order 32 need to be downloaded separately (~291MB) from https://zenodo.org/records/10820301
-
-Local nearrings of order 64 need to be downloaded separately (~49MB) from https://zenodo.org/records/10820320
-
-Local nearrings of order 128 need to be downloaded separately (~235MB) from https://zenodo.org/records/7225377
-
-Local nearrings of order 243 need to be downloaded separately (~429MB) from https://zenodo.org/records/10820318
-
-Local nearrings of order 625 need to be downloaded separately (~146MB) from https://zenodo.org/records/7613145
-
-Unpack these (zip) archives and move the libraries of local nearrings (txt.gz) from these archives to the respective `Endom` subdirectory of the `LocalNR` directory.
-
+The authors of the package express their gratitude to GAP developers, 
+especially Max Horn for useful remarks and package improvements, 
+Chris Jefferson for converting the data to the much more compact representation, 
+Olexandr Konovalov for permanent support.
 
 ## Contact
 
-If you use `LocalNR`, please tell us by sending an email to
-<sysak@imath.kiev.ua>, <raeirina@imath.kiev.ua>, <raemarina@imath.kiev.ua>.
+If you use `LocalNR`, please tell us by sending an email to package maintainers:
+<raeirina@imath.kiev.ua>, <raemarina@imath.kiev.ua>.
 
 If you find any bugs or have any suggestions or comments, we would
 very much appreciate it if you would let us know either by email or
@@ -128,25 +88,7 @@ via <https://github.com/gap-packages/LocalNR/issues> on GitHub. Also,
 we would like to hear about applications of this software.
 
 Yaroslav Sysak, Iryna Raievska, Maryna Raievska   
-Kyiv, 15th of March 2024.
 
-Yaroslav Sysak
+Institute of Mathematics of National Academy of Sciences of Ukraine,
+01024, Ukraine, Kyiv, 3, Tereshchenkivska st.
 
-    Institute of Mathematics 
-    of National Academy of Sciences of Ukraine
-    01024, Ukraine, Kyiv, 
-    3, Tereshchenkivska st.
-
-Iryna Raievska
-
-    Institute of Mathematics 
-    of National Academy of Sciences of Ukraine
-    01024, Ukraine, Kyiv, 
-    3, Tereshchenkivska st.
-
-Maryna Raievska
-
-    Institute of Mathematics 
-    of National Academy of Sciences of Ukraine
-    01024, Ukraine, Kyiv, 
-    3, Tereshchenkivska st.
