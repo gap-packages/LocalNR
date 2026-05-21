@@ -268,32 +268,3 @@ InstallGlobalFunction(LibraryOfLNRsOnGroup, function(G)
   od;
   return ee;
 end );
-
-
-##
-############################################################################
-##
-# InfoLocalNearRing
-InstallGlobalFunction(InfoLocalNearRing, function(G)
-
-  local R, s, T, i, K, t, h;
-
-  h := DirectoriesPackageLibrary( "LocalNR", "Endom/" );
-  t := Filename( h, Concatenation( "info", ".txt" ) );
-  R := ReadAsFunction( t )();
-  K := IdGroup( G );
-  s := Size( R );
-  T := [];
-  for i in [1..s] do
-    if R[i][1] = K[1] and R[i][2] = K[2] then
-      Add( T, Concatenation( "AllLocalNearRings(", String( R[i][1] ), ",", String( R[i][2] ), ",", String( R[i][3] ), ",", String( R[i][4] ), ") (", String( R[i][5] ), ")" ) );
-    fi;
-  od;
-  if Size( T ) > 1 then
-    Print( "The local nearrings are sorted by their multiplicative groups.\n", T );
-  elif Size( T ) = 1 then
-    Print( T );
-  else
-    return Error( "group is not recognized in the library" );
-  fi;
-end );

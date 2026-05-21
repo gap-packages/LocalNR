@@ -197,26 +197,3 @@ DeclareGlobalFunction( "IsAdditiveGroupOfLibraryOfLNRs");
 #! gap> IsAdditiveGroupOfLibraryOfLNRs(SmallGroup(81,14));
 #! false
 #! @EndExample
-
-###################################
-
-#! @Description
-#! The argument is a group $G$.
-#! The output is summary information about the local nearrings in the
-#! library of this package whose additive group is isomorphic to $G$.
-#! @Returns information
-#! @Arguments G
-#! @Label 
-DeclareGlobalFunction( "InfoLocalNearRing");
-
-#! @BeginExample
-#! gap> InfoLocalNearRing(SmallGroup(361,2));
-#! The local nearrings are sorted by their multiplicative groups.
-#! [ "AllLocalNearRings(361,2,342,1) (2)", "AllLocalNearRings(361,2,342,2) (2)", \
-#! "AllLocalNearRings(361,2,342,4) (1)",
-#!   "AllLocalNearRings(361,2,342,6) (1)", "AllLocalNearRings(361,2,342,7) (7)",\
-#!  "AllLocalNearRings(361,2,342,8) (6)",
-#!   "AllLocalNearRings(361,2,360,4) (1)", "AllLocalNearRings(361,2,360,15) (1)"\
-#!  ]
-#! @EndExample
-##

@@ -15,7 +15,7 @@
 SetPackageInfo( rec(
 PackageName := "LocalNR",
 Subtitle := "Package of local nearrings",
-Version := "2.0.0",
+Version := "2.1.0",
 Date := "21/05/2026",
 
 SourceRepository := rec(
@@ -130,7 +130,7 @@ BannerString := Concatenation(
   " and ",~.Persons[2].FirstNames, " ", ~.Persons[2].LastName,
         " (", ~.Persons[2].WWWHome, ")\n",
 "\n LocalNR - a package of local nearrings",
-"\n http://www.imath.kiev.ua/~algebra/LocalNR/",
+"\n https://gap-packages.github.io/LocalNR/",
 "\n ----------------------------------------------------------------------------- \n"),
 
 TestFile := "tst/testall.g",
