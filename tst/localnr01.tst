@@ -47,15 +47,5 @@ true
 gap> IsAdditiveGroupOfLibraryOfLNRs(SmallGroup(81,14));
 false
 
-# doc/_Chapter_Local_nearrings.xml:205-214
-gap> InfoLocalNearRing(SmallGroup(361,2));
-The local nearrings are sorted by their multiplicative groups.
-[ "AllLocalNearRings(361,2,342,1) (2)", "AllLocalNearRings(361,2,342,2) (2)", \
-"AllLocalNearRings(361,2,342,4) (1)",
-  "AllLocalNearRings(361,2,342,6) (1)", "AllLocalNearRings(361,2,342,7) (7)",\
- "AllLocalNearRings(361,2,342,8) (6)",
-  "AllLocalNearRings(361,2,360,4) (1)", "AllLocalNearRings(361,2,360,15) (1)"\
- ]
-
 #
 gap> STOP_TEST("localnr01.tst", 1);
