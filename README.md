@@ -89,6 +89,7 @@ we would like to hear about applications of this software.
 
 Yaroslav Sysak, Iryna Raievska, Maryna Raievska   
 
-Institute of Mathematics of National Academy of Sciences of Ukraine,
+Institute of Mathematics of National Academy of Sciences of Ukraine
+
 01024, Ukraine, Kyiv, 3, Tereshchenkivska st.
 
