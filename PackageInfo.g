@@ -104,7 +104,7 @@ Dependencies := rec(
   # insensitive, least version denoted with '>=' prepended to version string.
   # without these, the package will not load
   # NeededOtherPackages := [["GAPDoc", ">= 0.99"]],
-  NeededOtherPackages := [["SONATA", ">= 2.4"]],
+  NeededOtherPackages := [["SONATA", ">= 2.4"], ["smallgrp", ">= 1.3"]],
   # without these the package will issue a warning while loading
   # SuggestedOtherPackages := [],
   SuggestedOtherPackages := [],
